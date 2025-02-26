@@ -20,6 +20,10 @@
     #   signByDefault = true;
     # };
     extraConfig = {
+      commit.gpgSign = true;
+      gpg.format = "ssh";
+      # gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+      user.signingKey = "~/.ssh/id_ed25519";
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
