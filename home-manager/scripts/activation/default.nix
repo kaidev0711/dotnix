@@ -23,6 +23,11 @@
       fi
     '';
 
+    hushloginPermissions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      if [ -d "$HOME/.hushlogin" ]; then
+        /usr/bin/touch ~/.hushlogin
+      fi
+    '';
     # Set up default shell
     # postActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #   current_shell=$(basename "$SHELL")

@@ -29,6 +29,10 @@
         auto-pairs = true;
         idle-timeout = 50;
         end-of-line-diagnostics = "hint";
+        shell = [
+          "fish"
+          "-c"
+        ];
         # rulers = [100];
         # text-width = 100;
 
@@ -83,8 +87,6 @@
         lsp = {
           display-inlay-hints = true;
           display-messages = true;
-          # display-signature-help-docs = true;
-          # auto-signature-help = false;
         };
       };
       keys.normal = {
@@ -99,53 +101,12 @@
           "delete_selection"
           "paste_after"
         ];
-        # G = "goto_file_end";
-        # V = [
-        #   "select_mode"
-        #   "extend_to_line_bounds"
-        # ];
-        # x = "delete_selection";
-        # p = "paste_clipboard_after";
-        # P = "paste_clipboard_before";
-        # o = ["open_below" "normal_mode"];
-        # O = ["open_above" "normal_mode"];
-        # w = [
-        #   "move_next_word_start"
-        #   "move_char_right"
-        #   "collapse_selection"
-        # ];
-        # e = [
-        #   "move_next_word_end"
-        #   "collapse_selection"
-        # ];
-        # b = [
-        #   "move_prev_word_start"
-        #   "collapse_selection"
-        # ];
-        # H = ":bp";
-        # L = ":bn";
         esc = [
           "collapse_selection"
           "keep_primary_selection"
         ];
         C-c = "no_op";
 
-        # y = {
-        #   y = [
-        #     "extend_to_line_bounds"
-        #     "yank_main_selection_to_clipboard"
-        #     "normal_mode"
-        #     "flip_selections"
-        #     "collapse_selection"
-        #   ];
-        # };
-        # d = {
-        #   d = [
-        #     "extend_to_line_bounds"
-        #     "yank_main_selection_to_clipboard"
-        #     "delete_selection"
-        #   ];
-        # };
         space = {
           n = ":new";
         };
@@ -188,30 +149,6 @@
           "keep_primary_selection"
           "normal_mode"
         ];
-        # G = "goto_file_end";
-        # x = [
-        #   "yank_main_selection_to_clipboard"
-        #   "delete_selection"
-        # ];
-        # y = [
-        #   "yank_main_selection_to_clipboard"
-        #   "normal_mode"
-        #   "flip_selections"
-        #   "collapse_selection"
-        # ];
-        # Y = [
-        #   "extend_to_line_bounds"
-        #   "yank_main_selection_to_clipboard"
-        #   "goto_line_start"
-        #   "collapse_selection"
-        #   "normal_mode"
-        # ];
-        # d = [
-        #   "yank_main_selection_to_clipboard"
-        #   "delete_selection"
-        # ];
-        # p = "replace_selections_with_clipboard";
-        # P = "paste_clipboard_before";
         C-k = [
           "extend_to_line_bounds"
           "delete_selection"

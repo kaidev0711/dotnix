@@ -27,5 +27,6 @@
     tokei
     procs
     pipes-rs
+    hyperfine
   ];
 }

@@ -1,4 +1,9 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
   xdg.configFile."aerospace/aerospace.toml".text = ''
     after-login-command = []
@@ -184,9 +189,9 @@
     run = 'move-node-to-workspace Terminal'
     # run = ["layout floating", 'move-node-to-workspace Terminal']
 
-    # [[on-window-detected]]
-    # if.app-id = "com.google.Chrome"
-    # run = 'move-node-to-workspace Browser'
+    [[on-window-detected]]
+    if.app-id = "org.alacritty"
+    run = 'move-node-to-workspace Terminal'
 
     [[on-window-detected]]
     if.app-id = "app.zen-browser.zen"
@@ -207,4 +212,3 @@
 
   '';
 }
-

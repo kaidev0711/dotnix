@@ -6,7 +6,6 @@
 }:
 {
   imports = [
-    ./ghostty
-    ./alacritty
+    ./zellij
   ];
 }

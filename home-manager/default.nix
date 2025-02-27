@@ -15,6 +15,7 @@
     ./editors
     ./window_manager
     ./devs
+    ./multiplexers
   ];
   home.stateVersion = "24.11";
   programs.nix-index.enable = true;
