@@ -10,9 +10,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    zjstatus = {
-      url = "github:dj95/zjstatus";
-    };
   };
 
   outputs =
@@ -21,23 +18,16 @@
       nix-darwin,
       nixpkgs,
       home-manager,
-      zjstatus,
       ...
     }:
-    let
-      overlays = with inputs; [
-        (final: prev: { zjstatus = zjstatus.packages.${prev.system}.default; })
-      ];
-    in
     {
       # darwin-rebuild build --flake .#mbtuandv
       darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit inputs; };
         modules = [
           ./hosts/mbtuandv/configuration.nix
           home-manager.darwinModules.home-manager
           {
-            nixpkgs.overlays = overlays;
-            # home-manager.backupFileExtension = "backup";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.tuandv = {
