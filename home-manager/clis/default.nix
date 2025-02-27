@@ -28,5 +28,7 @@
     procs
     pipes-rs
     hyperfine
+    nix-prefetch-git
+    serpl
   ];
 }

@@ -81,9 +81,7 @@
         file-picker = {
           hidden = false;
         };
-        statusline = {
-          center = [ "version-control" ];
-        };
+        statusline = { };
         lsp = {
           display-inlay-hints = true;
           display-messages = true;
@@ -128,6 +126,10 @@
           l = ":log-open";
           y = ":yank-diagnostic";
           # n = ":open ~/Notes/index.md";
+          e = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open";
+          v = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit";
+          h = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit";
+          s = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
         };
       };
       keys.insert = {
@@ -204,4 +206,29 @@
       };
     };
   };
+  xdg.configFile."helix/yazi-picker.sh".text = ''
+    #!/usr/bin/env bash
+    paths=$(${pkgs.yazi}/bin/yazi --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
+
+    if [[ -n "$paths" ]]; then
+    	${pkgs.zellij}/bin/zellij action toggle-floating-panes
+    	${pkgs.zellij}/bin/zellij action write 27 # send <Escape> key
+    	${pkgs.zellij}/bin/zellij action write-chars ":$1 $paths"
+    	${pkgs.zellij}/bin/zellij action write 13 # send <Enter> key
+    else
+    	${pkgs.zellij}/bin/zellij action toggle-floating-panes
+    fi
+  '';
+
+  xdg.configFile."helix/serpl-replace.sh".text = ''
+    #!/usr/bin/env bash
+    ${pkgs.serpl}/bin/serpl
+    exit_code=$?
+
+    if [[ $exit_code -eq 0 ]]; then
+        ${pkgs.zellij}/bin/zellij action toggle-floating-panes
+        ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
+        ${pkgs.zellij}/bin/zellij action write 13 # send <Enter> key
+    fi
+  '';
 }
