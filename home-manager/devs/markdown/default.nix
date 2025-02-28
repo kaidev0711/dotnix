@@ -6,9 +6,6 @@
 }:
 {
   imports = [
-    ./direnv
-    ./rust
-    ./markdown
-    ./web
+    ./markdown_oxide
   ];
 }

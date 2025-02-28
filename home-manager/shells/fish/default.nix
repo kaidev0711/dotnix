@@ -12,6 +12,7 @@
       cp = "cp -i";
       rm = "rm -i";
       mv = "mv -i";
+      mkdir = "mkdir -p";
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
     };

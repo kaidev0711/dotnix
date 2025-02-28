@@ -18,6 +18,7 @@
     ./tealdeer
     ./macchina
     ./pipes_rs
+    ./bacon
   ];
   home.packages = with pkgs; [
     wget

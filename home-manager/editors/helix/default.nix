@@ -16,7 +16,7 @@
       };
     };
     settings = {
-      theme = "kanagawa_transparent";
+      theme = "kanagawa";
       editor = {
         bufferline = "multiple";
         cursorline = true;
@@ -124,8 +124,9 @@
           ];
           o = ":config-open";
           l = ":log-open";
+          c = ":lsp-workspace-command";
           y = ":yank-diagnostic";
-          # n = ":open ~/Notes/index.md";
+          n = ":open ~/Notes/index.md";
           e = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open";
           v = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit";
           h = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit";
@@ -170,11 +171,110 @@
         only = [
           "rust"
           "nix"
+          "markdown"
+          "toml"
+          "typescript"
+          "javascript"
+          "json"
         ];
       };
       language = [
         {
+          name = "json";
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "json"
+            ];
+          };
+        }
+        {
+          name = "typescript";
+          scope = "source.ts";
+          roots = [
+            "deno.json"
+            "deno.jsonc"
+            "package.json"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "ts"
+            ];
+          };
+          language-servers = [ "deno-lsp" ];
+        }
+        {
+          name = "javascript";
+          scope = "source.js";
+          roots = [
+            "deno.json"
+            "deno.jsonc"
+            "package.json"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "js"
+            ];
+          };
+          language-servers = [ "deno-lsp" ];
+        }
+        {
+          name = "jsx";
+          scope = "source.jsx";
+          roots = [
+            "deno.json"
+            "deno.jsonc"
+            "package.json"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "jsx"
+            ];
+          };
+          language-servers = [ "deno-lsp" ];
+        }
+        {
+          name = "tsx";
+          scope = "source.tsx";
+          roots = [
+            "deno.json"
+            "deno.jsonc"
+            "package.json"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "tsx"
+            ];
+          };
+          language-servers = [ "deno-lsp" ];
+        }
+        {
           name = "nix";
+          scope = "source.nix";
           auto-format = true;
           language-servers = [ "nixd" ];
           formatter = {
@@ -183,10 +283,47 @@
         }
         {
           name = "rust";
+          scope = "source.rust";
           auto-format = true;
+        }
+        {
+          name = "toml";
+          scope = "source.toml";
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.taplo;
+            args = [
+              "format"
+              "-"
+            ];
+          };
+        }
+        {
+          name = "markdown";
+          scope = "source.md";
+          auto-format = true;
+          language-servers = [
+            "markdown-oxide"
+          ];
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "md"
+            ];
+          };
         }
       ];
       language-server = {
+        deno-lsp = {
+          command = lib.getExe pkgs.deno;
+          args = [ "lsp" ];
+          config = {
+            deno.enable = true;
+          };
+        };
         nixd = {
           command = lib.getExe pkgs.nixd;
         };
@@ -202,6 +339,16 @@
               typeHints.hideClosureInitialization = false;
             };
           };
+        };
+        taplo = {
+          command = lib.getExe pkgs.taplo;
+          args = [
+            "lsp"
+            "stdio"
+          ];
+        };
+        markdown-oxide = {
+          command = lib.getExe pkgs.markdown-oxide;
         };
       };
     };
