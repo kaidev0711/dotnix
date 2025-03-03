@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./ssh
@@ -12,5 +7,7 @@
     ./jujutsu
     ./gitui
   ];
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    delta
+  ];
 }

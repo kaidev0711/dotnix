@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ ... }:
 {
   programs.starship = {
     enable = true;
@@ -196,7 +196,7 @@
       };
       solidity = {
         format = "\\[[$symbol($version)]($style)\\]";
-      };      
+      };
     };
   };
 }

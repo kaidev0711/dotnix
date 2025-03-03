@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 {
 
   xdg.configFile."pipes-rs/config.toml".text = ''

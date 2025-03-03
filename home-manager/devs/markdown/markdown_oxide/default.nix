@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, ... }:
 {
   xdg.configFile."moxide/settings.toml".text = ''
     # Leave blank to try to import from Obsidian Daily Notes

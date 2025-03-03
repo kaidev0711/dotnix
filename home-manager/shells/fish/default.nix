@@ -15,6 +15,7 @@
       mkdir = "mkdir -p";
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
+      zjr = "zellij action new-tab -l ${config.home.homeDirectory}/.config/zellij/layouts/rust.kdl";
     };
     plugins = [ ];
     functions = {

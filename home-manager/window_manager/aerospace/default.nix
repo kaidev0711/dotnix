@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ ... }:
 {
   xdg.configFile."aerospace/aerospace.toml".text = ''
     after-login-command = []

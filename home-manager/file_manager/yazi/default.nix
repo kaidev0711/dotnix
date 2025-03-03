@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";

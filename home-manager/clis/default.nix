@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./carapace
@@ -19,6 +14,7 @@
     ./macchina
     ./pipes_rs
     ./bacon
+    ./presenterm
   ];
   home.packages = with pkgs; [
     wget
@@ -31,5 +27,6 @@
     hyperfine
     nix-prefetch-git
     serpl
+    presenterm
   ];
 }

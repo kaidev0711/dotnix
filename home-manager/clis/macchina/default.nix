@@ -1,12 +1,6 @@
+{ ... }:
 {
-  inputs,
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-{
-  imports = with inputs; [
+  imports = [
     ../../modules/macchina.nix
   ];
   programs.macchina = {

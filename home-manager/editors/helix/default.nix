@@ -1,3 +1,5 @@
+# hx --grammar fetch
+# hx --grammar build
 {
   pkgs,
   config,
@@ -30,7 +32,7 @@
         idle-timeout = 50;
         end-of-line-diagnostics = "hint";
         shell = [
-          "fish"
+          "${pkgs.fish}/bin/fish"
           "-c"
         ];
         # rulers = [100];
@@ -135,8 +137,12 @@
       };
       keys.insert = {
         C-space = "completion";
-        # j = { k = "normal_mode" };
-        # k = { j = "normal_mode" };
+        j = {
+          k = "normal_mode";
+        };
+        k = {
+          j = "normal_mode";
+        };
         esc = [
           "collapse_selection"
           "normal_mode"
