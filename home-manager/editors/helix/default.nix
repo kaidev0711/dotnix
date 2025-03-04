@@ -334,8 +334,7 @@
           command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
-          # command = lib.getExe pkgs.rust-analyzer;
-          command = "rust-analyzer";
+          command = lib.getExe pkgs.rust-analyzer;
           config = {
             inlayHints = {
               bindingModeHints.enable = false;
