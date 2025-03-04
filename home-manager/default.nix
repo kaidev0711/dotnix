@@ -20,7 +20,10 @@
   ];
   home.stateVersion = "24.11";
   programs.nix-index.enable = true;
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    EDITOR = "hx";
+    SHELL = "${pkgs.fish}/bin/fish";
+  };
   home.packages = with pkgs; [ ];
   programs.home-manager.enable = true;
 }

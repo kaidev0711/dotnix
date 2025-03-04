@@ -32,7 +32,7 @@
         idle-timeout = 50;
         end-of-line-diagnostics = "hint";
         shell = [
-          "${pkgs.fish}/bin/fish"
+          "sh"
           "-c"
         ];
         # rulers = [100];
@@ -334,7 +334,8 @@
           command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
-          command = lib.getExe pkgs.rust-analyzer;
+          # command = lib.getExe pkgs.rust-analyzer;
+          command = "rust-analyzer";
           config = {
             inlayHints = {
               bindingModeHints.enable = false;

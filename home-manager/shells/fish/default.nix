@@ -16,6 +16,7 @@
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
       zjr = "zellij action new-tab -l ${config.home.homeDirectory}/.config/zellij/layouts/rust.kdl";
+      info = "macchina";
     };
     plugins = [ ];
     functions = {
@@ -28,6 +29,7 @@
     shellAbbrs = {
       gt = "gitui";
       ju = "just";
+      pre = "presenterm";
     };
     shellInit = ''
       # EDITOR

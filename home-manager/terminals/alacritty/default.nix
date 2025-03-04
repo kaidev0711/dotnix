@@ -63,7 +63,6 @@
       terminal = {
         shell = {
           program = "${pkgs.fish}/bin/fish";
-          args = [ "-l" ];
         };
       };
       mouse = {

@@ -37,6 +37,9 @@
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       pull.rebase = true;
+      rerere = {
+        enabled = true;
+      };
       color = {
         ui = true;
       };

@@ -1,11 +1,14 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    openssl
-    rustc
-    cargo
-    rustfmt
-    clippy
-    rust-analyzer
+    # rustc
+    # cargo
+    # rustfmt
+    # clippy
+    # rust-analyzer
+    # openssl
+
+    # TOOLCHAINS
+    # rustup
   ];
 }
