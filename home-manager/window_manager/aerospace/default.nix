@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   xdg.configFile."aerospace/aerospace.toml".text = ''
     after-login-command = []
@@ -21,7 +21,8 @@
     outer.left = 5
     outer.bottom = 5
     outer.top = 5
-    # outer.top = [{ monitor."Built-in Retina Display" = 10 }, 35]
+    # outer.top =        [{ monitor."built-in" = 5 }, 20]
+    # outer.top = [{ monitor."Built-in Retina Display" = 10 }, 40]
     outer.right = 5
     [workspace-to-monitor-force-assignment]
     1 = 1 # Monitor sequence number from left to right. 1-based indexing

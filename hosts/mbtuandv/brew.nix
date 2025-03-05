@@ -15,13 +15,13 @@
       "zen-browser"
       "discord"
       "raycast"
+      "jordanbaird-ice"
     ];
     taps = [
 
     ];
     masApps = {
       "The Unarchiver" = 425424353;
-      "Hidden Bar" = 1452453066;
       Xcode = 497799835;
     };
   };

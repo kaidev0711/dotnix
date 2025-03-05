@@ -4,6 +4,7 @@
     stateVersion = 6;
     defaults = {
       NSGlobalDomain = {
+        # _HIHideMenuBar = true;
         "com.apple.trackpad.scaling" = 3.0;
         "com.apple.sound.beep.feedback" = 0;
         AppleInterfaceStyle = "Dark";
