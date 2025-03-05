@@ -53,7 +53,6 @@
 
       tv init fish | source
 
-      set -x TMPDIR "/tmp"
     '';
   };
 }

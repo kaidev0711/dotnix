@@ -306,6 +306,11 @@
         }
         {
           name = "markdown";
+          text-width = 80;
+          soft-wrap = {
+            enable = true;
+            wrap-at-text-width = true;
+          };
           scope = "source.md";
           auto-format = true;
           language-servers = [
