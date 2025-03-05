@@ -23,6 +23,7 @@ in
       require("smart-enter"):setup {
       	open_multi = true,
       }
+      require("git"):setup()
     '';
     settings = {
       manager = {
@@ -66,6 +67,18 @@ in
           {
             name = "/remote/**";
             run = "noop";
+          }
+        ];
+        prepend_fetchers = [
+          {
+            id = "git";
+            name = "*";
+            run = "git";
+          }
+          {
+            id = "git";
+            name = "*/";
+            run = "git";
           }
         ];
       };
@@ -123,6 +136,7 @@ in
       kanagawa = "${kanagawa-flavor}";
     };
     plugins = {
+      git = "${yazi-plugins}/git.yazi";
       full-border = "${yazi-plugins}/full-border.yazi";
       toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
       smart-enter = "${yazi-plugins}/smart-enter.yazi";

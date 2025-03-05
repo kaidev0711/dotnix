@@ -17,6 +17,8 @@
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
       zjr = "zellij action new-tab -l ${config.home.homeDirectory}/.config/zellij/layouts/rust.kdl";
       info = "macchina";
+      zj = "${pkgs.zellij}/bin/zellij";
+      cat = "${pkgs.bat}/bin/bat";
     };
     plugins = [ ];
     functions = {
@@ -24,6 +26,14 @@
       mkcd = ''
         mkdir -p $argv[1]
         and cd $argv[1]
+      '';
+      aesw = ''
+        set selected_window (aerospace list-windows --all | tv)
+
+        if test -n "$selected_window"
+            set window_id (echo $selected_window | awk '{print $1}')
+            aerospace focus --window-id $window_id
+        end
       '';
     };
     shellAbbrs = {
@@ -43,6 +53,7 @@
 
       tv init fish | source
 
+      set -x TMPDIR "/tmp"
     '';
   };
 }
