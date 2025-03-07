@@ -18,7 +18,7 @@
       };
     };
     settings = {
-      theme = "kanagawa";
+      theme = "kanagawa_transparent";
       editor = {
         bufferline = "multiple";
         cursorline = true;
@@ -35,8 +35,8 @@
           "sh"
           "-c"
         ];
-        # rulers = [100];
-        # text-width = 100;
+        # rulers = [ 80 ];
+        text-width = 80;
 
         inline-diagnostics = {
           cursor-line = "error";
@@ -75,10 +75,8 @@
         };
         soft-wrap = {
           enable = true;
-          max-wrap = 25;
-          max-indent-retain = 0;
           wrap-indicator = "";
-          # wrap-at-text-width = true;
+          wrap-at-text-width = true;
         };
         file-picker = {
           hidden = false;
@@ -120,7 +118,9 @@
           q = ":q";
           Q = ":qa!";
           w = ":write";
-          r = [
+          s = ":toggle soft-wrap.enable";
+          z = ":toggle gutters.line-numbers.min-width 52 3";
+          O = [
             ":w"
             ":config-reload"
           ];
@@ -132,7 +132,7 @@
           e = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open";
           v = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit";
           h = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit";
-          s = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
+          r = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
         };
       };
       keys.insert = {
@@ -306,11 +306,6 @@
         }
         {
           name = "markdown";
-          text-width = 80;
-          soft-wrap = {
-            enable = true;
-            wrap-at-text-width = true;
-          };
           scope = "source.md";
           auto-format = true;
           language-servers = [
@@ -339,7 +334,8 @@
           command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
-          command = lib.getExe pkgs.rust-analyzer;
+          # command = lib.getExe pkgs.rust-analyzer;
+          command = "rust-analyzer";
           config = {
             inlayHints = {
               bindingModeHints.enable = false;
