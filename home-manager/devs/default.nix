@@ -6,5 +6,7 @@
     ./markdown
     ./web
   ];
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    # devenv
+  ];
 }

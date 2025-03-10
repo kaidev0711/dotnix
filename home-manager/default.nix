@@ -19,6 +19,7 @@
     ./file_manager
   ];
   home.stateVersion = "24.11";
+  home.file.".hushlogin".text = "";
   programs.nix-index.enable = true;
   xdg.enable = true;
   home.sessionVariables = {

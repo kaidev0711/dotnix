@@ -52,8 +52,9 @@ in
     hostPlatform = "aarch64-darwin";
     config = {
       allowUnfree = true;
-      experimental-features = "nix-command flakes";
+      allowUnfreePredicate = _: true;
       # allowBroken = true;
     };
+    overlays = [ ];
   };
 }
