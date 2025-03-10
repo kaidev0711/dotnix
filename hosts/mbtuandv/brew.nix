@@ -15,7 +15,6 @@
       "zen-browser"
       "discord"
       "raycast"
-      "jordanbaird-ice"
     ];
     taps = [
 
