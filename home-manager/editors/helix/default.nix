@@ -128,7 +128,7 @@
           l = ":log-open";
           c = ":lsp-workspace-command";
           y = ":yank-diagnostic";
-          n = ":open ~/Notes/index.md";
+          n = ":open ~/Documents/Notes/index.md";
           e = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open";
           v = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit";
           h = ":sh ${pkgs.zellij}/bin/zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit";

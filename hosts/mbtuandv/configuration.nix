@@ -22,7 +22,6 @@ in
   users.users."${username}" = {
     name = "${username}";
     home = "/Users/${username}";
-    # shell = pkgs.fish;
   };
   environment.variables.SHELL = "${pkgs.fish}/bin/fish";
 

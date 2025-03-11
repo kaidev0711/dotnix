@@ -42,7 +42,7 @@
           "/Applications/Xcode.app"
           "/Applications/Ghostty.app"
           "/Applications/Discord.app"
-          "/Applications/Zen Browser.app"
+          "/Users/tuandv/Applications/Home Manager Apps/Arc.app"
           "/Users/tuandv/Applications/Home Manager Apps/Alacritty.app"
         ];
         persistent-others = [ ];

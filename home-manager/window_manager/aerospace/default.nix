@@ -192,7 +192,7 @@
     run = 'move-node-to-workspace Terminal'
 
     [[on-window-detected]]
-    if.app-id = "app.zen-browser.zen"
+    if.app-id = "company.thebrowser.Browser"
     run = 'move-node-to-workspace Browser'
 
     [[on-window-detected]]

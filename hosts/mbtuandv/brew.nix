@@ -12,7 +12,6 @@
     ];
     casks = [
       "ghostty"
-      "zen-browser"
       "discord"
       "raycast"
     ];

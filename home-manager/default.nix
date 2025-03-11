@@ -17,6 +17,7 @@
     ./devs
     ./multiplexers
     ./file_manager
+    ./browsers
   ];
   home.stateVersion = "24.11";
   programs.nix-index.enable = true;
@@ -24,7 +25,6 @@
   home.sessionVariables = {
     EDITOR = "hx";
     SHELL = "${pkgs.fish}/bin/fish";
-    # TMPDIR = "/tmp";
   };
   home.packages = with pkgs; [ ];
   programs.home-manager.enable = true;
