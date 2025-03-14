@@ -15,7 +15,6 @@
       mkdir = "mkdir -p";
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
-      zjr = "zellij action new-tab -l ${config.home.homeDirectory}/.config/zellij/layouts/rust.kdl";
       info = "macchina";
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
