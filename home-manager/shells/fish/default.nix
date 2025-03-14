@@ -18,6 +18,9 @@
       info = "macchina";
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
+      gt = "${pkgs.gitui}/bin/gitui";
+      ju = "${pkgs.just}/bin/just";
+      pre = "${pkgs.presenterm}/bin/presenterm";
     };
     plugins = [ ];
     functions = {
@@ -35,11 +38,7 @@
         end
       '';
     };
-    shellAbbrs = {
-      gt = "gitui";
-      ju = "just";
-      pre = "presenterm";
-    };
+    shellAbbrs = { };
     shellInit = ''
       set -x LANG en_US.UTF-8
       set -x LC_ALL en_US.UTF-8

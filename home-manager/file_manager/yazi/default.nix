@@ -113,7 +113,7 @@ in
             "g"
             "n"
           ];
-          run = "cd ~/Notes";
+          run = "cd ~/Documents/Notes";
           desc = "Go to the Notes directory";
         }
         {
