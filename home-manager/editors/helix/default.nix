@@ -370,7 +370,14 @@
           args = [
             "--stdio"
           ];
+          config = {
+            harper-ls = {
+              linters.spaces = false;
+              diagnosticSeverity = "warning";
+            };
+          };
         };
+
       };
     };
   };
