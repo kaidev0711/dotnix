@@ -13,7 +13,7 @@
     font-family-bold = Cascadia Code Bold
     font-family-italic = Cascadia Code Italic
     font-family-bold-italic = Cascadia Code Bold Italic
-    font-size = 15
+    font-size = 16
     font-feature = -calt
     font-feature = -liga
     font-feature = -dlig
@@ -29,7 +29,7 @@
     window-height = 50
     window-width = 150
     window-padding-balance = true
-    background-opacity = 0.8
+    background-opacity = 1.0
     background-blur = true
     unfocused-split-opacity = 0.7
 
@@ -72,5 +72,7 @@
     keybind = ctrl+a>p=write_screen_file:paste
     keybind = ctrl+a>r=reload_config
     keybind = ctrl+a>i=inspector:toggle
+    keybind = alt+left=unbind
+    keybind = alt+right=unbind
   '';
 }

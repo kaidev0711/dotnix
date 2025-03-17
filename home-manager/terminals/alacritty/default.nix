@@ -11,7 +11,7 @@
         startup_mode = "Maximized";
         dynamic_padding = true;
         dynamic_title = false;
-        opacity = 0.8;
+        opacity = 1.0;
         # blur = true;
         option_as_alt = "Both";
         padding = {

@@ -18,7 +18,7 @@
       };
     };
     settings = {
-      theme = "kanagawa_transparent";
+      theme = "kanagawa";
       editor = {
         bufferline = "multiple";
         cursorline = true;
