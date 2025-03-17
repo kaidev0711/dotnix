@@ -54,6 +54,8 @@ in
       allowUnfreePredicate = _: true;
       # allowBroken = true;
     };
-    overlays = [ ];
+    overlays = [
+      (import ../../overlays/zellij.nix)
+    ];
   };
 }

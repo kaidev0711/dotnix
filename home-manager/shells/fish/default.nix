@@ -16,6 +16,7 @@
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
       info = "macchina";
+      zjr = "${pkgs.zellij}/bin/zellij --layout ${config.xdg.configHome}/zellij/layouts/rust.kdl";
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
       gt = "${pkgs.gitui}/bin/gitui";

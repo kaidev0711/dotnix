@@ -1,0 +1,23 @@
+layout {
+    tab name="Rust" {
+        pane split_direction="vertical" { // first logical container
+            // all these panes will be laid out vertically next to each other
+            pane edit="src/main.rs" size="60%" focus=true
+            pane split_direction="horizontal" size="40%"{ // second logical container
+                // all these panes will be laid out horizontally next to each other
+                pane command="hx" {
+                    args "."
+                }
+                pane command="cargo" {
+                    args "run"
+                }
+                pane command="bacon" {
+                    args "test"
+                }
+            }
+        }
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+    	}
+	}
+}
