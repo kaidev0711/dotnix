@@ -38,12 +38,13 @@
         wvous-tr-corner = 1;
         persistent-apps = [
           "/System/Applications/Launchpad.app"
-          "/Applications/Safari.app"
           "/Applications/Xcode.app"
-          "/Applications/Ghostty.app"
-          "/Applications/Discord.app"
+          "/Applications/Safari.app"
           "/Users/tuandv/Applications/Home Manager Apps/Arc.app"
           "/Users/tuandv/Applications/Home Manager Apps/Alacritty.app"
+          "/Users/tuandv/Applications/Home Manager Apps/WezTerm.app"
+          "/Applications/Ghostty.app"
+          "/Applications/Discord.app"
         ];
         persistent-others = [ ];
       };

@@ -9,10 +9,10 @@
     theme = Kanagawa Wave
 
     # fonts
-    font-family = Cascadia Code
-    font-family-bold = Cascadia Code Bold
-    font-family-italic = Cascadia Code Italic
-    font-family-bold-italic = Cascadia Code Bold Italic
+    font-family = Hack Nerd Font Mono
+    font-family-bold = Hack Nerd Font Mono Bold
+    font-family-italic = Hack Nerd Font Mono Italic
+    font-family-bold-italic = Hack Nerd Font Mono Bold Italic
     font-size = 16
     font-feature = -calt
     font-feature = -liga
@@ -29,8 +29,8 @@
     window-height = 50
     window-width = 150
     window-padding-balance = true
-    background-opacity = 1.0
-    background-blur = true
+    background-opacity = 0.8
+    # background-blur = true
     unfocused-split-opacity = 0.7
 
     # clipboard
