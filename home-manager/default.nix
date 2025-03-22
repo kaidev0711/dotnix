@@ -18,6 +18,7 @@
     ./multiplexers
     ./file_manager
     ./browsers
+    ./chat
   ];
   home.stateVersion = "24.11";
   programs.nix-index.enable = true;

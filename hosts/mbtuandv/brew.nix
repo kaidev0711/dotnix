@@ -1,7 +1,6 @@
 {
   homebrew = {
     enable = true;
-    # global = { autoUpdate = false; };
     onActivation = {
       cleanup = "zap";
       upgrade = true;
@@ -12,7 +11,6 @@
     ];
     casks = [
       "ghostty"
-      "discord"
       "raycast"
     ];
     taps = [

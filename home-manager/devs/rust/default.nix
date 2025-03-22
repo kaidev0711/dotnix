@@ -6,6 +6,7 @@
     cargo-nextest
     cargo-audit
     cargo-flamegraph
+    cargo-binstall
     # openssl
     # pkg-config
   ];

@@ -208,6 +208,10 @@
     run = 'move-node-to-workspace Chat'
 
     [[on-window-detected]]
+    if.app-id = "com.tdesktop.Telegram"
+    run = 'move-node-to-workspace Chat'
+
+    [[on-window-detected]]
     if.app-id = 'com.apple.finder'
     run = 'layout floating'
     # run = 'move-node-to-workspace Files'

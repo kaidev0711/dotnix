@@ -44,7 +44,8 @@
           "/Users/tuandv/Applications/Home Manager Apps/Alacritty.app"
           "/Users/tuandv/Applications/Home Manager Apps/WezTerm.app"
           "/Applications/Ghostty.app"
-          "/Applications/Discord.app"
+          "/Users/tuandv/Applications/Home Manager Apps/Telegram.app"
+          "/Users/tuandv/Applications/Home Manager Apps/Discord.app"
         ];
         persistent-others = [ ];
       };
