@@ -14,6 +14,7 @@
         InitialKeyRepeat = 15;
         KeyRepeat = 2;
         NSWindowShouldDragOnGesture = true;
+        NSAutomaticWindowAnimationsEnabled = true;
         NSAutomaticSpellingCorrectionEnabled = false;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
