@@ -196,7 +196,7 @@
     run = 'move-node-to-workspace Terminal'
 
     [[on-window-detected]]
-    if.app-id = "company.thebrowser.Browser"
+    if.app-id = "com.google.Chrome"
     run = 'move-node-to-workspace Browser'
 
     [[on-window-detected]]

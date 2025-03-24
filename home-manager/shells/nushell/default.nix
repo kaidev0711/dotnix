@@ -1,0 +1,118 @@
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
+  programs.nushell = {
+    enable = true;
+    settings = {
+      show_banner = false;
+      buffer_editor = "hx";
+      datetime_format = {
+        table = null;
+        normal = "%d/%m/%y %I:%M:%S%p";
+      };
+    };
+    environmentVariables = {
+      LANG = "en_US.UTF-8";
+      LC_ALL = "en_US.UTF-8";
+      EDITOR = "hx";
+      XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+      NUSHELL_CONFIG_FILE = "${config.xdg.configHome}/nushell/config.nu";
+      NUSHELL_ENV_FILE = "${config.xdg.configHome}/nushell/env.nu";
+    };
+    shellAliases = {
+      pipes = "pipes-rs";
+      cp = "cp -i";
+      rm = "rm -i";
+      mv = "mv -i";
+      ip = "ipconfig getifaddr en0";
+      rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
+      info = "macchina";
+      zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
+      zj = "${pkgs.zellij}/bin/zellij";
+      cat = "${pkgs.bat}/bin/bat";
+      gt = "${pkgs.gitui}/bin/gitui";
+      ju = "${pkgs.just}/bin/just";
+      pre = "${pkgs.presenterm}/bin/presenterm";
+    };
+    plugins = [
+      pkgs.nushellPlugins.query
+    ];
+    extraConfig = ''
+
+      $env.config.keybindings ++= [
+        {
+          name: fuzzy_file
+          modifier: Control
+          keycode: char_t
+          mode: emacs
+          event: {
+            send: executehostcommand
+            cmd: "commandline edit --insert (tv)"
+          }
+        }
+      ]
+
+      $env.config.explore = {
+        status_bar_background: { fg: "#1D1F21", bg: "#C4C9C6" },
+        command_bar_text: { fg: "#C4C9C6" },
+        highlight: { fg: "black", bg: "yellow" },
+        status: {
+            error: { fg: "white", bg: "red" },
+            warn: {}
+            info: {}
+        },
+        selected_cell: { bg: light_blue },
+      }
+
+      alias nu-open = open
+      alias open = ^open
+
+      export def dmy [] { (date now | format date %d-%m-%Y) }
+      export def ymd [] { (date now | format date %Y-%m-%d) }
+
+      export def --env mkcd [dirname: path] {
+        mkdir $dirname
+        cd $dirname
+      }
+
+      def aesw [] {
+        let selected_window = (aerospace list-windows --all | tv | str trim)
+
+        if ($selected_window | is-not-empty) {
+          let window_id = ($selected_window | split row " " | first)
+          aerospace focus --window-id $window_id
+        }
+      }
+
+    '';
+    extraEnv = ''
+
+      $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
+
+      use std/util "path add"
+      path add "${config.home.homeDirectory}/.local/bin"
+      path add "${config.home.homeDirectory}/.cargo/bin"
+      path add "/opt/homebrew/bin"
+
+      $env.PATH = ($env.PATH | uniq)
+
+      # Nu_resources
+      source "~/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
+
+      # Nu_scripts
+      ## aliases
+      source "${pkgs.nu_scripts}/share/nu_scripts/aliases/git/git-aliases.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/aliases/eza/eza-aliases.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/aliases/bat/bat-aliases.nu"
+
+      ## custom-completions
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu"
+    '';
+  };
+}

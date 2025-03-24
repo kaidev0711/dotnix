@@ -15,6 +15,7 @@
     ./pipes_rs
     ./bacon
     ./presenterm
+    ./atuin
   ];
   home.packages = with pkgs; [
     wget

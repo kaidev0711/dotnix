@@ -1,3 +1,7 @@
+{ ... }:
+let
+  homeDirectory = "/Users/tuandv";
+in
 {
   security.pam.services.sudo_local.touchIdAuth = true;
   system = {
@@ -41,14 +45,26 @@
           "/System/Applications/Launchpad.app"
           "/Applications/Xcode.app"
           "/Applications/Safari.app"
-          "/Users/tuandv/Applications/Home Manager Apps/Arc.app"
-          "/Users/tuandv/Applications/Home Manager Apps/Alacritty.app"
-          "/Users/tuandv/Applications/Home Manager Apps/WezTerm.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Google Chrome.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
+          "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
           "/Applications/Ghostty.app"
-          "/Users/tuandv/Applications/Home Manager Apps/Telegram.app"
-          "/Users/tuandv/Applications/Home Manager Apps/Discord.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Telegram.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Discord.app"
         ];
-        persistent-others = [ ];
+        persistent-others = [
+          "${homeDirectory}/Documents/Books/"
+          "${homeDirectory}/Downloads/"
+        ];
+      };
+      WindowManager = {
+        EnableStandardClickToShowDesktop = false;
+        HideDesktop = true;
+        StageManagerHideWidgets = true;
+        EnableTilingByEdgeDrag = false;
+        EnableTopTilingByEdgeDrag = false;
+        EnableTilingOptionAccelerator = false;
+        EnableTiledWindowMargins = false;
       };
       finder = {
         AppleShowAllExtensions = true;
@@ -71,7 +87,7 @@
         DisableConsoleAccess = true;
       };
       screencapture = {
-        location = "~/Pictures/Screenshots";
+        location = "${homeDirectory}/Pictures/Screenshots";
         type = "png";
       };
       universalaccess = {
@@ -85,6 +101,9 @@
         AirDrop = false;
         FocusModes = false;
         NowPlaying = false;
+      };
+      hitoolbox = {
+        AppleFnUsageType = "Show Emoji & Symbols";
       };
     };
     keyboard = {

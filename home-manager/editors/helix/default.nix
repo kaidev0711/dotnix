@@ -282,7 +282,10 @@
           name = "nix";
           scope = "source.nix";
           auto-format = true;
-          language-servers = [ "nixd" ];
+          language-servers = [
+            "nixd"
+            "harper-ls"
+          ];
           formatter = {
             command = lib.getExe pkgs.nixfmt-rfc-style;
           };
@@ -291,6 +294,10 @@
           name = "rust";
           scope = "source.rust";
           auto-format = true;
+          language-servers = [
+            "rust-analyzer"
+            "harper-ls"
+          ];
         }
         {
           name = "toml";
@@ -339,6 +346,12 @@
           # command = lib.getExe pkgs.rust-analyzer;
           command = "rust-analyzer";
           config = {
+            # cargo = {
+            #   features = "all";
+            # };
+            # check = {
+            #   command = "clippy";
+            # };
             inlayHints = {
               bindingModeHints.enable = false;
               closingBraceHints.minLines = 10;
@@ -372,8 +385,29 @@
           ];
           config = {
             harper-ls = {
-              linters.spaces = false;
-              diagnosticSeverity = "warning";
+              userDictPath = "";
+              fileDictPath = "";
+              diagnosticSeverity = "hint";
+              isolateEnglish = false;
+              linters = {
+                SpellCheck = true;
+                SpelledNumbers = false;
+                AnA = true;
+                SentenceCapitalization = true;
+                UnclosedQuotes = true;
+                WrongQuotes = false;
+                LongSentences = true;
+                RepeatedWords = true;
+                Spaces = true;
+                Matcher = true;
+                CorrectNumberSuffix = true;
+              };
+              codeActions = {
+                ForceStable = false;
+              };
+              markdown = {
+                IgnoreLinkTitle = false;
+              };
             };
           };
         };

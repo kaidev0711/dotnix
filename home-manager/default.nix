@@ -21,12 +21,12 @@
     ./chat
   ];
   home.stateVersion = "24.11";
-  programs.nix-index.enable = true;
   xdg.enable = true;
   home.sessionVariables = {
     EDITOR = "hx";
     SHELL = "${pkgs.fish}/bin/fish";
   };
   home.packages = with pkgs; [ ];
+  programs.nix-index.enable = true;
   programs.home-manager.enable = true;
 }
