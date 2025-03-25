@@ -23,6 +23,16 @@
       fi
     '';
 
+    # brew
+    installHomebrew = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      echo "Checking Homebrew..."
+      if [ ! -f "/opt/homebrew/bin/brew" ]; then
+        echo "Installing Homebrew..."
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      else
+        echo "Homebrew already installed, skipping..."
+      fi
+    '';
     # Set up default shell
     # postActivation = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     #   current_shell=$(basename "$SHELL")
