@@ -8,6 +8,12 @@
   programs.nushell = {
     enable = true;
     settings = {
+      history = {
+        file_format = "sqlite";
+        max_size = 5000000;
+        sync_on_enter = true;
+        isolation = true;
+      };
       show_banner = false;
       buffer_editor = "hx";
       datetime_format = {
@@ -43,6 +49,7 @@
     ];
     extraConfig = ''
 
+      $env.config.color_config = (gruvbox-dark)
       $env.config.keybindings ++= [
         {
           name: fuzzy_file
@@ -55,18 +62,6 @@
           }
         }
       ]
-
-      $env.config.explore = {
-        status_bar_background: { fg: "#1D1F21", bg: "#C4C9C6" },
-        command_bar_text: { fg: "#C4C9C6" },
-        highlight: { fg: "black", bg: "yellow" },
-        status: {
-            error: { fg: "white", bg: "red" },
-            warn: {}
-            info: {}
-        },
-        selected_cell: { bg: light_blue },
-      }
 
       alias nu-open = open
       alias open = ^open
@@ -102,6 +97,10 @@
 
       # Nu_resources
       source "~/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
+
+      # Themes
+      use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/gruvbox-dark.nu"
+
 
       # Nu_scripts
       ## aliases

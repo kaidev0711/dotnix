@@ -59,7 +59,7 @@
     # A list of builtin themes can be found in the `themes` directory of the television
     # repository. You may also create your own theme by creating a new file in a `themes`
     # directory in your configuration directory (see the `config.toml` location above).
-    theme = "default"
+    theme = "gruvbox-dark"
 
     # Previewers settings
     # ----------------------------------------------------------------------------
@@ -68,7 +68,7 @@
     # Bulitin syntax highlighting uses the same syntax highlighting engine as bat.
     # To get a list of your currently available themes, run `bat --list-themes`
     # Note that setting the BAT_THEME environment variable will override this setting.
-    theme = "Kanagawa"
+    theme = "gruvbox-dark"
 
     # Keybindings
     # ----------------------------------------------------------------------------

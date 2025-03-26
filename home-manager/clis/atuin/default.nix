@@ -4,7 +4,7 @@
     enable = true;
     enableNushellIntegration = true;
     enableFishIntegration = false;
-    flags = [ ];
+    flags = [ "--disable-up-arrow" ];
     settings = {
       style = "full";
     };

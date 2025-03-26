@@ -12,13 +12,13 @@
     defaultEditor = true;
     extraPackages = [ ];
     themes = {
-      kanagawa_transparent = {
-        "inherits" = "kanagawa";
+      transparent = {
+        "inherits" = "gruvbox";
         "ui.background" = { };
       };
     };
     settings = {
-      theme = "kanagawa_transparent";
+      theme = "transparent";
       editor = {
         bufferline = "multiple";
         cursorline = true;
@@ -36,7 +36,7 @@
           "-c"
         ];
         # rulers = [ 80 ];
-        text-width = 80;
+        text-width = 100;
 
         inline-diagnostics = {
           cursor-line = "error";
@@ -173,17 +173,6 @@
       };
     };
     languages = {
-      use-grammars = {
-        only = [
-          "rust"
-          "nix"
-          "markdown"
-          "toml"
-          "typescript"
-          "javascript"
-          "json"
-        ];
-      };
       language = [
         {
           name = "json";
@@ -200,7 +189,6 @@
         }
         {
           name = "typescript";
-          scope = "source.ts";
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -220,7 +208,6 @@
         }
         {
           name = "javascript";
-          scope = "source.js";
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -240,7 +227,6 @@
         }
         {
           name = "jsx";
-          scope = "source.jsx";
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -260,7 +246,6 @@
         }
         {
           name = "tsx";
-          scope = "source.tsx";
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -280,7 +265,6 @@
         }
         {
           name = "nix";
-          scope = "source.nix";
           auto-format = true;
           language-servers = [
             "nixd"
@@ -292,7 +276,6 @@
         }
         {
           name = "rust";
-          scope = "source.rust";
           auto-format = true;
           language-servers = [
             "rust-analyzer"
@@ -301,7 +284,6 @@
         }
         {
           name = "toml";
-          scope = "source.toml";
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.taplo;
@@ -313,7 +295,6 @@
         }
         {
           name = "markdown";
-          scope = "source.md";
           auto-format = true;
           language-servers = [
             "markdown-oxide"

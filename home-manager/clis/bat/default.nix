@@ -3,14 +3,8 @@
   programs.bat = {
     enable = true;
     config = {
-      theme = "Kanagawa";
+      theme = "gruvbox-dark";
       italic-text = "always";
-    };
-    themes = {
-      Kanagawa = {
-        src = ./themes;
-        file = "Kanagawa.tmTheme";
-      };
     };
   };
 }
