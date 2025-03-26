@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 {
   imports = [
     ./scripts
@@ -20,7 +15,7 @@
     ./browsers
     ./chat
   ];
-  home.stateVersion = "25.05";
+  home.stateVersion = "24.11";
   xdg.enable = true;
   home.sessionVariables = {
     EDITOR = "hx";

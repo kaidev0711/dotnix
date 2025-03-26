@@ -15,6 +15,7 @@
     ./pipes_rs
     ./bacon
     ./presenterm
+    ./glow
     ./atuin
   ];
   home.packages = with pkgs; [
@@ -29,5 +30,7 @@
     nix-prefetch-git
     serpl
     presenterm
+    glow
+    hexyl
   ];
 }

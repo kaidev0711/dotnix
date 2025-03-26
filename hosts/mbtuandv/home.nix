@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ ... }:
 {
   imports = [
-    ../../home-manager ];
+    ../../home-manager
+  ];
 }

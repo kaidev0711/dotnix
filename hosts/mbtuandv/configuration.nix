@@ -54,8 +54,6 @@ in
       allowUnfreePredicate = _: true;
       # allowBroken = true;
     };
-    overlays = [
-      (import ../../overlays/television.nix)
-    ];
+    overlays = [ ];
   };
 }

@@ -59,7 +59,7 @@
     # A list of builtin themes can be found in the `themes` directory of the television
     # repository. You may also create your own theme by creating a new file in a `themes`
     # directory in your configuration directory (see the `config.toml` location above).
-    theme = "gruvbox-dark"
+    theme = "default"
 
     # Previewers settings
     # ----------------------------------------------------------------------------
