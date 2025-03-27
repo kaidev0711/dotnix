@@ -26,8 +26,6 @@
       LC_ALL = "en_US.UTF-8";
       EDITOR = "hx";
       XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
-      NUSHELL_CONFIG_FILE = "${config.xdg.configHome}/nushell/config.nu";
-      NUSHELL_ENV_FILE = "${config.xdg.configHome}/nushell/env.nu";
     };
     shellAliases = {
       pipes = "pipes-rs";
