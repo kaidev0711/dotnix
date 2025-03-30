@@ -90,11 +90,17 @@
       path add "${config.home.homeDirectory}/.local/bin"
       path add "${config.home.homeDirectory}/.cargo/bin"
       path add "/opt/homebrew/bin"
+      # path add "/usr/local/bin"
+      # path add "/usr/local/sbin"
+      # path add "/usr/sbin"
+      # path add "/usr/bin"
+      # path add "/bin"
+      # path add "sbin"
 
       $env.PATH = ($env.PATH | uniq)
 
       # Nu_resources
-      source "~/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
+      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
 
       # Themes
       use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/gruvbox-dark.nu"

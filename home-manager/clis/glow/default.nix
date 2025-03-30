@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ ... }:
 {
   xdg.configFile."glow/glow.yml".text = ''
     # style name or JSON path (default "auto")
@@ -8,7 +8,7 @@
     # use pager to display markdown
     pager: true
     # word-wrap at width
-    width: 80
+    width: 100
     # show all files, including hidden and ignored.
     all: false
   '';

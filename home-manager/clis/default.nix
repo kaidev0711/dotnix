@@ -32,5 +32,6 @@
     presenterm
     glow
     hexyl
+    kondo
   ];
 }

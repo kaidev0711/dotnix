@@ -36,7 +36,7 @@
           "-c"
         ];
         # rulers = [ 80 ];
-        text-width = 80;
+        text-width = 100;
 
         inline-diagnostics = {
           cursor-line = "error";
