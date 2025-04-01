@@ -89,7 +89,7 @@
     alt-ctrl-b = 'workspace Browser'
     alt-ctrl-c = 'workspace Chat'
     alt-ctrl-d = 'workspace Dev'
-    alt-ctrl-e = 'workspace E'
+    alt-ctrl-e = 'workspace Editor'
     alt-ctrl-f = 'workspace F'
     alt-ctrl-g = 'workspace G'
     alt-ctrl-i = 'workspace I'
@@ -121,7 +121,7 @@
     alt-ctrl-shift-b = 'move-node-to-workspace Browser --focus-follows-window' # Browser
     alt-ctrl-shift-c = 'move-node-to-workspace Chat --focus-follows-window'    # Chat 
     alt-ctrl-shift-d = 'move-node-to-workspace Dev --focus-follows-window'     # Dev
-    alt-ctrl-shift-e = 'move-node-to-workspace E --focus-follows-window'
+    alt-ctrl-shift-e = 'move-node-to-workspace Editor --focus-follows-window'  # Editor
     alt-ctrl-shift-f = 'move-node-to-workspace F --focus-follows-window'
     alt-ctrl-shift-g = 'move-node-to-workspace G --focus-follows-window'
     alt-ctrl-shift-i = 'move-node-to-workspace I --focus-follows-window'
@@ -194,6 +194,11 @@
     [[on-window-detected]]
     if.app-id = "com.github.wez.wezterm"
     run = 'move-node-to-workspace Terminal'
+
+    [[on-window-detected]]
+    if.app-id = "com.apple.dt.Xcode"
+    # run = 'move-node-to-workspace Editor'
+    run = ["layout floating", 'move-node-to-workspace Editor']
 
     [[on-window-detected]]
     if.app-id = "com.google.Chrome"

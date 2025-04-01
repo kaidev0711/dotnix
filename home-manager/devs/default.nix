@@ -3,6 +3,7 @@
   imports = [
     ./direnv
     ./rust
+    ./swift
     ./markdown
     ./web
   ];

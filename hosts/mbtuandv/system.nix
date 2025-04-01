@@ -44,6 +44,8 @@ in
         persistent-apps = [
           "/System/Applications/Launchpad.app"
           "/Applications/Xcode.app"
+          "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
+          "/Applications/Swift Playground.app"
           "/Applications/Safari.app"
           "${homeDirectory}/Applications/Home Manager Apps/Google Chrome.app"
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"

@@ -294,6 +294,13 @@
           };
         }
         {
+          name = "swift";
+          formatter = {
+            command = lib.getExe pkgs.swift-format;
+          };
+          auto-format = true;
+        }
+        {
           name = "markdown";
           auto-format = true;
           language-servers = [

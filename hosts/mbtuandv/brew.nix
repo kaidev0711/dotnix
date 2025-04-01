@@ -18,6 +18,7 @@
     ];
     masApps = {
       "The Unarchiver" = 425424353;
+      "Swift Playground" = 1496833156;
       Xcode = 497799835;
     };
   };
