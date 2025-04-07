@@ -6,7 +6,7 @@
     enableFishIntegration = false;
     flags = [ "--disable-up-arrow" ];
     settings = {
-      style = "full";
+      style = "compact";
       inline_height = 20;
     };
     daemon = { };

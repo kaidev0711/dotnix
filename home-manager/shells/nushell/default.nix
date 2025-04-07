@@ -22,9 +22,6 @@
       };
     };
     environmentVariables = {
-      LANG = "en_US.UTF-8";
-      LC_ALL = "en_US.UTF-8";
-      EDITOR = "hx";
       XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
     };
     shellAliases = {
@@ -83,6 +80,7 @@
 
     '';
     extraEnv = ''
+      $env.GPG_TTY = (tty)
 
       $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
 
@@ -90,6 +88,7 @@
       path add "${config.home.homeDirectory}/.local/bin"
       path add "${config.home.homeDirectory}/.cargo/bin"
       path add "/opt/homebrew/bin"
+      path add "/opt/homebrew/sbin"
       # path add "/usr/local/bin"
       # path add "/usr/local/sbin"
       # path add "/usr/sbin"
