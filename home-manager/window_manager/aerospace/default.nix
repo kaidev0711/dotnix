@@ -205,6 +205,10 @@
     run = 'move-node-to-workspace Browser'
 
     [[on-window-detected]]
+    if.app-id = "com.brave.Browser"
+    run = 'move-node-to-workspace Browser'
+
+    [[on-window-detected]]
     if.app-id = "com.apple.Safari"
     run = 'move-node-to-workspace Browser'
 
@@ -220,6 +224,10 @@
     if.app-id = 'com.apple.finder'
     run = 'layout floating'
     # run = 'move-node-to-workspace Files'
+
+    [[on-window-detected]]
+    if.app-id = 'com.spotify.client'
+    run = 'layout floating'
 
   '';
 }

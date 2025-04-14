@@ -13,6 +13,8 @@
       "ghostty"
       "raycast"
       "keka"
+      "brave-browser"
+      "spotify"
     ];
     taps = [
 
