@@ -11,7 +11,7 @@
     ./ripgrep
     ./fd
     ./tealdeer
-    ./macchina
+    ./fastfetch
     ./pipes_rs
     ./bacon
     ./presenterm

@@ -62,7 +62,7 @@ in
       require("smart-enter"):setup {
       	open_multi = true,
       }
-      require("git"):setup()
+      require("git"):setup{ order = 0 }
       require("folder-rules"):setup()
     '';
     settings = {

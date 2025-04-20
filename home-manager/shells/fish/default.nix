@@ -23,7 +23,7 @@ in
       mkdir = "mkdir -p";
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
-      info = "macchina";
+      info = "${pkgs.fastfetch}/bin/fastfetch";
       zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
