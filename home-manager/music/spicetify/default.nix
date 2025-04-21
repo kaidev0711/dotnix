@@ -4,7 +4,7 @@
   ...
 }:
 let
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in
 {
   imports = [
@@ -14,7 +14,6 @@ in
   programs.spicetify = {
     enable = true;
     theme = spicePkgs.themes.onepunch;
-    colorScheme = "dark";
 
     enabledExtensions = with spicePkgs.extensions; [
       shuffle

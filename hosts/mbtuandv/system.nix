@@ -54,7 +54,7 @@ in
           "/Applications/Ghostty.app"
           "${homeDirectory}/Applications/Home Manager Apps/Telegram.app"
           "${homeDirectory}/Applications/Home Manager Apps/Discord.app"
-          "/Applications/Spotify.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Spotify.app"
         ];
         persistent-others = [
           "${homeDirectory}/Documents/Books/"
