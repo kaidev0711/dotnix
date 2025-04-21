@@ -14,7 +14,7 @@
     ./file_manager
     ./browsers
     ./chat
-    ./music
+    # ./music
   ];
   home.stateVersion = "24.11";
   xdg.enable = true;
