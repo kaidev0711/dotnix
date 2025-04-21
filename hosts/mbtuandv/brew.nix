@@ -14,6 +14,7 @@
       "raycast"
       "keka"
       "brave-browser"
+      "spotify"
     ];
     taps = [
 
