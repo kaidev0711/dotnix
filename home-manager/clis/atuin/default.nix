@@ -7,8 +7,7 @@
     flags = [ "--disable-up-arrow" ];
     settings = {
       style = "compact";
-      inline_height = 20;
+      inline_height = 25;
     };
-    daemon = { };
   };
 }
