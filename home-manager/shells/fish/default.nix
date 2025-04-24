@@ -51,15 +51,13 @@ in
     shellInit = ''
       # Rust
       set -x PATH $PATH ${config.home.homeDirectory}/.cargo/bin
-      set -x PATH $PATH "/opt/homebrew/bin"
-      set -x PATH $PATH "/opt/homebrew/sbin"
-      set -x XDG_CONFIG_HOME "${config.home.homeDirectory}/.config"
-      set -x PATH $PATH "${config.home.homeDirectory}/.local/bin"
-
-      tv init fish | source
-
+      set -x PATH $PATH /opt/homebrew/bin
+      set -x PATH $PATH /opt/homebrew/sbin
+      set -x PATH $PATH ${config.home.homeDirectory}/.local/bin
+      set -x XDG_CONFIG_HOME ${config.home.homeDirectory}/.config
       set -x GPG_TTY (tty)
 
+      tv init fish | source
     '';
   };
 }

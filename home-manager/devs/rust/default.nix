@@ -1,13 +1,18 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rustup
+    rustc
+    cargo
+    rustfmt
+    clippy
+    rust-analyzer
     rustlings
     cargo-nextest
     cargo-audit
     cargo-flamegraph
     cargo-binstall
-    # openssl
-    # pkg-config
+    gitoxide
+    openssl
+    pkg-config
   ];
 }

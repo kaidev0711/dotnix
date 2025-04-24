@@ -331,15 +331,8 @@
           command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
-          # command = lib.getExe pkgs.rust-analyzer;
-          command = "rust-analyzer";
+          command = lib.getExe pkgs.rust-analyzer;
           config = {
-            # cargo = {
-            #   features = "all";
-            # };
-            # check = {
-            #   command = "clippy";
-            # };
             inlayHints = {
               bindingModeHints.enable = false;
               closingBraceHints.minLines = 10;

@@ -33,5 +33,6 @@
     glow
     hexyl
     kondo
+    ouch
   ];
 }
