@@ -95,12 +95,12 @@
       path add "/nix/var/nix/profiles/default/bin"
       path add "/run/current-system/sw/bin"
       path add "/etc/profiles/per-user/${config.home.username}/bin"
-      # path add "/usr/local/bin"
-      # path add "/usr/local/sbin"
-      # path add "/usr/sbin"
-      # path add "/usr/bin"
-      # path add "/bin"
-      # path add "sbin"
+      path add "/usr/local/bin"
+      path add "/usr/local/sbin"
+      path add "/usr/sbin"
+      path add "/usr/bin"
+      path add "/bin"
+      path add "/sbin"
 
       $env.PATH = ($env.PATH | uniq)
 

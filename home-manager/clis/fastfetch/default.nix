@@ -10,11 +10,11 @@
         separator = "->   ";
       };
       modules = [
-        {
-          type = "title";
-          format = "{6}{7}{8}";
-        }
-        "break"
+        # {
+        #   type = "title";
+        #   format = "{6}{7}{8}";
+        # }
+        # "break"
         {
           type = "custom";
           format = "┌───────────────────────────── System Information ─────────────────────────────┐";
@@ -100,7 +100,7 @@
           type = "custom";
           format = "└──────────────────────────────────────────────────────────────────────────────┘";
         }
-        "break"
+        # "break"
         {
           paddingLeft = 34;
           symbol = "circle";

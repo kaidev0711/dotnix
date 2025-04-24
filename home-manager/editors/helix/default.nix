@@ -1,5 +1,3 @@
-# hx --grammar fetch
-# hx --grammar build
 {
   pkgs,
   config,
@@ -32,7 +30,7 @@
         idle-timeout = 50;
         end-of-line-diagnostics = "hint";
         shell = [
-          "sh"
+          "nu"
           "-c"
         ];
         # rulers = [ 80 ];
@@ -318,8 +316,16 @@
             ];
           };
         }
+        {
+          name = "nu";
+          language-servers = [ "nu-lsp" ];
+        }
       ];
       language-server = {
+        nu-lsp = {
+          command = "nu";
+          args = [ "--lsp" ];
+        };
         deno-lsp = {
           command = lib.getExe pkgs.deno;
           args = [ "lsp" ];
