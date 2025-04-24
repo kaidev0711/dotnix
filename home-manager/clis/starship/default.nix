@@ -6,7 +6,7 @@
     enableNushellIntegration = true;
     settings =
       (builtins.fromTOML (
-        builtins.readFile "${pkgs.starship}/share/starship/presets/gruvbox-rainbow.toml"
+        builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"
       ))
       // {
         add_newline = false;

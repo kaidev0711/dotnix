@@ -6,7 +6,7 @@
     # shell-integration = fish
 
     # Themes: ghostty +list-themes
-    theme = GruvboxDark
+    theme = Kanagawa Wave
 
     # fonts
     font-family = Hack Nerd Font Mono

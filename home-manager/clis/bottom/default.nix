@@ -6,9 +6,6 @@
       flags = {
         basic = true;
       };
-      styles = {
-        theme = "gruvbox";
-      };
     };
   };
 }

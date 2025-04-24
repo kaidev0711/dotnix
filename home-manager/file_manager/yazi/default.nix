@@ -12,11 +12,11 @@ let
     rev = "6fde3b2d9dc9a12c14588eb85cf4964e619842e6";
     hash = "sha256-+CSdghcIl50z0MXmFwbJ0koIkWIksm3XxYvTAwoRlDY=";
   };
-  gruvbox-flavor = pkgs.fetchFromGitHub {
-    owner = "bennyyip";
-    repo = "gruvbox-dark.yazi";
-    rev = "b4cc9f2a3016f9b5a9bbb5aeb4619d029ee61397";
-    hash = "sha256-9ZZHXP0Junaj6r80nE8oDNEU5WIKVdtz4g72BFzcSAM=";
+  kanagawa-flavor = pkgs.fetchFromGitHub {
+    owner = "dangooddd";
+    repo = "kanagawa.yazi";
+    rev = "31167ed54c9cc935b2fa448d64d367b1e5a1105d";
+    hash = "sha256-phwGd1i/n0mZH/7Ukf1FXwVgYRbXQEWlNRPCrmR5uNk=";
   };
 in
 {
@@ -248,11 +248,11 @@ in
     };
     theme = {
       flavor = {
-        dark = "gruvbox";
+        dark = "kanagawa";
       };
     };
     flavors = {
-      gruvbox = "${gruvbox-flavor}";
+      kanagawa = "${kanagawa-flavor}";
     };
     plugins = {
       git = "${yazi-plugins}/git.yazi";

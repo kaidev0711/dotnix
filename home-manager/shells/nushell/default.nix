@@ -43,7 +43,7 @@
     ];
     extraConfig = ''
 
-      $env.config.color_config = (gruvbox-dark)
+      $env.config.color_config = (default-dark)
       $env.config.keybindings ++= [
         {
           name: fuzzy_file
@@ -101,7 +101,7 @@
       source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
 
       # Themes
-      use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/gruvbox-dark.nu"
+      use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
 
 
       # Nu_scripts

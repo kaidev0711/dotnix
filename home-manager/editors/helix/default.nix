@@ -13,7 +13,7 @@
     extraPackages = [ ];
     themes = {
       transparent = {
-        "inherits" = "gruvbox";
+        "inherits" = "kanagawa";
         "ui.background" = { };
       };
     };
