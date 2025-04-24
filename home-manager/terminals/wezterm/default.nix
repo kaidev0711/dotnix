@@ -7,7 +7,7 @@
       local act = wezterm.action
       local config = {}
       if wezterm.config_builder then config = wezterm.config_builder() end
-      config.default_prog = {"${pkgs.fish}/bin/fish", "-l"}
+      config.default_prog = {"${pkgs.nushell}/bin/nu", "-l"}
       config.color_scheme = 'Kanagawa (Gogh)'
       config.initial_cols = 150
       config.initial_rows = 40

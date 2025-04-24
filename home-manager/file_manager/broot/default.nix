@@ -52,7 +52,7 @@
   programs.broot = {
     enable = true;
     enableFishIntegration = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     settings = {
       modal = true;
       default_flags = "-gh";

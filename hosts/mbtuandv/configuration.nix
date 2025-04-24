@@ -22,9 +22,9 @@ in
   users.users."${username}" = {
     name = "${username}";
     home = "/Users/${username}";
+    shell = pkgs.nushell;
   };
-  environment.variables.SHELL = "${pkgs.fish}/bin/fish";
-
+  # environment.variables.SHELL = "${pkgs.fish}/bin/fish";
   programs.fish.enable = true;
 
   services = { };

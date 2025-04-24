@@ -20,9 +20,6 @@
         normal = "%d/%m/%y %I:%M:%S%p";
       };
     };
-    environmentVariables = {
-      XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
-    };
     shellAliases = {
       pipes = "pipes-rs";
       cp = "cp -i";
@@ -79,7 +76,14 @@
 
     '';
     extraEnv = ''
+      # $env.XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
+      $env.SHELL = "${pkgs.nushell}/bin/nu"      
+      $env.EDITOR = "hx"
+      $env.VISUAL = "hx"
       $env.GPG_TTY = (tty)
+      $env.LANG = "en_US.UTF-8";
+      $env.LC_CTYPE = "en_US.UTF-8";
+      $env.LC_ALL = "en_US.UTF-8";
 
       $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
 
@@ -88,6 +92,9 @@
       path add "${config.home.homeDirectory}/.cargo/bin"
       path add "/opt/homebrew/bin"
       path add "/opt/homebrew/sbin"
+      path add "/nix/var/nix/profiles/default/bin"
+      path add "/run/current-system/sw/bin"
+      path add "/etc/profiles/per-user/${config.home.username}/bin"
       # path add "/usr/local/bin"
       # path add "/usr/local/sbin"
       # path add "/usr/sbin"
