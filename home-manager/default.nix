@@ -29,4 +29,8 @@
   home.packages = with pkgs; [ ];
   programs.nix-index.enable = true;
   programs.home-manager.enable = true;
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  # };
 }

@@ -1,5 +1,12 @@
 { pkgs, ... }:
 {
+  catppuccin.tmux = {
+    enable = true;
+    flavor = "mocha";
+    extraConfig = ''
+      set -g @catppuccin_status_modules_right "application session user host date_time"
+    '';
+  };
   programs.tmux = {
     enable = true;
     sensibleOnTop = false;
@@ -11,14 +18,6 @@
     prefix = "C-a";
     shell = "${pkgs.fish}/bin/fish";
     terminal = "tmux-256color";
-    plugins = with pkgs.tmuxPlugins; [
-      {
-        plugin = tokyo-night-tmux;
-        extraConfig = ''
-          				set -g @tokyo-night-tmux_theme storm
-        '';
-      }
-    ];
     extraConfig = ''
       set -ag terminal-overrides ",xterm-256color:RGB"
 

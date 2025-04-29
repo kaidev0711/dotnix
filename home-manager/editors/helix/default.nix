@@ -11,7 +11,7 @@
     extraPackages = [ ];
     themes = {
       transparent = {
-        "inherits" = "kanagawa";
+        "inherits" = "catppuccin_mocha";
         "ui.background" = { };
       };
     };

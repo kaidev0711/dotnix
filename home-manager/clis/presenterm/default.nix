@@ -11,7 +11,7 @@
       terminal_font_size: 16
 
       # the theme to use by default in every presentation unless overridden.
-      theme: terminal-dark
+      theme: catppuccin-mocha
 
       # the image protocol to use.
       image_protocol: kitty-local

@@ -68,7 +68,7 @@
     # Bulitin syntax highlighting uses the same syntax highlighting engine as bat.
     # To get a list of your currently available themes, run `bat --list-themes`
     # Note that setting the BAT_THEME environment variable will override this setting.
-    theme = "Kanagawa"
+    theme = "Catppuccin Mocha"
 
     # Keybindings
     # ----------------------------------------------------------------------------

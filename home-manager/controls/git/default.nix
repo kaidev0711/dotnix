@@ -24,12 +24,6 @@
       };
       interactive.diffFilter = "delta --color-only";
       merge.conflictStyle = "zdiff3";
-      delta = {
-        navigate = true;
-        side-by-side = true;
-        line-numbers = true;
-      };
-
       # gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       user.signingKey = "~/.ssh/id_ed25519";
       commit.gpgSign = true;

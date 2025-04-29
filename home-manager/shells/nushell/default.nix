@@ -4,6 +4,10 @@
   ...
 }:
 {
+  catppuccin.nushell = {
+    enable = true;
+    flavor = "mocha";
+  };
   programs.nushell = {
     enable = true;
     settings = {
@@ -49,7 +53,7 @@
       	rm -fp $tmp
       }
 
-      $env.config.color_config = (default-dark)
+      # $env.config.color_config = (default-dark)
       $env.config.keybindings ++= [
         {
           name: fuzzy_file
@@ -120,7 +124,7 @@
       source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu" 
 
       # Themes
-      use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
+      # use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
 
 
       # Nu_scripts

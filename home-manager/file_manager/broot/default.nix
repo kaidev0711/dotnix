@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  xdg.configFile."broot/skins/kanagawa.toml".text = ''
+  xdg.configFile."broot/skins/catppuccin_mocha.toml".text = ''
     [skin]
     directory = "ansi(12)"
     file = "ansi(7)"

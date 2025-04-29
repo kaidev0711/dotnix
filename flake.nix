@@ -10,6 +10,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -18,6 +19,7 @@
       nix-darwin,
       nixpkgs,
       home-manager,
+      catppuccin,
       ...
     }:
     {
@@ -33,6 +35,7 @@
             home-manager.users.tuandv = {
               imports = [
                 ./hosts/mbtuandv/home.nix
+                catppuccin.homeModules.catppuccin
               ];
             };
           }

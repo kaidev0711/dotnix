@@ -12,12 +12,6 @@ let
     rev = "6fde3b2d9dc9a12c14588eb85cf4964e619842e6";
     hash = "sha256-+CSdghcIl50z0MXmFwbJ0koIkWIksm3XxYvTAwoRlDY=";
   };
-  kanagawa-flavor = pkgs.fetchFromGitHub {
-    owner = "dangooddd";
-    repo = "kanagawa.yazi";
-    rev = "31167ed54c9cc935b2fa448d64d367b1e5a1105d";
-    hash = "sha256-phwGd1i/n0mZH/7Ukf1FXwVgYRbXQEWlNRPCrmR5uNk=";
-  };
 in
 {
   xdg.configFile = {
@@ -246,14 +240,6 @@ in
         }
       ];
     };
-    theme = {
-      flavor = {
-        dark = "kanagawa";
-      };
-    };
-    flavors = {
-      kanagawa = "${kanagawa-flavor}";
-    };
     plugins = {
       git = "${yazi-plugins}/git.yazi";
       piper = "${yazi-plugins}/piper.yazi";
@@ -266,5 +252,10 @@ in
       starship = "${starship-plugins}";
       ouch = "${pkgs.yaziPlugins.ouch}";
     };
+  };
+  catppuccin.yazi = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
   };
 }
