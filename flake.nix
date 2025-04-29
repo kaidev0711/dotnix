@@ -23,7 +23,6 @@
       ...
     }:
     {
-      # darwin-rebuild build --flake .#mbtuandv
       darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
         specialArgs = { inherit inputs; };
         modules = [

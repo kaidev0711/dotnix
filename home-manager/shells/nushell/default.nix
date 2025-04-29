@@ -24,24 +24,6 @@
         normal = "%d/%m/%y %I:%M:%S%p";
       };
     };
-    shellAliases = {
-      pipes = "pipes-rs";
-      cp = "cp -i";
-      rm = "rm -i";
-      mv = "mv -i";
-      ip = "ipconfig getifaddr en0";
-      rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
-      info = "${pkgs.fastfetch}/bin/fastfetch";
-      zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
-      zj = "${pkgs.zellij}/bin/zellij";
-      cat = "${pkgs.bat}/bin/bat";
-      gt = "${pkgs.gitui}/bin/gitui";
-      ju = "${pkgs.just}/bin/just";
-      pre = "${pkgs.presenterm}/bin/presenterm";
-    };
-    plugins = [
-      pkgs.nushellPlugins.query
-    ];
     extraConfig = ''
       def --env y [...args] {
       	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
@@ -137,6 +119,21 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/aerospace/aerospace-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/ssh/ssh-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu"
     '';
+    shellAliases = {
+      cp = "cp -i";
+      rm = "rm -i";
+      mv = "mv -i";
+      ip = "ipconfig getifaddr en0";
+      rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
+      zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
+    };
+    plugins = [
+      pkgs.nushellPlugins.query
+    ];
   };
 }
