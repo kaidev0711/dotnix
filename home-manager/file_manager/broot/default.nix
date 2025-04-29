@@ -147,7 +147,7 @@
       };
       imports = [
         {
-          file = "skins/kanagawa.toml";
+          file = "skins/catppuccin_mocha.toml";
           luma = [
             "dark"
             "unknown"

@@ -6,10 +6,6 @@ let
   };
 in
 {
-  catppuccin.zellij = {
-    enable = true;
-    flavor = "mocha";
-  };
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;
