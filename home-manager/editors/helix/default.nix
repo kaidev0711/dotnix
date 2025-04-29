@@ -43,10 +43,11 @@
         };
         gutters = {
           layout = [
-            "diff"
             "diagnostics"
+            "spacer"
             "line-numbers"
             "spacer"
+            "diff"
           ];
           line-numbers = {
             min-width = 1;

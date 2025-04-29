@@ -62,7 +62,7 @@ in
   programs.yazi = {
     enable = true;
     enableFishIntegration = true;
-    enableNushellIntegration = true;
+    enableNushellIntegration = false;
     shellWrapperName = "y";
     initLua = ''
       require("full-border"):setup()

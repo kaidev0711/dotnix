@@ -1,5 +1,7 @@
 { ... }:
 {
-  xdg.configFile."spicetify/Themes".source = ./themes;
-  xdg.configFile."spicetify/Extensions".source = ./extensions;
+  xdg.configFile = {
+    "spicetify/Themes".source = ./themes;
+    "spicetify/Extensions".source = ./extensions;
+  };
 }

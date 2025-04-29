@@ -23,7 +23,7 @@
     LC_CTYPE = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
     EDITOR = "hx";
-    # SHELL = "${pkgs.fish}/bin/fish";
+    SHELL = "${pkgs.nushell}/bin/nu";
     # XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
   };
   home.packages = with pkgs; [ ];

@@ -37,6 +37,7 @@ in
         orientation = "right";
         show-recents = false;
         mru-spaces = false;
+        expose-group-apps = true;
         wvous-bl-corner = 1;
         wvous-br-corner = 1;
         wvous-tl-corner = 1;

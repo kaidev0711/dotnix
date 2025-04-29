@@ -6,7 +6,7 @@
     enableNushellIntegration = true;
     settings =
       (builtins.fromTOML (
-        builtins.readFile "${pkgs.starship}/share/starship/presets/nerd-font-symbols.toml"
+        builtins.readFile "${pkgs.starship}/share/starship/presets/catppuccin-powerline.toml"
       ))
       // {
         add_newline = false;

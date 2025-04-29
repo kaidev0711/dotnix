@@ -39,6 +39,15 @@
       pkgs.nushellPlugins.query
     ];
     extraConfig = ''
+      def --env y [...args] {
+      	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
+      	yazi ...$args --cwd-file $tmp
+      	let cwd = (open $tmp)
+      	if $cwd != "" and $cwd != $env.PWD {
+      		cd $cwd
+      	}
+      	rm -fp $tmp
+      }
 
       $env.config.color_config = (default-dark)
       $env.config.keybindings ++= [
@@ -106,6 +115,9 @@
 
       # Nu_resources
       source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
+
+      # Nu_modules  
+      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu" 
 
       # Themes
       use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
