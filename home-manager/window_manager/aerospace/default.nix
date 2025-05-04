@@ -15,8 +15,10 @@
     on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
     on-focus-changed = ['move-mouse window-lazy-center']
     automatically-unhide-macos-hidden-apps = false
+
     [key-mapping]
     preset = 'qwerty'
+
     [gaps]
     inner.horizontal = 5
     inner.vertical = 5
@@ -26,17 +28,19 @@
     # outer.top =        [{ monitor."built-in" = 5 }, 20]
     # outer.top = [{ monitor."Built-in Retina Display" = 10 }, 40]
     outer.right = 5
+
     [workspace-to-monitor-force-assignment]
-    1 = 1 # Monitor sequence number from left to right. 1-based indexing
+    # 1 = 1 # Monitor sequence number from left to right. 1-based indexing
     Browser = 'main' # Main monitor
     Terminal = "main"
     # Terminal = '^built-in retina display$' # Case insensitive regex match
-    3 = 'secondary' # Non-main monitor in case when there are only two monitors
-    4 = 'built-in' # Case insensitive regex substring
-    6 = [
-      'secondary',
-      'dell',
-    ] # You can specify multiple patterns. The first matching pattern will be used
+    # 3 = 'secondary' # Non-main monitor in case when there are only two monitors
+    # 4 = 'built-in' # Case insensitive regex substring
+    # 6 = [
+      # 'secondary',
+      # 'dell',
+    # ] # You can specify multiple patterns. The first matching pattern will be used
+     
     [mode.main.binding]
     # All possible keys:
     # - Letters.        a, b, c, ..., z
