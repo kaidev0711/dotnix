@@ -34,5 +34,6 @@
     hexyl
     kondo
     ouch
+    gping
   ];
 }

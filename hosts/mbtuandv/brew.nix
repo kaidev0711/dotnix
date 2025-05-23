@@ -15,6 +15,7 @@
       "keka"
       "brave-browser"
       "spotify"
+      "skim"
     ];
     taps = [
 

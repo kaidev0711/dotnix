@@ -28,21 +28,6 @@ in
       end
       return { setup = setup }
     '';
-    "yazi/plugins/smart-paste.yazi/main.lua".text = ''
-      --- @sync entry
-      return {
-      	entry = function()
-      		local h = cx.active.current.hovered
-      		if h and h.cha.is_dir then
-      			ya.mgr_emit("enter", {})
-      			ya.mgr_emit("paste", {})
-      			ya.mgr_emit("leave", {})
-      		else
-      			ya.mgr_emit("paste", {})
-      		end
-      	end,
-      }
-    '';
     "yazi/plugins/smart-tab.yazi/main.lua".text = ''
       --- @sync entry
       return {
@@ -248,6 +233,7 @@ in
       full-border = "${yazi-plugins}/full-border.yazi";
       toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
       smart-enter = "${yazi-plugins}/smart-enter.yazi";
+      smart-paste = "${yazi-plugins}/smart-paste.yazi";
       smart-filter = "${yazi-plugins}/smart-filter.yazi";
       starship = "${starship-plugins}";
       ouch = "${pkgs.yaziPlugins.ouch}";

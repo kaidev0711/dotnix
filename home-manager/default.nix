@@ -16,7 +16,8 @@
     ./chat
     ./music
   ];
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
+  home.enableNixpkgsReleaseCheck = false;
   # xdg.enable = true;
   home.sessionVariables = {
     LANG = "en_US.UTF-8";

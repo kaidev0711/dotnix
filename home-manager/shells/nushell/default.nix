@@ -117,6 +117,7 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/ssh/ssh-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu"
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/typst/typst-completions.nu"
     '';
     shellAliases = {
       cp = "cp -i";

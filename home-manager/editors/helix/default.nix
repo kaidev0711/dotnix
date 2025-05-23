@@ -13,16 +13,12 @@
       transparent = {
         "inherits" = "catppuccin_mocha";
         "ui.background" = { };
-        "ui.bufferline.active" = {
-          fg = "mauve";
-          bg = "base";
-        };
       };
     };
     settings = {
       theme = "transparent";
       editor = {
-        bufferline = "multiple";
+        bufferline = "never";
         cursorline = true;
         line-number = "absolute";
         popup-border = "all";
@@ -42,16 +38,13 @@
 
         inline-diagnostics = {
           cursor-line = "error";
-          # cursor-line = "warning";
-          # other-lines = "error";
         };
         gutters = {
           layout = [
+            "diff"
             "diagnostics"
-            "spacer"
             "line-numbers"
             "spacer"
-            "diff"
           ];
           line-numbers = {
             min-width = 1;
@@ -84,7 +77,25 @@
         file-picker = {
           hidden = false;
         };
-        statusline = { };
+        statusline = {
+          left = [
+            "mode"
+            "spinner"
+          ];
+          center = [ "file-name" ];
+          right = [
+            "diagnostics"
+            "selections"
+            "position"
+            "file-encoding"
+            "file-line-ending"
+            "file-type"
+          ];
+          separator = "│";
+          mode.normal = "NORMAL";
+          mode.insert = "INSERT";
+          mode.select = "SELECT";
+        };
         lsp = {
           display-inlay-hints = true;
           display-messages = true;
@@ -325,6 +336,14 @@
           name = "nu";
           language-servers = [ "nu-lsp" ];
         }
+        {
+          name = "typst";
+          auto-format = true;
+          language-servers = [ "tinymist" ];
+          formatter = {
+            command = lib.getExe pkgs.typstyle;
+          };
+        }
       ];
       language-server = {
         nu-lsp = {
@@ -370,6 +389,9 @@
             "server"
           ];
         };
+        tinymist = {
+          command = lib.getExe pkgs.tinymist;
+        };
         harper-ls = {
           command = lib.getExe pkgs.harper;
           args = [
@@ -403,7 +425,6 @@
             };
           };
         };
-
       };
     };
   };
