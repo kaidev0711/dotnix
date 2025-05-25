@@ -344,8 +344,18 @@
             command = lib.getExe pkgs.typstyle;
           };
         }
+        {
+          name = "elixir";
+          language-servers = [ "elixir-ls" ];
+        }
       ];
       language-server = {
+        elixir-ls = {
+          command = lib.getExe pkgs.beam27Packages.elixir-ls;
+          config = {
+            elixirLS.dialyzerEnabled = false;
+          };
+        };
         nu-lsp = {
           command = "nu";
           args = [ "--lsp" ];

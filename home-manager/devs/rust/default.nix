@@ -11,6 +11,7 @@
     cargo-audit
     cargo-flamegraph
     cargo-binstall
+    cargo-info
     gitoxide
     openssl
     pkg-config

@@ -7,6 +7,7 @@
     ./markdown
     ./web
     ./typst
+    ./elixir
   ];
   home.packages = with pkgs; [
     # devenv

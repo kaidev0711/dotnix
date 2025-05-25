@@ -17,6 +17,7 @@
     ./presenterm
     ./glow
     ./atuin
+    ./ripgrep-all
   ];
   home.packages = with pkgs; [
     wget
@@ -35,5 +36,7 @@
     kondo
     ouch
     gping
+    wiki-tui
+    xh
   ];
 }
