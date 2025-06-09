@@ -16,6 +16,9 @@
       "brave-browser"
       "spotify"
       "skim"
+      "signal"
+      "telegram"
+      "discord"
     ];
     taps = [
 

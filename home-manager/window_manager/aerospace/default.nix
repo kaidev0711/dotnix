@@ -221,7 +221,11 @@
     run = 'move-node-to-workspace Chat'
 
     [[on-window-detected]]
-    if.app-id = "com.tdesktop.Telegram"
+    if.app-id = "ru.keepcoder.Telegram"
+    run = 'move-node-to-workspace Chat'
+
+    [[on-window-detected]]
+    if.app-id = "org.whispersystems.signal-desktop"
     run = 'move-node-to-workspace Chat'
 
     [[on-window-detected]]

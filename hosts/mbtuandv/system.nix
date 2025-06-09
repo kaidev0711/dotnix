@@ -55,8 +55,9 @@ in
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
           "/Applications/Ghostty.app"
-          "${homeDirectory}/Applications/Home Manager Apps/Telegram.app"
-          "${homeDirectory}/Applications/Home Manager Apps/Discord.app"
+          "/Applications/Discord.app"
+          "/Applications/Signal.app"
+          "/Applications/Telegram.app"
           "/Applications/Spotify.app"
         ];
         persistent-others = [

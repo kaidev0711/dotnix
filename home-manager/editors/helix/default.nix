@@ -348,6 +348,13 @@
           name = "elixir";
           language-servers = [ "elixir-ls" ];
         }
+        {
+          name = "heex";
+          language-servers = [ "elixir-ls" ];
+        }
+        {
+          name = "eex";
+        }
       ];
       language-server = {
         elixir-ls = {
@@ -380,6 +387,9 @@
               discriminantHints.enable = "fieldless";
               lifetimeElisionHints.enable = "skip_trivial";
               typeHints.hideClosureInitialization = false;
+            };
+            files = {
+              watcher = "server";
             };
           };
         };

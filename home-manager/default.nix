@@ -13,7 +13,6 @@
     ./multiplexers
     ./file_manager
     ./browsers
-    ./chat
     ./music
   ];
   home.stateVersion = "25.05";

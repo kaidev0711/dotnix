@@ -15,5 +15,6 @@
     gitoxide
     openssl
     pkg-config
+    tokio-console
   ];
 }

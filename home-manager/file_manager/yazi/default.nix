@@ -3,14 +3,20 @@ let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
-    rev = "b12a9ab085a8c2fe2b921e1547ee667b714185f9";
-    hash = "sha256-LWN0riaUazQl3llTNNUMktG+7GLAHaG/IxNj1gFhDRE=";
+    rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
+    hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
+  };
+  yazi-flavors = pkgs.fetchFromGitHub {
+    owner = "yazi-rs";
+    repo = "flavors";
+    rev = "d04a298a8d4ada755816cb1a8cfb74dd46ef7124";
+    hash = "sha256-m3yk6OcJ9vbCwtxkMRVUDhMMTOwaBFlqWDxGqX2Kyvc=";
   };
   starship-plugins = pkgs.fetchFromGitHub {
     owner = "Rolv-Apneseth";
     repo = "starship.yazi";
-    rev = "6fde3b2d9dc9a12c14588eb85cf4964e619842e6";
-    hash = "sha256-+CSdghcIl50z0MXmFwbJ0koIkWIksm3XxYvTAwoRlDY=";
+    rev = "6a0f3f788971b155cbc7cec47f6f11aebbc148c9";
+    hash = "sha256-q1G0Y4JAuAv8+zckImzbRvozVn489qiYVGFQbdCxC98=";
   };
 in
 {
@@ -20,9 +26,9 @@ in
       	ps.sub("cd", function()
       		local cwd = cx.active.current.cwd
       		if cwd:ends_with("Downloads") then
-      			ya.mgr_emit("sort", { "mtime", reverse = true, dir_first = false })
+      			ya.emit("sort", { "mtime", reverse = true, dir_first = false })
       		else
-      			ya.mgr_emit("sort", { "alphabetical", reverse = false, dir_first = true })
+      			ya.emit("sort", { "alphabetical", reverse = false, dir_first = true })
       		end
       	end)
       end
@@ -33,9 +39,26 @@ in
       return {
       	entry = function()
       		local h = cx.active.current.hovered
-      		ya.mgr_emit("tab_create", h and h.cha.is_dir and { h.url } or { current = true })
+      		ya.emit("tab_create", h and h.cha.is_dir and { h.url } or { current = true })
       	end,
       }
+    '';
+    "yazi/plugins/confirm-quit.yazi/main.lua".text = ''
+      local count = ya.sync(function() return #cx.tabs end)
+      local function entry()
+      	if count() < 2 then
+      		return ya.emit("quit", {})
+      	end
+      	local yes = ya.confirm {
+      		pos = { "center", w = 60, h = 10 },
+      		title = "Quit?",
+      		content = ui.Text("There are multiple tabs open. Are you sure you want to quit?"):wrap(ui.Wrap.YES),
+      	}
+      	if yes then
+      		ya.emit("quit", {})
+      	end
+      end
+      return { entry = entry }
     '';
   };
   programs.yazi = {
@@ -51,9 +74,32 @@ in
       require("git"):setup{ order = 0 }
       require("folder-rules"):setup()
       require("starship"):setup()
+
+      Status:children_add(function(self)
+      	local h = self._current.hovered
+      	if h and h.link_to then
+      		return " -> " .. tostring(h.link_to)
+      	else
+      		return ""
+      	end
+      end, 3300, Status.LEFT)
+
+      Status:children_add(function()
+      	local h = cx.active.current.hovered
+      	if not h or ya.target_family() ~= "unix" then
+      		return ""
+      	end
+
+      	return ui.Line {
+      		ui.Span(ya.user_name(h.cha.uid) or tostring(h.cha.uid)):fg("magenta"),
+      		":",
+      		ui.Span(ya.group_name(h.cha.gid) or tostring(h.cha.gid)):fg("magenta"),
+      		" ",
+      	}
+      end, 500, Status.RIGHT)
     '';
     settings = {
-      manager = {
+      mgr = {
         ratio = [
           3
           6
@@ -76,7 +122,7 @@ in
       opener = {
         bulk-rename = [
           {
-            run = ''$EDITOR "$@"'';
+            run = ''hx "$@"'';
             block = true;
           }
         ];
@@ -146,11 +192,19 @@ in
       };
     };
     keymap = {
-      manager.prepend_keymap = [
+      input.prepend_keymap = [
+        {
+          on = "<Esc>";
+          run = "close";
+          desc = "Cancel input";
+        }
+      ];
+      mgr.prepend_keymap = [
         {
           on = "!";
-          run = ''shell "$SHELL" --block --confirm'';
-          desc = "Open shell here";
+          for = "unix";
+          run = ''shell "$SHELL" --block'';
+          desc = "Open $SHELL here";
         }
         {
           on = "<Esc>";
@@ -161,6 +215,13 @@ in
           on = "l";
           run = "plugin smart-enter";
           desc = "Enter the child directory, or open the file";
+        }
+        {
+          on = [
+            "g"
+            "p"
+          ];
+          run = ''shell -- ya emit cd "$(git rev-parse --show-toplevel)"'';
         }
         {
           on = [
@@ -223,7 +284,19 @@ in
           run = "plugin ouch";
           desc = "Compress with ouch";
         }
+        {
+          on = "q";
+          run = "plugin confirm-quit";
+        }
       ];
+    };
+    theme = {
+      flavor = {
+        dark = "catppuccin-mocha";
+      };
+    };
+    flavors = {
+      catppuccin-mocha = "${yazi-flavors}/catppuccin-mocha.yazi";
     };
     plugins = {
       git = "${yazi-plugins}/git.yazi";
@@ -239,9 +312,9 @@ in
       ouch = "${pkgs.yaziPlugins.ouch}";
     };
   };
-  catppuccin.yazi = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
+  # catppuccin.yazi = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "mauve";
+  # };
 }
