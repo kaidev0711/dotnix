@@ -13,12 +13,16 @@
       transparent = {
         "inherits" = "catppuccin_mocha";
         "ui.background" = { };
+        "ui.bufferline.active" = {
+          fg = "mauve";
+          bg = "base";
+        };
       };
     };
     settings = {
       theme = "transparent";
       editor = {
-        bufferline = "never";
+        bufferline = "multiple";
         cursorline = true;
         line-number = "absolute";
         popup-border = "all";
@@ -142,7 +146,6 @@
           l = ":log-open";
           c = ":lsp-workspace-command";
           y = ":yank-diagnostic";
-          n = ":open ~/Documents/Notes/index.md";
           e = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
           v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
           h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";

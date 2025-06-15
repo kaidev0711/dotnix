@@ -232,14 +232,6 @@ in
           desc = "Go to the rust directory";
         }
         {
-          on = [
-            "g"
-            "n"
-          ];
-          run = "cd ~/Documents/Notes";
-          desc = "Go to the Notes directory";
-        }
-        {
           on = "<C-p>";
           run = ''shell -- qlmanage -p "$@"'';
         }

@@ -59,6 +59,7 @@ in
           "/Applications/Signal.app"
           "/Applications/Telegram.app"
           "/Applications/Spotify.app"
+          "/System/Applications/Notes.app"
         ];
         persistent-others = [
           "${homeDirectory}/Documents/Books/"
@@ -88,6 +89,7 @@ in
       };
       trackpad = {
         Clicking = true;
+        TrackpadThreeFingerTapGesture = 2;
         TrackpadRightClick = true;
       };
       loginwindow = {
