@@ -1,9 +1,9 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    beam27Packages.erlang
-    beam27Packages.elixir
-    beam27Packages.elixir-ls
+    beam28Packages.erlang
+    beam28Packages.elixir
+    beam28Packages.elixir-ls
     nodejs_24
     postgresql
   ];

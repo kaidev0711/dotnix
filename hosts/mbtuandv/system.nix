@@ -51,7 +51,6 @@ in
           "/Applications/Swift Playground.app"
           "/Applications/Safari.app"
           "/Applications/Brave Browser.app"
-          "${homeDirectory}/Applications/Home Manager Apps/Google Chrome.app"
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
           "/Applications/Ghostty.app"

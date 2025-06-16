@@ -361,7 +361,7 @@
       ];
       language-server = {
         elixir-ls = {
-          command = lib.getExe pkgs.beam27Packages.elixir-ls;
+          command = lib.getExe pkgs.beam28Packages.elixir-ls;
           config = {
             elixirLS.dialyzerEnabled = false;
           };

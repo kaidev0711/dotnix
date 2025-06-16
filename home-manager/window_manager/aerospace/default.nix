@@ -95,10 +95,10 @@
     alt-ctrl-d = 'workspace Dev'
     alt-ctrl-e = 'workspace Editor'
     alt-ctrl-t = 'workspace Terminal'
+    alt-ctrl-f = 'workspace Model'
     # alt-ctrl-f = 'workspace F'
     # alt-ctrl-g = 'workspace G'
     # alt-ctrl-i = 'workspace I'
-    # alt-ctrl-m = 'workspace M'
     # alt-ctrl-n = 'workspace N'
     # alt-ctrl-o = 'workspace O'
     # alt-ctrl-p = 'workspace P'
@@ -127,10 +127,10 @@
     alt-ctrl-shift-d = 'move-node-to-workspace Dev --focus-follows-window'     # Dev
     alt-ctrl-shift-e = 'move-node-to-workspace Editor --focus-follows-window'  # Editor
     alt-ctrl-shift-t = 'move-node-to-workspace Terminal --focus-follows-window' # Terminal
+    alt-ctrl-shift-f = 'move-node-to-workspace Model --focus-follows-window'   # Model
     # alt-ctrl-shift-f = 'move-node-to-workspace F --focus-follows-window'
     # alt-ctrl-shift-g = 'move-node-to-workspace G --focus-follows-window'
     # alt-ctrl-shift-i = 'move-node-to-workspace I --focus-follows-window'
-    # alt-ctrl-shift-m = 'move-node-to-workspace M --focus-follows-window'
     # alt-ctrl-shift-n = 'move-node-to-workspace N --focus-follows-window'
     # alt-ctrl-shift-o = 'move-node-to-workspace O --focus-follows-window'
     # alt-ctrl-shift-p = 'move-node-to-workspace P --focus-follows-window'
@@ -203,10 +203,6 @@
     if.app-id = "com.apple.dt.Xcode"
     # run = 'move-node-to-workspace Editor'
     run = ["layout floating", 'move-node-to-workspace Editor']
-
-    [[on-window-detected]]
-    if.app-id = "com.google.Chrome"
-    run = 'move-node-to-workspace Browser'
 
     [[on-window-detected]]
     if.app-id = "com.brave.Browser"

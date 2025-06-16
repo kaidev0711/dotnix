@@ -12,7 +12,6 @@
     ./devs
     ./multiplexers
     ./file_manager
-    ./browsers
     ./music
   ];
   home.stateVersion = "25.05";
