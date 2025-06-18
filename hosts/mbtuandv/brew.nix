@@ -11,7 +11,6 @@
     ];
     casks = [
       "ghostty"
-      "raycast"
       "keka"
       "brave-browser"
       "spotify"

@@ -45,7 +45,6 @@ in
         wvous-tl-corner = 1;
         wvous-tr-corner = 1;
         persistent-apps = [
-          "/System/Applications/Launchpad.app"
           "/Applications/Xcode.app"
           "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
           "/Applications/Swift Playground.app"
@@ -101,7 +100,7 @@ in
       };
       universalaccess = {
         reduceMotion = true;
-        reduceTransparency = true;
+        reduceTransparency = false;
       };
       controlcenter = {
         BatteryShowPercentage = true;

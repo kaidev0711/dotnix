@@ -12,7 +12,6 @@
     ./devs
     ./multiplexers
     ./file_manager
-    ./music
   ];
   home.stateVersion = "25.05";
   home.enableNixpkgsReleaseCheck = false;

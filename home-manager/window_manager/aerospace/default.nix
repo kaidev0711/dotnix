@@ -3,7 +3,7 @@
   xdg.configFile."aerospace/aerospace.toml".text = ''
     after-login-command = []
     after-startup-command = [
-      'exec-and-forget ${pkgs.jankyborders}/bin/borders active_color="gradient(top_left=0xffff9e64,bottom_right=0xffbb9af7)" inactive_color="gradient(top_left=0x40ff9e64,bottom_right=0x40bb9af7)" width=5.0',
+      # 'exec-and-forget ${pkgs.jankyborders}/bin/borders active_color="gradient(top_left=0xffff9e64,bottom_right=0xffbb9af7)" inactive_color="gradient(top_left=0x40ff9e64,bottom_right=0x40bb9af7)" width=5.0',
     ]
     exec-on-workspace-change = []
     start-at-login = true
@@ -223,6 +223,10 @@
     [[on-window-detected]]
     if.app-id = "org.whispersystems.signal-desktop"
     run = 'move-node-to-workspace Chat'
+
+    [[on-window-detected]]
+    if.app-id = "com.apple.Notes"
+    run = 'move-node-to-workspace Apple'
 
     [[on-window-detected]]
     if.app-id = 'com.apple.finder'
