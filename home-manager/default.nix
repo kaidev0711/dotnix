@@ -13,7 +13,7 @@
     ./multiplexers
     ./file_manager
   ];
-  home.stateVersion = "25.05";
+  home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;
   # xdg.enable = true;
   home.sessionVariables = {
