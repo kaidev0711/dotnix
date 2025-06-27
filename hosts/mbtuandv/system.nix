@@ -66,6 +66,7 @@ in
       };
       WindowManager = {
         EnableStandardClickToShowDesktop = false;
+        StandardHideWidgets = true;
         HideDesktop = true;
         StageManagerHideWidgets = true;
         EnableTilingByEdgeDrag = false;

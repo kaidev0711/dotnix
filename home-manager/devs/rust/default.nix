@@ -1,11 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    rustc
-    cargo
-    rustfmt
-    clippy
-    rust-analyzer
+    rustup
     rustlings
     cargo-nextest
     cargo-audit
@@ -16,5 +12,7 @@
     openssl
     pkg-config
     tokio-console
+    wasmtime
+    wabt
   ];
 }

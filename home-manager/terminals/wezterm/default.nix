@@ -16,10 +16,14 @@
       config.window_background_opacity = 0.8
       config.macos_window_background_blur = 0
       config.font = wezterm.font_with_fallback {
+        {
+        	family = 'JetBrains Mono',
+        	weight = 'Bold',
+         	style = "Normal",
+        },
       	{
           family = 'Cascadia Code',
           weight = 'Bold',
-      		stretch = "Normal",
       		style = "Normal",
         },
         {
@@ -27,12 +31,8 @@
         	weight = 'Bold',
         	style = "Normal"
         },
-        {
-        	family = 'JetBrains Mono',
-        	weight = 'Bold',
-         	style = "Italic"
-        },
       }
+      config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
       config.warn_about_missing_glyphs=false
       config.font_size = 17
       config.scrollback_lines = 3000

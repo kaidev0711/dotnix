@@ -8,10 +8,14 @@
     ./web
     ./typst
     ./elixir
+    ./sql
   ];
   home.packages = with pkgs; [
     # devenv
     hurl
     harper
+    ast-grep
+    tabiew
+    kalker
   ];
 }

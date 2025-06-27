@@ -127,29 +127,34 @@
           n = ":new";
         };
         ";" = {
-          f = ":toggle auto-format";
-          i = ":toggle lsp.display-inlay-hints";
-          k = ":toggle file-picker.hidden";
-          d = ":toggle indent-guides.render";
-          x = ":buffer-close";
-          X = ":buffer-close-others";
+          t = {
+            f = ":toggle auto-format";
+            i = ":toggle lsp.display-inlay-hints";
+            h = ":toggle file-picker.hidden";
+            r = ":toggle indent-guides.render";
+            s = ":toggle soft-wrap.enable";
+            g = ":toggle gutters.line-numbers.min-width 52 3";
+          };
+          b = {
+            x = ":buffer-close";
+            X = ":buffer-close-others";
+          };
           q = ":q";
           Q = ":qa!";
           w = ":write";
-          s = ":toggle soft-wrap.enable";
-          z = ":toggle gutters.line-numbers.min-width 52 3";
+          r = ":reload";
+          o = ":config-open";
           O = [
             ":w"
             ":config-reload"
           ];
-          o = ":config-open";
           l = ":log-open";
           c = ":lsp-workspace-command";
           y = ":yank-diagnostic";
           e = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
           v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
           h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";
-          r = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
+          s = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
         };
       };
       keys.insert = {
@@ -381,7 +386,8 @@
           command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
-          command = lib.getExe pkgs.rust-analyzer;
+          # command = lib.getExe pkgs.rust-analyzer;
+          command = "rust-analyzer";
           config = {
             inlayHints = {
               bindingModeHints.enable = false;

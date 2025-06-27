@@ -98,6 +98,7 @@
 
       # Nu_modules  
       source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu" 
+      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/completions-jj.nu" 
 
       # Themes
       # use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
@@ -110,6 +111,7 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/aliases/bat/bat-aliases.nu"
 
       ## custom-completions
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu"
