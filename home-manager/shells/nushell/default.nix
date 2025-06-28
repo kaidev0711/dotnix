@@ -98,7 +98,6 @@
 
       # Nu_modules  
       source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu" 
-      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/completions-jj.nu" 
 
       # Themes
       # use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"
@@ -122,6 +121,9 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/typst/typst-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/mix/mix-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu"
+
+      ### web completions
+      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/pnpm/pnpm-completions.nu"
     '';
     shellAliases = {
       cp = "cp -i";
