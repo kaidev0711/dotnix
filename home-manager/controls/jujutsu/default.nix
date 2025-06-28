@@ -4,8 +4,8 @@
     enable = true;
     settings = {
       user = {
-        name = "Dang Van Tuan";
-        eamil = "kaiz.developers@gmail.com";
+        name = "kaidev0711";
+        email = "kaiz.developers@gmail.com";
       };
     };
   };

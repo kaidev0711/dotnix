@@ -12,7 +12,7 @@
     casks = [
       "ghostty"
       "keka"
-      "brave-browser"
+      "google-chrome"
       "spotify"
       "skim"
       "signal"

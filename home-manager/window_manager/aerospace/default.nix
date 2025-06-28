@@ -169,7 +169,7 @@
           ];
         }
         {
-          "if".app-id = "com.brave.Browser";
+          "if".app-id = "com.google.Chrome";
           run = [ "move-node-to-workspace Browser" ];
         }
         {
