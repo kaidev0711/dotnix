@@ -110,20 +110,13 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/aliases/bat/bat-aliases.nu"
 
       ## custom-completions
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rustup/rustup-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/zellij/zellij-completions.nu"
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/cargo/cargo-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/nix/nix-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/aerospace/aerospace-completions.nu"
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/gh/gh-completions.nu"
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/ssh/ssh-completions.nu"
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/tealdeer/tldr-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/typst/typst-completions.nu"
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/mix/mix-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu"
 
       ### web completions
-      source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/pnpm/pnpm-completions.nu"
     '';
     shellAliases = {
       cp = "cp -i";
