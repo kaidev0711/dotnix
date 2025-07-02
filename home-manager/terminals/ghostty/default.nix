@@ -2,17 +2,16 @@
 {
   xdg.configFile."ghostty/config".text = ''
     # Shell
-    command = ${pkgs.fish}/bin/fish
-    # shell-integration = fish
+    command = ${pkgs.nushell}/bin/nu
 
     # Themes: ghostty +list-themes
     theme = catppuccin-mocha
 
     # fonts
-    font-family = Hack Nerd Font Mono
-    font-family-bold = Hack Nerd Font Mono Bold
-    font-family-italic = Hack Nerd Font Mono Italic
-    font-family-bold-italic = Hack Nerd Font Mono Bold Italic
+    font-family = JetBrains Mono
+    font-family-bold = JetBrains Mono Bold
+    font-family-italic = JetBrains Mono Italic
+    font-family-bold-italic = JetBrains Mono Bold Italic
     font-size = 16
     font-feature = -calt
     font-feature = -liga

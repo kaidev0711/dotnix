@@ -1,10 +1,4 @@
-{
-  inputs,
-  pkgs,
-  config,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 let
   hostname = "mbtuandv";
   username = "tuandv";
@@ -24,7 +18,6 @@ in
     home = "/Users/${username}";
     shell = pkgs.nushell;
   };
-  # environment.variables.SHELL = "${pkgs.fish}/bin/fish";
   programs.fish.enable = true;
 
   services = { };
@@ -34,7 +27,7 @@ in
   fonts = {
     packages = with pkgs; [
       cascadia-code
-      nerd-fonts.jetbrains-mono
+      jetbrains-mono
       nerd-fonts.geist-mono
       nerd-fonts.hack
     ];
