@@ -44,6 +44,7 @@ in
     settings = {
       trusted-users = [ username ];
       experimental-features = "nix-command flakes";
+      warn-dirty = false;
     };
     optimise = {
       automatic = true;
@@ -64,7 +65,6 @@ in
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      # allowBroken = true;
     };
     overlays = [ ];
   };

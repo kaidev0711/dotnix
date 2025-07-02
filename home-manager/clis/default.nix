@@ -38,5 +38,6 @@
     gping
     wiki-tui
     xh
+    sniffnet
   ];
 }
