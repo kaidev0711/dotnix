@@ -1,7 +1,6 @@
 { ... }:
 {
   imports = [
-    ./ghostty
     ./alacritty
     ./wezterm
   ];

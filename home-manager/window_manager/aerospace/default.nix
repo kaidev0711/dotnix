@@ -150,10 +150,6 @@
 
       on-window-detected = [
         {
-          "if".app-id = "com.mitchellh.ghostty";
-          run = [ "move-node-to-workspace Terminal" ];
-        }
-        {
           "if".app-id = "org.alacritty";
           run = [ "move-node-to-workspace Terminal" ];
         }
@@ -194,10 +190,6 @@
         }
         {
           "if".app-id = "com.apple.finder";
-          run = [ "layout floating" ];
-        }
-        {
-          "if".app-id = "com.spotify.client";
           run = [ "layout floating" ];
         }
       ];

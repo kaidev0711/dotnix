@@ -10,10 +10,8 @@
       "mas"
     ];
     casks = [
-      "ghostty"
       "keka"
       "google-chrome"
-      "spotify"
       "skim"
       "signal"
       "telegram"

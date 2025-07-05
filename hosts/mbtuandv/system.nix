@@ -52,11 +52,9 @@ in
           "/Applications/Google Chrome.app"
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
-          "/Applications/Ghostty.app"
           "/Applications/Discord.app"
           "/Applications/Signal.app"
           "/Applications/Telegram.app"
-          "/Applications/Spotify.app"
           "/System/Applications/Notes.app"
         ];
         persistent-others = [
