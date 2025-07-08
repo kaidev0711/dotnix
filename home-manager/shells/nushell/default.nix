@@ -125,6 +125,8 @@
       ip = "ipconfig getifaddr en0";
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
       zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
+      zjv = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/vibes.kdl";
+      vibes = "rustyvibes ${config.home.homeDirectory}/Devs/_opensource/Soundpacks/nk-cream/ -v 100";
     };
     plugins = [
       pkgs.nushellPlugins.query

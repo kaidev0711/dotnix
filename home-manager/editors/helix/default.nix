@@ -12,7 +12,6 @@
     themes = {
       transparent = {
         "inherits" = "catppuccin_mocha";
-        "ui.background" = { };
         "ui.bufferline.active" = {
           fg = "mauve";
           bg = "base";
