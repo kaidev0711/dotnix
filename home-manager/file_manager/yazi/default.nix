@@ -6,12 +6,6 @@ let
     rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
     hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
   };
-  yazi-flavors = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "flavors";
-    rev = "d04a298a8d4ada755816cb1a8cfb74dd46ef7124";
-    hash = "sha256-m3yk6OcJ9vbCwtxkMRVUDhMMTOwaBFlqWDxGqX2Kyvc=";
-  };
   starship-plugins = pkgs.fetchFromGitHub {
     owner = "Rolv-Apneseth";
     repo = "starship.yazi";
@@ -282,14 +276,8 @@ in
         }
       ];
     };
-    theme = {
-      flavor = {
-        dark = "catppuccin-mocha";
-      };
-    };
-    flavors = {
-      catppuccin-mocha = "${yazi-flavors}/catppuccin-mocha.yazi";
-    };
+    theme = { };
+    flavors = { };
     plugins = {
       git = "${yazi-plugins}/git.yazi";
       piper = "${yazi-plugins}/piper.yazi";
@@ -304,9 +292,9 @@ in
       ouch = "${pkgs.yaziPlugins.ouch}";
     };
   };
-  # catppuccin.yazi = {
-  #   enable = true;
-  #   flavor = "mocha";
-  #   accent = "mauve";
-  # };
+  catppuccin.yazi = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+  };
 }
