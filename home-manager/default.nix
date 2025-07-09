@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   imports = [
     ./scripts
@@ -13,6 +13,7 @@
     ./multiplexers
     ./file_manager
     ./music
+    ./search_and_replace
   ];
   home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;

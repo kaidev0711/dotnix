@@ -29,7 +29,6 @@
     pipes-rs
     hyperfine
     nix-prefetch-git
-    serpl
     presenterm
     glow
     hexyl

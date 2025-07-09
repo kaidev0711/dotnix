@@ -150,10 +150,11 @@
           l = ":log-open";
           c = ":lsp-workspace-command";
           y = ":yank-diagnostic";
-          e = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
-          v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
-          h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";
-          s = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/serpl-replace.sh";
+          e = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
+          v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
+          h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";
+          s = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh serpl";
+          S = ":sh ${pkgs.zellij}/bin/zellij run -n Scooter -c -f -x 10% -y 10% --width 80% --height 80% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh scooter";
         };
       };
       keys.insert = {
@@ -470,17 +471,26 @@
     fi
   '';
 
-  xdg.configFile."helix/serpl-replace.sh".text = ''
-    #!/usr/bin/env bash
-    ${pkgs.serpl}/bin/serpl
+  xdg.configFile."helix/replace.sh".text = ''
+    TOOL=$1
+    if [[ "$TOOL" == "serpl" ]]; then
+      ${pkgs.serpl}/bin/serpl
+    elif [[ "$TOOL" == "scooter" ]]; then
+      ${pkgs.scooter}/bin/scooter
+    else
+      echo "Invalid tool: $TOOL"
+      exit 1
+    fi
     exit_code=$?
 
     if [[ $exit_code -eq 0 ]]; then
       ${pkgs.zellij}/bin/zellij action toggle-floating-panes
       ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
-      ${pkgs.zellij}/bin/zellij action write 13 # send <Enter> key
+      ${pkgs.zellij}/bin/zellij action write 13
     else
-    	${pkgs.zellij}/bin/zellij action toggle-floating-panes
+      echo "$TOOL failed with exit code $exit_code"
+      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
+      exit $exit_code
     fi
   '';
 }
