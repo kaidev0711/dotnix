@@ -6,5 +6,8 @@
     typescript
     pnpm
     yarn
+    vscode-langservers-extracted
+    tailwindcss_4
+    tailwindcss-language-server
   ];
 }

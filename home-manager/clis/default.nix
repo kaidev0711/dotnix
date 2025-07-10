@@ -38,5 +38,6 @@
     wiki-tui
     xh
     sniffnet
+    xan
   ];
 }

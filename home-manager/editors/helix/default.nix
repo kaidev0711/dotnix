@@ -197,7 +197,42 @@
     languages = {
       language = [
         {
+          name = "html";
+          language-servers = [
+            "vscode-html-language-server"
+            "tailwindcss-ls"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "html"
+            ];
+          };
+        }
+        {
+          name = "css";
+          language-servers = [
+            "vscode-css-language-server"
+            "tailwindcss-ls"
+          ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "css"
+            ];
+          };
+        }
+        {
           name = "json";
+          language-servers = [ "vscode-json-language-server" ];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
@@ -210,7 +245,25 @@
           };
         }
         {
+          name = "jsonc";
+          language-servers = [ "vscode-json-language-server" ];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.deno;
+            args = [
+              "fmt"
+              "-"
+              "--ext"
+              "jsonc"
+            ];
+          };
+        }
+        {
           name = "typescript";
+          language-servers = [
+            "deno-lsp"
+            "tailwindcss-ls"
+          ];
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -226,10 +279,13 @@
               "ts"
             ];
           };
-          language-servers = [ "deno-lsp" ];
         }
         {
           name = "javascript";
+          language-servers = [
+            "deno-lsp"
+            "tailwindcss-ls"
+          ];
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -245,10 +301,13 @@
               "js"
             ];
           };
-          language-servers = [ "deno-lsp" ];
         }
         {
           name = "jsx";
+          language-servers = [
+            "deno-lsp"
+            "tailwindcss-ls"
+          ];
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -264,10 +323,13 @@
               "jsx"
             ];
           };
-          language-servers = [ "deno-lsp" ];
         }
         {
           name = "tsx";
+          language-servers = [
+            "deno-lsp"
+            "tailwindcss-ls"
+          ];
           roots = [
             "deno.json"
             "deno.jsonc"
@@ -283,26 +345,26 @@
               "tsx"
             ];
           };
-          language-servers = [ "deno-lsp" ];
         }
         {
           name = "nix";
-          auto-format = true;
           language-servers = [
             "nixd"
             "harper-ls"
           ];
+          auto-format = true;
           formatter = {
             command = lib.getExe pkgs.nixfmt-rfc-style;
           };
         }
         {
           name = "rust";
-          auto-format = true;
           language-servers = [
             "rust-analyzer"
             "harper-ls"
+            "tailwindcss-ls"
           ];
+          auto-format = true;
         }
         {
           name = "toml";
@@ -324,12 +386,12 @@
         }
         {
           name = "markdown";
-          auto-format = true;
           language-servers = [
             "markdown-oxide"
             "marksman"
             "harper-ls"
           ];
+          auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
             args = [
@@ -346,8 +408,8 @@
         }
         {
           name = "typst";
-          auto-format = true;
           language-servers = [ "tinymist" ];
+          auto-format = true;
           formatter = {
             command = lib.getExe pkgs.typstyle;
           };
@@ -355,16 +417,63 @@
         {
           name = "elixir";
           language-servers = [ "elixir-ls" ];
+          auto-format = true;
         }
         {
           name = "heex";
-          language-servers = [ "elixir-ls" ];
+          language-servers = [
+            "elixir-ls"
+            "tailwindcss-ls"
+          ];
+          auto-format = true;
         }
         {
           name = "eex";
+          auto-format = true;
         }
       ];
       language-server = {
+        tailwindcss-ls = {
+          command = lib.getExe pkgs.tailwindcss-language-server;
+          args = [ "--stdio" ];
+          config = {
+            userLanguages = {
+              rust = "html";
+              "*.rs" = "html";
+            };
+          };
+        };
+        vscode-html-language-server = {
+          command = "vscode-html-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+          };
+        };
+        vscode-css-language-server = {
+          command = "vscode-css-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+            css = {
+              validate = {
+                enable = true;
+              };
+            };
+          };
+        };
+        vscode-json-language-server = {
+          command = "vscode-json-language-server";
+          args = [ "--stdio" ];
+          config = {
+            provideFormatter = true;
+            json = {
+              validate = {
+                enable = true;
+              };
+            };
+          };
+        };
         elixir-ls = {
           command = lib.getExe pkgs.beam28Packages.elixir-ls;
           config = {
