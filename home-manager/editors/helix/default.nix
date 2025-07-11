@@ -201,6 +201,7 @@
           language-servers = [
             "vscode-html-language-server"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -218,6 +219,7 @@
           language-servers = [
             "vscode-css-language-server"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -232,7 +234,10 @@
         }
         {
           name = "json";
-          language-servers = [ "vscode-json-language-server" ];
+          language-servers = [
+            "vscode-json-language-server"
+            "harper-ls"
+          ];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
@@ -246,7 +251,10 @@
         }
         {
           name = "jsonc";
-          language-servers = [ "vscode-json-language-server" ];
+          language-servers = [
+            "vscode-json-language-server"
+            "harper-ls"
+          ];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
@@ -263,6 +271,7 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -285,6 +294,7 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -307,6 +317,7 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -329,6 +340,7 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -404,11 +416,17 @@
         }
         {
           name = "nu";
-          language-servers = [ "nu-lsp" ];
+          language-servers = [
+            "nu-lsp"
+            "harper-ls"
+          ];
         }
         {
           name = "typst";
-          language-servers = [ "tinymist" ];
+          language-servers = [
+            "tinymist"
+            "harper-ls"
+          ];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.typstyle;
@@ -416,7 +434,10 @@
         }
         {
           name = "elixir";
-          language-servers = [ "elixir-ls" ];
+          language-servers = [
+            "elixir-ls"
+            "harper-ls"
+          ];
           auto-format = true;
         }
         {
@@ -424,6 +445,7 @@
           language-servers = [
             "elixir-ls"
             "tailwindcss-ls"
+            "harper-ls"
           ];
           auto-format = true;
         }
@@ -444,14 +466,14 @@
           };
         };
         vscode-html-language-server = {
-          command = "vscode-html-language-server";
+          command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
           args = [ "--stdio" ];
           config = {
             provideFormatter = true;
           };
         };
         vscode-css-language-server = {
-          command = "vscode-css-language-server";
+          command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
           args = [ "--stdio" ];
           config = {
             provideFormatter = true;
@@ -463,7 +485,7 @@
           };
         };
         vscode-json-language-server = {
-          command = "vscode-json-language-server";
+          command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
           args = [ "--stdio" ];
           config = {
             provideFormatter = true;
