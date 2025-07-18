@@ -17,5 +17,9 @@
     ast-grep
     tabiew
     kalker
+    taplo
+    codebook
+    nixd
+    nixfmt-rfc-style
   ];
 }

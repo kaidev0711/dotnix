@@ -30,19 +30,6 @@
       	rm -fp $tmp
       }
 
-      $env.config.keybindings ++= [
-        {
-          name: fuzzy_file
-          modifier: Control
-          keycode: char_t
-          mode: emacs
-          event: {
-            send: executehostcommand
-            cmd: "commandline edit --insert (tv)"
-          }
-        }
-      ]
-
       alias nu-open = open
       alias open = ^open
 
@@ -116,7 +103,9 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/typst/typst-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu"
 
-      ### web completions
+      # television
+      mkdir ($nu.data-dir | path join "vendor/autoload")
+      tv init nu | save -f ($nu.data-dir | path join "vendor/autoload/tv.nu")
     '';
     shellAliases = {
       cp = "cp -i";
