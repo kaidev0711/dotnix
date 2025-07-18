@@ -1,8 +1,8 @@
 { ... }:
 {
   programs.atuin = {
-    enable = true;
-    enableNushellIntegration = true;
+    enable = false;
+    enableNushellIntegration = false;
     enableFishIntegration = false;
     flags = [ "--disable-up-arrow" ];
     settings = {
