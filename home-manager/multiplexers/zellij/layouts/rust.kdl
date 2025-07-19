@@ -3,7 +3,6 @@ layout {
         pane split_direction="vertical" { 
             pane edit="src/main.rs" size="60%" focus=true
             pane split_direction="horizontal" size="40%"{ 
-                pane edit="./Cargo.toml"
                 pane command="bacon" {
                     args "run"
                 }
