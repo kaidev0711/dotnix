@@ -165,7 +165,7 @@
           ];
         }
         {
-          "if".app-id = "com.google.Chrome";
+          "if".app-id = "app.zen-browser.zen";
           run = [ "move-node-to-workspace Browser" ];
         }
         {

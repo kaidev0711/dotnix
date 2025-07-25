@@ -11,11 +11,11 @@
     ];
     casks = [
       "keka"
-      "google-chrome"
       "skim"
       "signal"
       "telegram"
       "discord"
+      "zen"
     ];
     taps = [
 
