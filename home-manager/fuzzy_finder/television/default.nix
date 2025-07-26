@@ -9,10 +9,8 @@
       history_size = 200;
       global_history = false;
       ui = {
-        use_nerd_font_icons = false;
+        use_nerd_font_icons = true;
         ui_scale = 100;
-        input_bar_position = "top";
-        input_prompt = ">";
         orientation = "landscape";
         theme = "default";
         preview_size = 50;
@@ -34,13 +32,22 @@
             visible = false;
           };
         };
+        input_bar = {
+          position = "top";
+          prompt = ">";
+          border_type = "rounded";
+        };
         status_bar = {
           separator_open = "";
           separator_close = "";
         };
+        results_panel = {
+          border_type = "rounded";
+        };
         preview_panel = {
           size = 50;
           scrollbar = true;
+          border_type = "rounded";
         };
         remote_control = {
           show_channel_descriptions = true;
