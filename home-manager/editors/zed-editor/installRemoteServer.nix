@@ -1,5 +1,5 @@
 {
   programs.zed-editor = {
-    # installRemoteServer = true;
+    installRemoteServer = true;
   };
 }
