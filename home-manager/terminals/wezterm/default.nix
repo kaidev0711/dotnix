@@ -14,7 +14,7 @@
       config.enable_tab_bar = false
       config.window_decorations = "RESIZE"
       config.window_background_opacity = 1.0
-      config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Bold' })
+      config.font = wezterm.font('FiraCode Nerd Font Mono', { weight = 'Bold' })
       config.font_size = 18
       config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
       config.warn_about_missing_glyphs=false
@@ -23,7 +23,7 @@
       config.default_cursor_style = "BlinkingBar"
       config.cursor_blink_rate = 400
 
-      config.inactive_pane_hsb = {	
+      config.inactive_pane_hsb = {
       	saturation = 0.9,
       	brightness = 0.8,
       }
@@ -73,7 +73,7 @@
 
           -- Cancel the mode by pressing escape
           { key = 'Escape', action = 'PopKeyTable' },
-        },   
+        },
       }
       -- config.bypass_mouse_reporting_modifiers = 'ALT'
       -- config.bypass_mouse_reporting_modifiers = 'SHIFT'
