@@ -5,12 +5,12 @@
       disable_ai = true;
       vim_mode = true;
       base_keymap = "VSCode";
-      ui_font_family = "JetBrains Mono";
+      ui_font_family = "FiraCode Nerd Font";
       ui_font_size = 16;
-      buffer_font_family = "JetBrains Mono";
+      buffer_font_family = "FiraCode Nerd Font";
       buffer_font_size = 16;
       terminal = {
-        font_family = "Hack Nerd Font";
+        font_family = "FiraCode Nerd Font";
         env = {
           EDITOR = "zed --wait";
         };

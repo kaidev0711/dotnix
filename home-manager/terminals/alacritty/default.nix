@@ -25,19 +25,19 @@
       };
       font = {
         normal = {
-          family = "Hack Nerd Font Mono";
+          family = "FiraCode Nerd Font";
           style = "Regular";
         };
         italic = {
-          family = "Hack Nerd Font Mono";
+          family = "FiraCode Nerd Font";
           style = "Italic";
         };
         bold = {
-          family = "Hack Nerd Font Mono";
+          family = "FiraCode Nerd Font";
           style = "Bold";
         };
         bold_italic = {
-          family = "Hack Nerd Font Mono";
+          family = "FiraCode Nerd Font";
           style = "Bold Italic";
         };
         size = 16;

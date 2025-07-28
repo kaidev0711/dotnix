@@ -14,26 +14,10 @@
       config.enable_tab_bar = false
       config.window_decorations = "RESIZE"
       config.window_background_opacity = 1.0
-      config.font = wezterm.font_with_fallback {
-        {
-        	family = 'JetBrains Mono',
-        	weight = 'Bold',
-         	style = "Normal",
-        },
-      	{
-          family = 'Cascadia Code',
-          weight = 'Bold',
-      		style = "Normal",
-        },
-        {
-        	family = 'GeistMono Nerd Font',
-        	weight = 'Bold',
-        	style = "Normal"
-        },
-      }
+      config.font = wezterm.font('FiraCode Nerd Font', { weight = 'Bold' })
+      config.font_size = 18
       config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }
       config.warn_about_missing_glyphs=false
-      config.font_size = 17
       config.scrollback_lines = 3000
       config.window_close_confirmation = 'NeverPrompt'
       config.default_cursor_style = "BlinkingBar"
