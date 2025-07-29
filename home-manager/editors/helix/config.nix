@@ -69,33 +69,7 @@
         file-picker = {
           hidden = false;
         };
-        statusline = {
-          left = [
-            "mode"
-            "spinner"
-          ];
-          center = [ "file-name" ];
-          right = [
-            "diagnostics"
-            "selections"
-            "position"
-            "file-encoding"
-            "file-line-ending"
-            "file-type"
-          ];
-          separator = "│";
-          mode.normal = "NORMAL";
-          mode.insert = "INSERT";
-          mode.select = "SELECT";
-          diagnostics = [
-            "warning"
-            "error"
-          ];
-          workspace-diagnostics = [
-            "warning"
-            "error"
-          ];
-        };
+        statusline = { };
         lsp = {
           display-inlay-hints = true;
           display-messages = true;

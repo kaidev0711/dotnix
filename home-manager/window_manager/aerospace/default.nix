@@ -169,7 +169,7 @@
           ];
         }
         {
-          "if".app-id = "app.zen-browser.zen";
+          "if".app-id = "org.mozilla.firefox";
           run = [ "move-node-to-workspace Browser" ];
         }
         {

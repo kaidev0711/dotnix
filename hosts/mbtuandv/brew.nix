@@ -15,7 +15,7 @@
       "signal"
       "telegram"
       "discord"
-      "zen"
+      "firefox"
     ];
     taps = [
 

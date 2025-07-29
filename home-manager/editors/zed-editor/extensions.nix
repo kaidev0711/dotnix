@@ -3,6 +3,8 @@
     extensions = [
       "nix"
       "toml"
+      "postgres-language-server"
+      "sql"
     ];
   };
 }
