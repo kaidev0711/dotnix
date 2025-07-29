@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     rustup
     rustlings
+    workshop-runner
     cargo-nextest
     cargo-audit
     cargo-flamegraph

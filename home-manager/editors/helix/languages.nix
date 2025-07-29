@@ -8,6 +8,11 @@
     languages = {
       language = [
         {
+          name = "sql";
+          language-servers = [ "pgtools" ];
+          auto-format = true;
+        }
+        {
           name = "html";
           language-servers = [
             "vscode-html-language-server"
@@ -272,6 +277,10 @@
         }
       ];
       language-server = {
+        pgtools = {
+          command = "postgrestools";
+          args = [ "lsp-proxy" ];
+        };
         codebook = {
           command = lib.getExe pkgs.codebook;
           args = [ "serve" ];
