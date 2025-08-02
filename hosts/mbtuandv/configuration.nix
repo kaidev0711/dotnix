@@ -22,7 +22,7 @@ in {
     postgresql = {
       enable = true;
       package = pkgs.postgresql;
-      dataDir = "/Users/tuandv/Database/PostgreSQL/17";
+      dataDir = "/Users/tuandv/Database/_postgresql/17";
       enableTCPIP = true;
       authentication = pkgs.lib.mkOverride 10 ''
         #type database DBuser origin-address auth-method

@@ -23,6 +23,7 @@
     nix-darwin,
     nixpkgs,
     home-manager,
+    catppuccin,
     ...
   }: {
     darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
@@ -37,7 +38,7 @@
           home-manager.users.tuandv = {
             imports = [
               ./hosts/mbtuandv/home.nix
-              inputs.catppuccin.homeModules.catppuccin
+              catppuccin.homeModules.catppuccin
             ];
           };
         }
