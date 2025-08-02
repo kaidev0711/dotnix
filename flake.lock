@@ -181,7 +181,8 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs_2",
-        "television": "television"
+        "television": "television",
+        "yazi-plugins": "yazi-plugins"
       }
     },
     "systems": {
@@ -218,6 +219,22 @@
         "owner": "alexpasmantier",
         "ref": "main",
         "repo": "television",
+        "type": "github"
+      }
+    },
+    "yazi-plugins": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753282815,
+        "narHash": "sha256-ixZKOtLOwLHLeSoEkk07TB3N57DXoVEyImR3qzGUzxQ=",
+        "owner": "yazi-rs",
+        "repo": "plugins",
+        "rev": "de53d90cb2740f84ae595f93d0c4c23f8618a9e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yazi-rs",
+        "repo": "plugins",
         "type": "github"
       }
     }

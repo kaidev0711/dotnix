@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   xdg.configFile."serpl/config.toml".text = ''
     [keybindings]
     "<Ctrl-d>" = "Quit"

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   catppuccin.tmux = {
     enable = true;
     flavor = "mocha";
@@ -52,10 +51,10 @@
       unbind C-b
       unbind '"'
       unbind %
-      unbind "\$" 
+      unbind "\$"
       unbind n
       unbind p
-      unbind &  
+      unbind &
 
       bind | split-window -h -c "#{pane_current_path}"
       bind _ split-window -v -c "#{pane_current_path}"
@@ -79,8 +78,8 @@
       bind x kill-pane
       bind X kill-window
 
-      bind > swap-pane -D       
-      bind < swap-pane -U 
+      bind > swap-pane -D
+      bind < swap-pane -U
 
       bind c new-window -c "#{pane_current_path}"
     '';

@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   catppuccin.fish = {
     enable = true;
     flavor = "mocha";
@@ -26,7 +25,7 @@
       ju = "${pkgs.just}/bin/just";
       pre = "${pkgs.presenterm}/bin/presenterm";
     };
-    plugins = [ ];
+    plugins = [];
     functions = {
       fish_greeting = '''';
       mkcd = ''
@@ -42,7 +41,7 @@
         end
       '';
     };
-    shellAbbrs = { };
+    shellAbbrs = {};
     shellInit = ''
       # Rust
       set -x PATH $PATH ${config.home.homeDirectory}/.cargo/bin

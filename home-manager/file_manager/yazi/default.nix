@@ -1,19 +1,15 @@
-{ pkgs, ... }:
-let
-  yazi-plugins = pkgs.fetchFromGitHub {
-    owner = "yazi-rs";
-    repo = "plugins";
-    rev = "63f9650e522336e0010261dcd0ffb0bf114cf912";
-    hash = "sha256-ZCLJ6BjMAj64/zM606qxnmzl2la4dvO/F5QFicBEYfU=";
-  };
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   starship-plugins = pkgs.fetchFromGitHub {
     owner = "Rolv-Apneseth";
     repo = "starship.yazi";
     rev = "6a0f3f788971b155cbc7cec47f6f11aebbc148c9";
     hash = "sha256-q1G0Y4JAuAv8+zckImzbRvozVn489qiYVGFQbdCxC98=";
   };
-in
-{
+in {
   xdg.configFile = {
     "yazi/plugins/folder-rules.yazi/main.lua".text = ''
       local function setup()
@@ -266,7 +262,7 @@ in
           desc = "Show Git file changes";
         }
         {
-          on = [ "C" ];
+          on = ["C"];
           run = "plugin ouch";
           desc = "Compress with ouch";
         }
@@ -276,18 +272,18 @@ in
         }
       ];
     };
-    theme = { };
-    flavors = { };
+    theme = {};
+    flavors = {};
     plugins = {
-      git = "${yazi-plugins}/git.yazi";
-      piper = "${yazi-plugins}/piper.yazi";
-      vcs-files = "${yazi-plugins}/vcs-files.yazi";
-      chmod = "${yazi-plugins}/chmod.yazi";
-      full-border = "${yazi-plugins}/full-border.yazi";
-      toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
-      smart-enter = "${yazi-plugins}/smart-enter.yazi";
-      smart-paste = "${yazi-plugins}/smart-paste.yazi";
-      smart-filter = "${yazi-plugins}/smart-filter.yazi";
+      git = "${inputs.yazi-plugins}/git.yazi";
+      piper = "${inputs.yazi-plugins}/piper.yazi";
+      vcs-files = "${inputs.yazi-plugins}/vcs-files.yazi";
+      chmod = "${inputs.yazi-plugins}/chmod.yazi";
+      full-border = "${inputs.yazi-plugins}/full-border.yazi";
+      toggle-pane = "${inputs.yazi-plugins}/toggle-pane.yazi";
+      smart-enter = "${inputs.yazi-plugins}/smart-enter.yazi";
+      smart-paste = "${inputs.yazi-plugins}/smart-paste.yazi";
+      smart-filter = "${inputs.yazi-plugins}/smart-filter.yazi";
       starship = "${starship-plugins}";
       ouch = "${pkgs.yaziPlugins.ouch}";
     };

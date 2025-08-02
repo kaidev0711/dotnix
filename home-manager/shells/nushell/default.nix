@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   catppuccin.nushell = {
     enable = true;
     flavor = "mocha";
@@ -46,7 +45,7 @@
     '';
     extraEnv = ''
       # $env.XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
-      $env.SHELL = "${pkgs.nushell}/bin/nu"      
+      $env.SHELL = "${pkgs.nushell}/bin/nu"
       $env.EDITOR = "hx"
       $env.VISUAL = "hx"
       $env.GPG_TTY = (tty)
@@ -74,10 +73,10 @@
       $env.PATH = ($env.PATH | uniq)
 
       # Nu_resources
-      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/resource/rust.nu" 
+      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/resource/rust.nu"
 
-      # Nu_modules  
-      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu" 
+      # Nu_modules
+      source "${config.home.homeDirectory}/Dotnix/home-manager/shells/nushell/modules/broot.nu"
 
       # Themes
       # use "${pkgs.nu_scripts}/share/nu_scripts/themes/nu-themes/default-dark.nu"

@@ -10,6 +10,6 @@
     };
   };
   programs.zed-editor = {
-    themes = { };
+    themes = {};
   };
 }

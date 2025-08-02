@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   xdg.configFile."moxide/settings.toml".text = ''
     # Leave blank to try to import from Obsidian Daily Notes
     dailynote = "%Y-%m-%d" # this is akin to YYYY-MM-DD from Obsidian
@@ -14,7 +13,7 @@
     # If false, [](file) -> [](file) (for example)
     title_headings = true
 
-    # Show diagnostics for unresolved links; note that even if this is turned off, 
+    # Show diagnostics for unresolved links; note that even if this is turned off,
     # special semantic tokens will be sent for the unresolved links, allowing you
     # to visually identify unresolved links
     unresolved_diagnostics = true
@@ -28,7 +27,7 @@
 
     # The folder for new files to be created in; this is relevant for the code action that creates
     # from an unresolved link. If not specified, it will import from your obsidian config option titled
-    # "Default Location for new notes" -- which is "" by default too. 
+    # "Default Location for new notes" -- which is "" by default too.
     new_file_folder_path = ""
 
 

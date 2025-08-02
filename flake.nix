@@ -12,36 +12,36 @@
 
     catppuccin.url = "github:catppuccin/nix";
     television.url = "github:alexpasmantier/television/main";
+    yazi-plugins = {
+      url = "github:yazi-rs/plugins";
+      flake = false;
+    };
   };
 
-  outputs =
-    inputs@{
-      self,
-      nix-darwin,
-      nixpkgs,
-      home-manager,
-      catppuccin,
-      television,
-      ...
-    }:
-    {
-      darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./hosts/mbtuandv/configuration.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.users.tuandv = {
-              imports = [
-                ./hosts/mbtuandv/home.nix
-                catppuccin.homeModules.catppuccin
-              ];
-            };
-          }
-        ];
-      };
+  outputs = inputs @ {
+    self,
+    nix-darwin,
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
+    darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
+      modules = [
+        ./hosts/mbtuandv/configuration.nix
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.users.tuandv = {
+            imports = [
+              ./hosts/mbtuandv/home.nix
+              inputs.catppuccin.homeModules.catppuccin
+            ];
+          };
+        }
+      ];
     };
+  };
 }

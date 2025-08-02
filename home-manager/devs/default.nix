@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./direnv
     ./rust
@@ -19,7 +18,8 @@
     kalker
     taplo
     codebook
+    nil
     nixd
-    nixfmt-rfc-style
+    alejandra
   ];
 }

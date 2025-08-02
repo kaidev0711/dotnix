@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   xdg.configFile."pipes-rs/config.toml".text = ''
     bold = true
     color_mode = "ansi" # ansi, rgb or none

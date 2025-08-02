@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   catppuccin.fzf = {
     enable = true;
     flavor = "mocha";

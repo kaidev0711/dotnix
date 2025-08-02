@@ -1,9 +1,7 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   hostname = "mbtuandv";
   username = "tuandv";
-in
-{
+in {
   imports = [
     ./system.nix
     ./brew.nix
@@ -35,7 +33,7 @@ in
     };
   };
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [];
 
   fonts = {
     packages = with pkgs; [
@@ -49,7 +47,7 @@ in
 
   nix = {
     settings = {
-      trusted-users = [ username ];
+      trusted-users = [username];
       experimental-features = "nix-command flakes";
       warn-dirty = false;
     };
@@ -73,6 +71,6 @@ in
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
-    overlays = [ ];
+    overlays = [];
   };
 }

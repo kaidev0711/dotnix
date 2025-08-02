@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.zed-editor = {
     userSettings = {
       disable_ai = true;

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     ./scripts
     ./shells
@@ -24,7 +23,7 @@
     EDITOR = "hx";
     SHELL = "${pkgs.nushell}/bin/nu";
   };
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [];
   programs.nix-index.enable = true;
   programs.home-manager.enable = true;
 }

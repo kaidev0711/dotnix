@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   catppuccin.alacritty = {
     enable = true;
     flavor = "mocha";

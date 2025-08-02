@@ -1,7 +1,6 @@
-{ ... }:
-{
+{...}: {
   programs.bacon = {
     enable = true;
-    settings = { };
+    settings = {};
   };
 }

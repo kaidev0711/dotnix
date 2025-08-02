@@ -1,5 +1,4 @@
-{ config, ... }:
-{
+{config, ...}: {
   programs.tealdeer = {
     enable = true;
     settings = {

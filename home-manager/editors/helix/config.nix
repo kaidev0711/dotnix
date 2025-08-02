@@ -2,8 +2,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -69,7 +68,7 @@
         file-picker = {
           hidden = false;
         };
-        statusline = { };
+        statusline = {};
         lsp = {
           display-inlay-hints = true;
           display-messages = true;
@@ -230,7 +229,7 @@
     if [[ $exit_code -eq 0 ]]; then
       ${pkgs.zellij}/bin/zellij action toggle-floating-panes
       ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
-      ${pkgs.zellij}/bin/zellij action write 13 
+      ${pkgs.zellij}/bin/zellij action write 13
     else
     	${pkgs.zellij}/bin/zellij action toggle-floating-panes
     fi

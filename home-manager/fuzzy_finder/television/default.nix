@@ -1,5 +1,8 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   programs.television = {
     enable = true;
     package = inputs.television.packages."${pkgs.system}".default;
@@ -146,7 +149,7 @@
             "git log"
             "git show"
           ];
-          "docker-images" = [ "docker run" ];
+          "docker-images" = ["docker run"];
           "git-repos" = [
             "nvim"
             "code"

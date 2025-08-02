@@ -18,7 +18,6 @@
       "firefox"
     ];
     taps = [
-
     ];
     masApps = {
       "Swift Playground" = 1496833156;

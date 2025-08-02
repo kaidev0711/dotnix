@@ -2,10 +2,9 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   home.activation = {
-    generateSshKey = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    generateSshKey = lib.hm.dag.entryAfter ["writeBoundary"] ''
       if [ ! -f "$HOME/.ssh/id_ed25519" ]; then
         /usr/bin/ssh-keygen -t ed25519 -f "$HOME/.ssh/id_ed25519" -N "" -C "kaiz.developers@gmail.com"
         chmod 600 "$HOME/.ssh/id_ed25519"
@@ -15,11 +14,10 @@
       fi
     '';
 
-    sshPermissions = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    sshPermissions = lib.hm.dag.entryAfter ["writeBoundary"] ''
       if [ -d "$HOME/.ssh" ]; then
         chmod 700 "$HOME/.ssh"
       fi
     '';
-
   };
 }

@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   xdg.configFile."scooter/config.toml".text = ''
     [editor_open]
     command = "hx %file +%line"

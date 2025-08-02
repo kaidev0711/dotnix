@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   xdg.configFile."presenterm/config.yaml".text = ''
     ---
     # yaml-language-server: $schema=https://raw.githubusercontent.com/mfontanini/presenterm/master/config-file-schema.json

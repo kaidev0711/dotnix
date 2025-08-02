@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   programs.aerospace = {
     enable = true;
     launchd = {
@@ -7,15 +6,15 @@
       keepAlive = true;
     };
     userSettings = {
-      after-startup-command = [ ];
-      exec-on-workspace-change = [ ];
+      after-startup-command = [];
+      exec-on-workspace-change = [];
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
       accordion-padding = 30;
       default-root-container-layout = "tiles";
       default-root-container-orientation = "auto";
-      on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
-      on-focus-changed = [ "move-mouse window-lazy-center" ];
+      on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
+      on-focus-changed = ["move-mouse window-lazy-center"];
       automatically-unhide-macos-hidden-apps = false;
 
       key-mapping = {
@@ -151,15 +150,15 @@
       on-window-detected = [
         {
           "if".app-id = "org.alacritty";
-          run = [ "move-node-to-workspace Terminal" ];
+          run = ["move-node-to-workspace Terminal"];
         }
         {
           "if".app-id = "com.github.wez.wezterm";
-          run = [ "move-node-to-workspace Terminal" ];
+          run = ["move-node-to-workspace Terminal"];
         }
         {
           "if".app-id = "dev.zed.Zed";
-          run = [ "move-node-to-workspace Editor" ];
+          run = ["move-node-to-workspace Editor"];
         }
         {
           "if".app-id = "com.apple.dt.Xcode";
@@ -170,31 +169,31 @@
         }
         {
           "if".app-id = "org.mozilla.firefox";
-          run = [ "move-node-to-workspace Browser" ];
+          run = ["move-node-to-workspace Browser"];
         }
         {
           "if".app-id = "com.apple.Safari";
-          run = [ "move-node-to-workspace Browser" ];
+          run = ["move-node-to-workspace Browser"];
         }
         {
           "if".app-id = "com.hnc.Discord";
-          run = [ "move-node-to-workspace Chat" ];
+          run = ["move-node-to-workspace Chat"];
         }
         {
           "if".app-id = "ru.keepcoder.Telegram";
-          run = [ "move-node-to-workspace Chat" ];
+          run = ["move-node-to-workspace Chat"];
         }
         {
           "if".app-id = "org.whispersystems.signal-desktop";
-          run = [ "move-node-to-workspace Chat" ];
+          run = ["move-node-to-workspace Chat"];
         }
         {
           "if".app-id = "com.apple.Notes";
-          run = [ "move-node-to-workspace Apple" ];
+          run = ["move-node-to-workspace Apple"];
         }
         {
           "if".app-id = "com.apple.finder";
-          run = [ "layout floating" ];
+          run = ["layout floating"];
         }
       ];
     };

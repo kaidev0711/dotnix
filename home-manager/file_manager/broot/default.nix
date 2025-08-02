@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   xdg.configFile."broot/skins/catppuccin_mocha.toml".text = ''
     [skin]
     directory = "ansi(12)"
@@ -185,10 +188,10 @@
       };
       preview_transformers = [
         {
-          input_extensions = [ "json" ];
+          input_extensions = ["json"];
           output_extension = "json";
           mode = "text";
-          command = [ "${pkgs.jq}/bin/jq" ];
+          command = ["${pkgs.jq}/bin/jq"];
         }
       ];
       verbs = [

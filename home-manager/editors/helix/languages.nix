@@ -2,8 +2,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.helix = {
     languages = {
       language = [
@@ -172,12 +171,17 @@
         {
           name = "nix";
           language-servers = [
+            "nil"
             "nixd"
             "harper-ls"
           ];
           auto-format = true;
           formatter = {
-            command = lib.getExe pkgs.nixfmt-rfc-style;
+            command = lib.getExe pkgs.alejandra;
+            args = [
+              "--quiet"
+              "--"
+            ];
           };
         }
         {
@@ -274,11 +278,11 @@
       language-server = {
         codebook = {
           command = lib.getExe pkgs.codebook;
-          args = [ "serve" ];
+          args = ["serve"];
         };
         tailwindcss-ls = {
           command = lib.getExe pkgs.tailwindcss-language-server;
-          args = [ "--stdio" ];
+          args = ["--stdio"];
           config = {
             userLanguages = {
               rust = "html";
@@ -288,14 +292,14 @@
         };
         vscode-html-language-server = {
           command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
           config = {
             provideFormatter = true;
           };
         };
         vscode-css-language-server = {
           command = "${pkgs.vscode-langservers-extracted}/bin/vscode-css-language-server";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
           config = {
             provideFormatter = true;
             css = {
@@ -307,7 +311,7 @@
         };
         vscode-json-language-server = {
           command = "${pkgs.vscode-langservers-extracted}/bin/vscode-json-language-server";
-          args = [ "--stdio" ];
+          args = ["--stdio"];
           config = {
             provideFormatter = true;
             json = {
@@ -325,14 +329,17 @@
         };
         nu-lsp = {
           command = "nu";
-          args = [ "--lsp" ];
+          args = ["--lsp"];
         };
         deno-lsp = {
           command = lib.getExe pkgs.deno;
-          args = [ "lsp" ];
+          args = ["lsp"];
           config = {
             deno.enable = true;
           };
+        };
+        nil = {
+          command = lib.getExe pkgs.nil;
         };
         nixd = {
           command = lib.getExe pkgs.nixd;

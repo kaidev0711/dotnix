@@ -1,9 +1,7 @@
-{ ... }:
-let
+{...}: let
   homeDirectory = "/Users/tuandv";
   username = "tuandv";
-in
-{
+in {
   security.pam.services.sudo_local.touchIdAuth = true;
   system = {
     primaryUser = "${username}";

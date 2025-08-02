@@ -1,5 +1,4 @@
-{ ... }:
-{
+{...}: {
   imports = [
     ./userSettings.nix
     ./userKeymaps.nix
