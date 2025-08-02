@@ -9,8 +9,8 @@
 
     # Set true if you title your notes by the first heading
     # Right now, if true this will cause completing a file link in the markdown style
-    # to insert the name of the first heading in the display text area
     # [](file) -> [first heading of file.md](file)
+    # to insert the name of the first heading in the display text area
     # If false, [](file) -> [](file) (for example)
     title_headings = true
 

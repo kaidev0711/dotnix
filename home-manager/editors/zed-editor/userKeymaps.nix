@@ -11,6 +11,13 @@
               reveal_target = "center";
             }
           ];
+          "space f w" = [
+            "task::Spawn"
+            {
+              task_name = "Live Grep";
+              reveal_target = "center";
+            }
+          ];
         };
       }
     ];

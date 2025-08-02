@@ -112,6 +112,7 @@
     };
     plugins = [
       pkgs.nushellPlugins.query
+      pkgs.nushellPlugins.polars
     ];
   };
 }

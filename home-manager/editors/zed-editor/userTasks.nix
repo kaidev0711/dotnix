@@ -9,6 +9,13 @@
         allow_concurrent_runs = true;
         use_new_terminal = true;
       }
+      {
+        label = "Live Grep";
+        command = "zeditor $(tv text)";
+        hide = "always";
+        allow_concurrent_runs = true;
+        use_new_terminal = true;
+      }
     ];
   };
 }

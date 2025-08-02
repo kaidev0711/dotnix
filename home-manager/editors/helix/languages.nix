@@ -8,11 +8,6 @@
     languages = {
       language = [
         {
-          name = "sql";
-          language-servers = [ "pgtools" ];
-          auto-format = true;
-        }
-        {
           name = "html";
           language-servers = [
             "vscode-html-language-server"
@@ -277,10 +272,6 @@
         }
       ];
       language-server = {
-        pgtools = {
-          command = "postgrestools";
-          args = [ "lsp-proxy" ];
-        };
         codebook = {
           command = lib.getExe pkgs.codebook;
           args = [ "serve" ];
@@ -395,6 +386,8 @@
               fileDictPath = "";
               diagnosticSeverity = "hint";
               isolateEnglish = false;
+              dialect = "American";
+              maxFileLength = 120000;
               linters = {
                 SpellCheck = true;
                 SpelledNumbers = false;

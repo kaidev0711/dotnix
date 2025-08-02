@@ -1,6 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
-  imports = [
-    ./postgres
-  ];
+  home.packages = with pkgs; [ ];
 }
