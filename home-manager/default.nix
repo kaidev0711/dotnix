@@ -13,6 +13,7 @@
     ./file_manager
     ./music
     ./search_and_replace
+    ./spell_checker
   ];
   home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;

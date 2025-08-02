@@ -11,7 +11,6 @@
           language-servers = [
             "vscode-html-language-server"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -29,7 +28,6 @@
           language-servers = [
             "vscode-css-language-server"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -46,7 +44,6 @@
           name = "json";
           language-servers = [
             "vscode-json-language-server"
-            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -63,7 +60,6 @@
           name = "jsonc";
           language-servers = [
             "vscode-json-language-server"
-            "harper-ls"
           ];
           auto-format = true;
           formatter = {
@@ -81,7 +77,6 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -104,7 +99,6 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -127,7 +121,6 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -150,7 +143,6 @@
           language-servers = [
             "deno-lsp"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           roots = [
             "deno.json"
@@ -173,7 +165,7 @@
           language-servers = [
             "nil"
             "nixd"
-            "harper-ls"
+            "typos-lsp"
           ];
           auto-format = true;
           formatter = {
@@ -188,9 +180,8 @@
           name = "rust";
           language-servers = [
             "rust-analyzer"
-            "harper-ls"
-            "tailwindcss-ls"
             "codebook"
+            "typos-lsp"
           ];
           auto-format = true;
         }
@@ -200,6 +191,7 @@
           language-servers = [
             "taplo"
             "codebook"
+            "typos-lsp"
           ];
           formatter = {
             command = lib.getExe pkgs.taplo;
@@ -221,8 +213,8 @@
           language-servers = [
             "markdown-oxide"
             "marksman"
-            "harper-ls"
             "codebook"
+            "typos-lsp"
           ];
           auto-format = true;
           formatter = {
@@ -239,7 +231,6 @@
           name = "nu";
           language-servers = [
             "nu-lsp"
-            "harper-ls"
           ];
         }
         {
@@ -257,7 +248,6 @@
           name = "elixir";
           language-servers = [
             "elixir-ls"
-            "harper-ls"
           ];
           auto-format = true;
         }
@@ -266,7 +256,6 @@
           language-servers = [
             "elixir-ls"
             "tailwindcss-ls"
-            "harper-ls"
           ];
           auto-format = true;
         }
@@ -276,19 +265,9 @@
         }
       ];
       language-server = {
-        codebook = {
-          command = lib.getExe pkgs.codebook;
-          args = ["serve"];
-        };
         tailwindcss-ls = {
           command = lib.getExe pkgs.tailwindcss-language-server;
           args = ["--stdio"];
-          config = {
-            userLanguages = {
-              rust = "html";
-              "*.rs" = "html";
-            };
-          };
         };
         vscode-html-language-server = {
           command = "${pkgs.vscode-langservers-extracted}/bin/vscode-html-language-server";
@@ -382,6 +361,18 @@
         tinymist = {
           command = lib.getExe pkgs.tinymist;
         };
+
+        # TODO: spell checker
+        codebook = {
+          command = lib.getExe pkgs.codebook;
+          args = ["serve"];
+        };
+        typos-lsp = {
+          command = lib.getExe pkgs.typos-lsp;
+          config = {
+            diagnosticSeverity = "Hint";
+          };
+        };
         harper-ls = {
           command = lib.getExe pkgs.harper;
           args = [
@@ -389,31 +380,7 @@
           ];
           config = {
             harper-ls = {
-              userDictPath = "";
-              fileDictPath = "";
               diagnosticSeverity = "hint";
-              isolateEnglish = false;
-              dialect = "American";
-              maxFileLength = 120000;
-              linters = {
-                SpellCheck = true;
-                SpelledNumbers = false;
-                AnA = true;
-                SentenceCapitalization = true;
-                UnclosedQuotes = true;
-                WrongQuotes = false;
-                LongSentences = true;
-                RepeatedWords = true;
-                Spaces = true;
-                Matcher = true;
-                CorrectNumberSuffix = true;
-              };
-              codeActions = {
-                ForceStable = false;
-              };
-              markdown = {
-                IgnoreLinkTitle = false;
-              };
             };
           };
         };

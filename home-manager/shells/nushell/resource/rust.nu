@@ -1,7 +1,7 @@
 export def "rust commands" [] {
     [
         [command                   description];
-        ["cargo nextest"           "executs tests faster and other goodies"]
+        ["cargo nextest"           "executes tests faster and other goodies"]
         ["cargo outdated"          "shows outdated deps"]
         ["cargo sort"              "sorts cargo.toml deps alphabetically"]
         ["cargo sweep"             "removes built artifacts matching certain properties"]

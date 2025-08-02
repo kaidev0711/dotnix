@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   imports = [
     ./direnv
+    ./nix
     ./rust
+    ./toml
     ./swift
     ./markdown
     ./web
@@ -12,14 +14,8 @@
   home.packages = with pkgs; [
     # devenv
     hurl
-    harper
     ast-grep
     tabiew
     kalker
-    taplo
-    codebook
-    nil
-    nixd
-    alejandra
   ];
 }

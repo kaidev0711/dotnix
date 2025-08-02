@@ -11,11 +11,13 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     catppuccin.url = "github:catppuccin/nix";
-    television.url = "github:alexpasmantier/television/main";
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
       flake = false;
     };
+    television.url = "github:alexpasmantier/television";
+    helix.url = "github:helix-editor/helix";
+    wezterm.url = "github:wez/wezterm?dir=nix";
   };
 
   outputs = inputs @ {

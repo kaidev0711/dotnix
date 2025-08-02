@@ -1,11 +1,13 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    package = inputs.helix.packages.${pkgs.system}.default;
     settings = {
       theme = "transparent";
       editor = {
@@ -125,18 +127,6 @@
             o = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
             v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
             h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";
-            O = [
-              ":sh rm -f /tmp/files2open"
-              ":set mouse false"
-              ":insert-output yazi %{buffer_name} --chooser-file=/tmp/files2open"
-              ":redraw"
-              ":set mouse true"
-              ":open /tmp/files2open"
-              "select_all"
-              "split_selection_on_newline"
-              "goto_file"
-              ":buffer-close! /tmp/files2open"
-            ];
           };
           s = {
             s = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh serpl";
