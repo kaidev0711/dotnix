@@ -157,10 +157,6 @@
           run = ["move-node-to-workspace Terminal"];
         }
         {
-          "if".app-id = "dev.zed.Zed";
-          run = ["move-node-to-workspace Editor"];
-        }
-        {
           "if".app-id = "com.apple.dt.Xcode";
           run = [
             "layout floating"

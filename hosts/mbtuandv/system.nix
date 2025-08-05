@@ -11,8 +11,8 @@ in {
         # _HIHideMenuBar = true;
         "com.apple.trackpad.scaling" = 3.0;
         "com.apple.sound.beep.feedback" = 0;
-        AppleInterfaceStyle = "Dark";
         AppleKeyboardUIMode = 3;
+        AppleInterfaceStyle = "Dark";
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         InitialKeyRepeat = 15;
@@ -50,7 +50,6 @@ in {
           "/Applications/Firefox.app"
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
-          "${homeDirectory}/Applications/Home Manager Apps/Zed.app"
           "/Applications/Discord.app"
           "/Applications/Signal.app"
           "/Applications/Telegram.app"
