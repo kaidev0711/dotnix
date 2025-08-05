@@ -17,6 +17,7 @@
     ./glow
     ./atuin
     ./ripgrep-all
+    ./tailspin
   ];
   home.packages = with pkgs; [
     wget
@@ -38,5 +39,6 @@
     xh
     sniffnet
     xan
+    tailspin
   ];
 }
