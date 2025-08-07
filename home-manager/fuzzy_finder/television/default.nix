@@ -12,29 +12,9 @@
       history_size = 200;
       global_history = false;
       ui = {
-        use_nerd_font_icons = true;
         ui_scale = 100;
         orientation = "landscape";
         theme = "default";
-        preview_size = 50;
-        features = {
-          preview_panel = {
-            enabled = true;
-            visible = true;
-          };
-          help_panel = {
-            enabled = true;
-            visible = false;
-          };
-          status_bar = {
-            enabled = true;
-            visible = true;
-          };
-          remote_control = {
-            enabled = true;
-            visible = false;
-          };
-        };
         input_bar = {
           position = "top";
           prompt = ">";
@@ -43,6 +23,7 @@
         status_bar = {
           separator_open = "";
           separator_close = "";
+          hidden = false;
         };
         results_panel = {
           border_type = "rounded";
@@ -51,6 +32,11 @@
           size = 50;
           scrollbar = true;
           border_type = "rounded";
+          hidden = false;
+        };
+        help_panel = {
+          show_categories = true;
+          hidden = true;
         };
         remote_control = {
           show_channel_descriptions = true;
