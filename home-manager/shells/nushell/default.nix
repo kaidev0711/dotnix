@@ -44,7 +44,6 @@
 
     '';
     extraEnv = ''
-      # $env.XDG_CONFIG_HOME = "${config.home.homeDirectory}/.config";
       $env.SHELL = "${pkgs.nushell}/bin/nu"
       $env.EDITOR = "hx"
       $env.VISUAL = "hx"
@@ -55,14 +54,19 @@
 
       $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
 
+      $env.GOPATH = ($env.HOME + "/go:" + $env.HOME + "/Devs/_go")
+      $env.GOBIN = ($env.HOME + "/go/bin")
+
       use std/util "path add"
-      path add "${config.home.homeDirectory}/.local/bin"
-      path add "${config.home.homeDirectory}/.cargo/bin"
-      path add "/opt/homebrew/bin"
-      path add "/opt/homebrew/sbin"
+      path add ($env.HOME + "/.local/bin")
+      path add ($env.HOME + "/.cargo/bin")
+      path add ($env.HOME + "/go/bin")
       path add "/nix/var/nix/profiles/default/bin"
       path add "/run/current-system/sw/bin"
       path add "/etc/profiles/per-user/${config.home.username}/bin"
+      path add ($env.HOME + "/.nix-profile/bin")
+      path add "/opt/homebrew/bin"
+      path add "/opt/homebrew/sbin"
       path add "/usr/local/bin"
       path add "/usr/local/sbin"
       path add "/usr/sbin"

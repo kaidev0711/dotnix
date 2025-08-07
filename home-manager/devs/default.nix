@@ -3,6 +3,7 @@
     ./direnv
     ./nix
     ./rust
+    ./go
     ./toml
     ./swift
     ./markdown

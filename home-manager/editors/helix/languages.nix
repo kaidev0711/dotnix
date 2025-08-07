@@ -164,7 +164,6 @@
           name = "nix";
           language-servers = [
             "nil"
-            "nixd"
             "typos-lsp"
           ];
           auto-format = true;
@@ -200,6 +199,14 @@
               "-"
             ];
           };
+        }
+        {
+          name = "go";
+          language-servers = ["gopls" "golangci-lint-lsp"];
+          formatter = {
+            command = "goimports";
+          };
+          auto-format = true;
         }
         {
           name = "swift";
@@ -253,10 +260,7 @@
         }
         {
           name = "heex";
-          language-servers = [
-            "elixir-ls"
-            "tailwindcss-ls"
-          ];
+          language-servers = ["elixir-ls" "tailwindcss-ls"];
           auto-format = true;
         }
         {
@@ -300,6 +304,28 @@
             };
           };
         };
+        # Golang
+        gopls = {
+          command = lib.getExe pkgs.gopls;
+          config = {
+            gofumpt = true;
+            hints = {
+              assignVariableTypes = true;
+              compositeLiteralFields = true;
+              constantValues = true;
+              functionTypeParameters = true;
+              parameterNames = true;
+              rangeVariableTypes = true;
+            };
+          };
+        };
+        golangci-lint-lsp = {
+          command = lib.getExe pkgs.golangci-lint-langserver;
+          config = {
+            command = ["golangci-lint" "run" "--output.json.path=stdout" "--show-stats=false" "--issues-exit-code=1"];
+          };
+        };
+
         elixir-ls = {
           command = lib.getExe pkgs.beam28Packages.elixir-ls;
           config = {
@@ -319,9 +345,6 @@
         };
         nil = {
           command = lib.getExe pkgs.nil;
-        };
-        nixd = {
-          command = lib.getExe pkgs.nixd;
         };
         rust-analyzer = {
           command = "rust-analyzer";
