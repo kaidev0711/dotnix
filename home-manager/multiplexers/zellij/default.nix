@@ -10,5 +10,6 @@ in {
   };
   xdg.configFile."zellij/config.kdl".source = ./config.kdl;
   xdg.configFile."zellij/layouts".source = ./layouts;
+  xdg.configFile."zellij/themes".source = ./themes;
   xdg.configFile."zellij/plugins/room.wasm".source = roomPlugin;
 }
