@@ -15,8 +15,4 @@
       )
     '';
   };
-  catppuccin.gitui = {
-    enable = true;
-    flavor = "mocha";
-  };
 }

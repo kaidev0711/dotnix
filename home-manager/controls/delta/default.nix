@@ -7,8 +7,4 @@
       line-numbers = true;
     };
   };
-  catppuccin.delta = {
-    enable = true;
-    flavor = "mocha";
-  };
 }

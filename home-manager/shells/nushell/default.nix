@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  catppuccin.nushell = {
-    enable = true;
-    flavor = "mocha";
-  };
   programs.nushell = {
     enable = true;
     extraConfig = ''

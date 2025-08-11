@@ -12,7 +12,7 @@
       local config = {}
       if wezterm.config_builder then config = wezterm.config_builder() end
       config.default_prog = {"${pkgs.nushell}/bin/nu", "-l"}
-      config.color_scheme = 'Catppuccin Mocha (Gogh)'
+      config.color_scheme = 'rose-pine'
       config.initial_cols = 150
       config.initial_rows = 40
       config.enable_tab_bar = false

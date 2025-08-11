@@ -10,7 +10,10 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    catppuccin.url = "github:catppuccin/nix";
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
       flake = false;
@@ -25,7 +28,7 @@
     nix-darwin,
     nixpkgs,
     home-manager,
-    catppuccin,
+    stylix,
     ...
   }: {
     darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
@@ -40,7 +43,7 @@
           home-manager.users.tuandv = {
             imports = [
               ./hosts/mbtuandv/home.nix
-              catppuccin.homeModules.catppuccin
+              stylix.homeModules.stylix
             ];
           };
         }

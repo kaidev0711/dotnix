@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  catppuccin.fish = {
-    enable = true;
-    flavor = "mocha";
-  };
   programs.fish = {
     enable = true;
     shellAliases = {

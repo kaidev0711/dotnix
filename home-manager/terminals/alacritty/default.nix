@@ -1,8 +1,8 @@
-{pkgs, ...}: {
-  catppuccin.alacritty = {
-    enable = true;
-    flavor = "mocha";
-  };
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -24,22 +24,22 @@
       };
       font = {
         normal = {
-          family = "FiraCode Nerd Font Mono";
+          family = lib.mkForce "FiraCode Nerd Font Mono";
           style = "Regular";
         };
         italic = {
-          family = "FiraCode Nerd Font Mono";
+          family = lib.mkForce "FiraCode Nerd Font Mono";
           style = "Italic";
         };
         bold = {
-          family = "FiraCode Nerd Font Mono";
+          family = lib.mkForce "FiraCode Nerd Font Mono";
           style = "Bold";
         };
         bold_italic = {
-          family = "FiraCode Nerd Font Mono";
+          family = lib.mkForce "FiraCode Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = 16;
+        size = lib.mkForce 16;
         glyph_offset = {
           x = 0;
           y = 0;

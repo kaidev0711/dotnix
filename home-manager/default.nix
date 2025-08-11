@@ -14,6 +14,7 @@
     ./music
     ./search_and_replace
     ./spell_checker
+    ./themes
   ];
   home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;

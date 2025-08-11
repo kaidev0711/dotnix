@@ -4,10 +4,6 @@
     sha256 = "sha256-t6GPP7OOztf6XtBgzhLF+edUU294twnu0y5uufXwrkw=";
   };
 in {
-  catppuccin.zellij = {
-    enable = true;
-    flavor = "mocha";
-  };
   programs.zellij = {
     enable = true;
     enableFishIntegration = false;

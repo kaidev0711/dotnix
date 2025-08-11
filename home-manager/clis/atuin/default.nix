@@ -11,9 +11,4 @@
       inline_height = 25;
     };
   };
-  catppuccin.atuin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
 }

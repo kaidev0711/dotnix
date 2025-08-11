@@ -1,5 +1,7 @@
 {...}: {
   imports = [
     ./typos
+    ./harper
+    ./codebook
   ];
 }

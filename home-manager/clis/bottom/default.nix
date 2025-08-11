@@ -7,8 +7,4 @@
       };
     };
   };
-  catppuccin.bottom = {
-    enable = true;
-    flavor = "mocha";
-  };
 }

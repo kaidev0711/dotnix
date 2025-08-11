@@ -288,9 +288,4 @@ in {
       ouch = "${pkgs.yaziPlugins.ouch}";
     };
   };
-  catppuccin.yazi = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-  };
 }
