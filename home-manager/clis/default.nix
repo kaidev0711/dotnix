@@ -18,6 +18,7 @@
     ./atuin
     ./ripgrep-all
     ./tailspin
+    ./clock_rs
   ];
   home.packages = with pkgs; [
     wget

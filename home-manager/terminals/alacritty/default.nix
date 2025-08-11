@@ -39,7 +39,7 @@
           family = lib.mkForce "FiraCode Nerd Font Mono";
           style = "Bold Italic";
         };
-        size = lib.mkForce 16;
+        size = lib.mkForce 17;
         glyph_offset = {
           x = 0;
           y = 0;
