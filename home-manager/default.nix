@@ -9,6 +9,7 @@
     ./editors
     ./window_manager
     ./devs
+    ./devops
     ./multiplexers
     ./file_manager
     ./music
@@ -26,7 +27,6 @@
     EDITOR = "hx";
     SHELL = "${pkgs.nushell}/bin/nu";
   };
-  home.packages = with pkgs; [];
   programs.nix-index.enable = true;
   programs.home-manager.enable = true;
 }

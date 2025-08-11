@@ -47,6 +47,8 @@
       $env.LANG = "en_US.UTF-8";
       $env.LC_CTYPE = "en_US.UTF-8";
       $env.LC_ALL = "en_US.UTF-8";
+      $env.DOCKER_BUILDKIT = "1"
+      $env.COMPOSE_DOCKER_CLI_BUILD = "1"
 
       $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
 
@@ -56,6 +58,7 @@
       use std/util "path add"
       path add ($env.HOME + "/.local/bin")
       path add ($env.HOME + "/.cargo/bin")
+      path add ($env.HOME + "/.krew/bin")
       path add ($env.HOME + "/go/bin")
       path add "/nix/var/nix/profiles/default/bin"
       path add "/run/current-system/sw/bin"

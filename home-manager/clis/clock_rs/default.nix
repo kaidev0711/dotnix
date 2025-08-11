@@ -13,7 +13,7 @@
         vertical = "center";
       };
       date = {
-        fmt = "%d-%m-%Y";
+        fmt = "%A, %B %d, %Y";
         use_12h = false;
         utc = false;
         hide_seconds = true;
