@@ -8,7 +8,7 @@
     enableAlias = true;
     settings = {
       kubectl = lib.getExe pkgs.kubectl;
-      preset = "dark";
+      preset = lib.mkForce "dark";
       paging = "auto";
     };
   };

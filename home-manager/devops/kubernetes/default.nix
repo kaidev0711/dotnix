@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./kubecolor
+    ./k9s
   ];
   home.sessionVariables = {
     PATH = "${config.home.homeDirectory}/.krew/bin:$PATH";
@@ -16,6 +17,7 @@
     krew
     kustomize
     kuttl
+    kluctl
     popeye
     stern
     velero

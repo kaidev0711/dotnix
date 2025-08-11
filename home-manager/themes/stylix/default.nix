@@ -7,12 +7,15 @@
       bat.enable = true;
       gitui.enable = true;
       yazi.enable = true;
-      fzf.enable = true;
       tmux.enable = true;
       fish.enable = true;
       nushell.enable = true;
       alacritty.enable = true;
       wezterm.enable = true;
+      k9s.enable = true;
+      kubecolor.enable = true;
+      zellij.enable = true;
+      fzf.enable = true;
     };
   };
 }
