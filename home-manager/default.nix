@@ -16,7 +16,6 @@
     ./search_and_replace
     ./spell_checker
     ./themes
-    ./llm
   ];
   home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;
