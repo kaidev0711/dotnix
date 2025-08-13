@@ -5,6 +5,7 @@
     ./gh
     ./jujutsu
     ./gitui
+    ./git_cliff
   ];
   home.packages = with pkgs; [];
 }
