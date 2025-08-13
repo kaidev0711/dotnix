@@ -8,8 +8,8 @@
 
     # Set true if you title your notes by the first heading
     # Right now, if true this will cause completing a file link in the markdown style
-    # [](file) -> [first heading of file.md](file)
     # to insert the name of the first heading in the display text area
+    # [](file) -> [first heading of file.md](file)
     # If false, [](file) -> [](file) (for example)
     title_headings = true
 
@@ -61,5 +61,10 @@
     # Full or Partial, for Partial, block_transclusion_length = { partial = 10 }
     # block_transclusion must be enabled for this to take effect
     block_transclusion_length = "Full"
+
+    # Link file names only
+    # Enables autocompleting by heading but inserting link to filename (instead of filename + heading)
+    # Useful for unique notes / Zettelkasten users
+    link_filenames_only = false
   '';
 }

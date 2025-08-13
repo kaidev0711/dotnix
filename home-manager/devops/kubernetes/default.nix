@@ -18,6 +18,7 @@
     kustomize
     kuttl
     kluctl
+    kubectx
     popeye
     stern
     velero
