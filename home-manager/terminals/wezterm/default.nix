@@ -17,7 +17,7 @@
       config.initial_rows = 40
       config.enable_tab_bar = false
       config.window_decorations = "RESIZE"
-      config.window_background_opacity = 1.0
+      config.window_background_opacity = 0.8
       config.font = wezterm.font('FiraCode Nerd Font Mono', { weight = 'Bold' })
       config.font_size = 18
       config.harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }

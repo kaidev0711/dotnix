@@ -11,6 +11,7 @@
     ./typst
     ./elixir
     ./sql
+    ./just
   ];
   home.packages = with pkgs; [
     # devenv

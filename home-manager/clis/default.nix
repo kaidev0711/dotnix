@@ -23,7 +23,6 @@
   home.packages = with pkgs; [
     wget
     du-dust
-    just
     sd
     tokei
     procs

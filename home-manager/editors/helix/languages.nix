@@ -217,28 +217,20 @@
         }
         {
           name = "markdown";
-          language-servers = [
-            "markdown-oxide"
-            "marksman"
-            "codebook"
-            "typos-lsp"
-          ];
+          language-servers = ["markdown-oxide" "marksman" "codebook" "typos-lsp"];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
-            args = [
-              "fmt"
-              "-"
-              "--ext"
-              "md"
-            ];
+            args = ["fmt" "-" "--ext" "md"];
           };
         }
         {
           name = "nu";
-          language-servers = [
-            "nu-lsp"
-          ];
+          language-servers = ["nu-lsp"];
+        }
+        {
+          name = "just";
+          language-servers = ["just-lsp"];
         }
         {
           name = "typst";
@@ -304,6 +296,7 @@
             };
           };
         };
+
         # Golang
         gopls = {
           command = lib.getExe pkgs.gopls;
@@ -326,6 +319,7 @@
           };
         };
 
+        # Elixir
         elixir-ls = {
           command = lib.getExe pkgs.beam28Packages.elixir-ls;
           config = {
@@ -377,12 +371,14 @@
         };
         marksman = {
           command = lib.getExe pkgs.marksman;
-          args = [
-            "server"
-          ];
+          args = ["server"];
         };
         tinymist = {
           command = lib.getExe pkgs.tinymist;
+        };
+
+        just-lsp = {
+          command = lib.getExe pkgs.just-lsp;
         };
 
         # TODO: spell checker
@@ -398,9 +394,7 @@
         };
         harper-ls = {
           command = lib.getExe pkgs.harper;
-          args = [
-            "--stdio"
-          ];
+          args = ["--stdio"];
           config = {
             harper-ls = {
               diagnosticSeverity = "hint";
