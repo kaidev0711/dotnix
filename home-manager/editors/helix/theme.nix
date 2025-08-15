@@ -2,7 +2,8 @@
   programs.helix = {
     themes = {
       transparent = {
-        "inherits" = "rose_pine";
+        "inherits" = "kanagawa";
+        "ui.background" = {};
       };
     };
   };
