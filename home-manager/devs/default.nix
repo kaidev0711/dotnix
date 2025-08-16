@@ -3,6 +3,7 @@
     ./direnv
     ./nix
     ./rust
+    ./gleam
     ./go
     ./toml
     ./swift

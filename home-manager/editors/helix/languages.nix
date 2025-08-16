@@ -185,6 +185,11 @@
           auto-format = true;
         }
         {
+          name = "gleam";
+          language-servers = ["gleam"];
+          auto-format = true;
+        }
+        {
           name = "toml";
           auto-format = true;
           language-servers = [
@@ -358,6 +363,10 @@
               watcher = "server";
             };
           };
+        };
+        gleam = {
+          command = lib.getExe pkgs.gleam;
+          args = ["lsp"];
         };
         taplo = {
           command = lib.getExe pkgs.taplo;
