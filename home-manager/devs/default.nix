@@ -10,6 +10,7 @@
     ./markdown
     ./web
     ./typst
+    ./erlang
     ./elixir
     ./sql
     ./just

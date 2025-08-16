@@ -331,6 +331,7 @@
             elixirLS.dialyzerEnabled = false;
           };
         };
+
         nu-lsp = {
           command = "nu";
           args = ["--lsp"];
