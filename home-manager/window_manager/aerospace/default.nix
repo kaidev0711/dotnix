@@ -164,7 +164,7 @@
           ];
         }
         {
-          "if".app-id = "org.mozilla.firefox";
+          "if".app-id = "com.brave.Browser";
           run = ["move-node-to-workspace Browser"];
         }
         {

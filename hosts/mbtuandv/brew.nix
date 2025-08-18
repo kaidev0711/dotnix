@@ -15,7 +15,7 @@
       "signal"
       "telegram"
       "discord"
-      "firefox"
+      "brave-browser"
     ];
     taps = [
     ];
