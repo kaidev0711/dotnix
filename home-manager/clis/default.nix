@@ -19,6 +19,7 @@
     ./ripgrep-all
     ./tailspin
     ./clock_rs
+    ./pay_respects
   ];
   home.packages = with pkgs; [
     wget
