@@ -50,6 +50,11 @@
             alt-ctrl-k = "focus up";
             alt-ctrl-l = "focus right";
 
+            alt-ctrl-shift-h = "move left";
+            alt-ctrl-shift-j = "move down";
+            alt-ctrl-shift-k = "move up";
+            alt-ctrl-shift-l = "move right";
+
             alt-ctrl-a = "workspace Apple";
             alt-ctrl-b = "workspace Browser";
             alt-ctrl-c = "workspace Chat";

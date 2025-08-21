@@ -3,5 +3,6 @@
     ./config.nix
     ./languages.nix
     ./theme.nix
+    ./ignores.nix
   ];
 }

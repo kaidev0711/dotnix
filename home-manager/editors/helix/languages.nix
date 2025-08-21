@@ -215,6 +215,7 @@
         }
         {
           name = "swift";
+          language-servers = ["sourcekit-lsp"];
           formatter = {
             command = lib.getExe pkgs.swift-format;
           };
@@ -266,6 +267,9 @@
         }
       ];
       language-server = {
+        sourcekit-lsp = {
+          command = "sourcekit-lsp";
+        };
         tailwindcss-ls = {
           command = lib.getExe pkgs.tailwindcss-language-server;
           args = ["--stdio"];
