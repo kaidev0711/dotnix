@@ -4,6 +4,7 @@
     ./nix
     ./rust
     ./gleam
+    ./zig
     ./go
     ./toml
     ./swift

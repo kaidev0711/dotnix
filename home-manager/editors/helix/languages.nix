@@ -206,6 +206,15 @@
           };
         }
         {
+          name = "zig";
+          language-servers = ["zls"];
+          auto-format = true;
+          formatter = {
+            command = lib.getExe pkgs.zig_0_15;
+            args = ["fmt" "--stdin"];
+          };
+        }
+        {
           name = "go";
           language-servers = ["gopls" "golangci-lint-lsp"];
           formatter = {
@@ -380,6 +389,8 @@
             "stdio"
           ];
         };
+        # zig
+        zls = {command = lib.getExe pkgs.zls;};
         markdown-oxide = {
           command = lib.getExe pkgs.markdown-oxide;
         };
