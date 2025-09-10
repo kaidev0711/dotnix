@@ -390,7 +390,7 @@
           ];
         };
         # zig
-        zls = {command = lib.getExe pkgs.zls;};
+        # zls = {command = lib.getExe pkgs.zls_0_15;};
         markdown-oxide = {
           command = lib.getExe pkgs.markdown-oxide;
         };

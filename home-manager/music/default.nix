@@ -1,7 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     termusic
-    yt-dlp
     ffmpeg
   ];
+  programs.yt-dlp = {
+    enable = true;
+  };
 }

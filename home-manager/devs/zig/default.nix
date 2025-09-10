@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     zig_0_15
-    zls
+    # zls_0_15
   ];
 }
