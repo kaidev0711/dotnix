@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   home.packages = with pkgs; [
     gopls
     golangci-lint-langserver
@@ -8,11 +12,13 @@
   ];
   programs.go = {
     enable = true;
-    goPath = "go";
-    extraGoPaths = [
-      "Devs/_go"
-    ];
-    goBin = "go/bin";
-    goPrivate = [];
+    env = {
+      GOPATH = [
+        "${config.home.homeDirectory}/go"
+        "${config.home.homeDirectory}/Devs/_go"
+      ];
+      GOBIN = "${config.home.homeDirectory}/bin";
+      GOPRIVATE = [];
+    };
   };
 }
