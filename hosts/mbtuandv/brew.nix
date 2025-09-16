@@ -1,4 +1,18 @@
 {
+  config,
+  inputs,
+  ...
+}: {
+  nix-homebrew = {
+    enable = true;
+    enableRosetta = true;
+    user = "tuandv";
+    taps = {
+      "homebrew/homebrew-core" = inputs.homebrew-core;
+      "homebrew/homebrew-cask" = inputs.homebrew-cask;
+    };
+    mutableTaps = false;
+  };
   homebrew = {
     enable = true;
     onActivation = {
@@ -8,6 +22,7 @@
     };
     brews = [
       "mas"
+      "sniffnet"
     ];
     casks = [
       "keka"
@@ -17,8 +32,7 @@
       "discord"
       "brave-browser"
     ];
-    taps = [
-    ];
+    taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {
       "Swift Playground" = 1496833156;
       Xcode = 497799835;

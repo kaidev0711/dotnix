@@ -38,7 +38,6 @@
     gping
     wiki-tui
     xh
-    sniffnet
     xan
     tailspin
     ttyper

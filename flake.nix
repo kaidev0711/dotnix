@@ -11,6 +11,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,12 +39,16 @@
     nixpkgs,
     home-manager,
     stylix,
+    nix-homebrew,
+    homebrew-core,
+    homebrew-cask,
     ...
   }: {
     darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/mbtuandv/configuration.nix
+        nix-homebrew.darwinModules.nix-homebrew
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
