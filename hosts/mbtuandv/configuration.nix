@@ -7,8 +7,11 @@ in {
     ./brew.nix
     ./nix-darwin-activation.nix
   ];
-  networking.hostName = hostname;
-  networking.computerName = hostname;
+  networking = {
+    hostName = hostname;
+    computerName = hostname;
+    localHostName = hostname;
+  };
   system.defaults.smb.NetBIOSName = hostname;
 
   users.users."${username}" = {
@@ -56,8 +59,11 @@ in {
         "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
-      trusted-users = [username];
-      experimental-features = "nix-command flakes";
+      trusted-users = ["@admin" username];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
     optimise = {

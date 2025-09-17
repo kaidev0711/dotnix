@@ -17,7 +17,7 @@
         "${config.home.homeDirectory}/go"
         "${config.home.homeDirectory}/Devs/_go"
       ];
-      GOBIN = "${config.home.homeDirectory}/bin";
+      GOBIN = "${config.home.homeDirectory}/go/bin";
       GOPRIVATE = [];
     };
   };

@@ -2,11 +2,13 @@
   config,
   inputs,
   ...
-}: {
+}: let
+  username = "tuandv";
+in {
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
-    user = "tuandv";
+    user = username;
     taps = {
       "homebrew/homebrew-core" = inputs.homebrew-core;
       "homebrew/homebrew-cask" = inputs.homebrew-cask;
