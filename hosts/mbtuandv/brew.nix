@@ -33,6 +33,8 @@ in {
       "telegram"
       "discord"
       "brave-browser"
+      "cloudflare-warp"
+      "openkey"
     ];
     taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {
