@@ -16,6 +16,7 @@
     ./search_and_replace
     ./spell_checker
     ./themes
+    ./browsers
   ];
   home.stateVersion = "25.11";
   home.enableNixpkgsReleaseCheck = false;

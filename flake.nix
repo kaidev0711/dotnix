@@ -39,16 +39,12 @@
     nixpkgs,
     home-manager,
     stylix,
-    nix-homebrew,
-    homebrew-core,
-    homebrew-cask,
     ...
   }: {
     darwinConfigurations."mbtuandv" = nix-darwin.lib.darwinSystem {
       specialArgs = {inherit inputs;};
       modules = [
         ./hosts/mbtuandv/configuration.nix
-        nix-homebrew.darwinModules.nix-homebrew
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

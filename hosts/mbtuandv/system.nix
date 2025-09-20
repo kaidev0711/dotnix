@@ -47,7 +47,7 @@ in {
           "/Applications/Xcode.app/Contents/Developer/Applications/Simulator.app"
           "/Applications/Swift Playground.app"
           "/Applications/Safari.app"
-          "/Applications/Brave Browser.app"
+          "${homeDirectory}/Applications/Home Manager Apps/Brave Browser.app"
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
           "/Applications/Discord.app"
@@ -92,7 +92,7 @@ in {
         DisableConsoleAccess = true;
       };
       screencapture = {
-        location = "${homeDirectory}/Pictures/Screenshots";
+        location = "${homeDirectory}/Documents/Screenshots";
         type = "png";
       };
       universalaccess = {

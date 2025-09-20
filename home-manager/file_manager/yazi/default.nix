@@ -218,7 +218,7 @@ in {
             "g"
             "r"
           ];
-          run = "cd ~/Devs/_rust";
+          run = "cd ~/devs/_rust";
           desc = "Go to the rust directory";
         }
         {

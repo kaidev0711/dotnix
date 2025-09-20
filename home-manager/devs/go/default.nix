@@ -15,7 +15,7 @@
     env = {
       GOPATH = [
         "${config.home.homeDirectory}/go"
-        "${config.home.homeDirectory}/Devs/_go"
+        "${config.home.homeDirectory}/devs/_go"
       ];
       GOBIN = "${config.home.homeDirectory}/go/bin";
       GOPRIVATE = [];

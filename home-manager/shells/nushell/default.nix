@@ -52,7 +52,7 @@
 
       $env.NU_LIB_DIRS = $NU_LIB_DIRS ++ [ "${pkgs.nu_scripts}/share/nu_scripts" ]
 
-      $env.GOPATH = ($env.HOME + "/go:" + $env.HOME + "/Devs/_go")
+      $env.GOPATH = ($env.HOME + "/go:" + $env.HOME + "/devs/_go")
       $env.GOBIN = ($env.HOME + "/go/bin")
 
       use std/util "path add"
@@ -110,11 +110,12 @@
       rmds = "fd -H '^\.DS_Store$' -tf -X rm -i";
       zjr = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/rust.kdl";
       zjv = "${pkgs.zellij}/bin/zellij action new-tab -l ${config.xdg.configHome}/zellij/layouts/vibes.kdl";
-      vibes = "rustyvibes ${config.home.homeDirectory}/Devs/_opensource/Soundpacks/nk-cream/ -v 100";
+      vibes = "rustyvibes ${config.home.homeDirectory}/devs/_opensource/Soundpacks/nk-cream/ -v 100";
     };
-    plugins = [
-      pkgs.nushellPlugins.query
-      pkgs.nushellPlugins.polars
+    plugins = with pkgs.nushellPlugins; [
+      query
+      polars
+      formats
     ];
   };
 }

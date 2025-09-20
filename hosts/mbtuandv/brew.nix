@@ -5,6 +5,7 @@
 }: let
   username = "tuandv";
 in {
+  imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -32,7 +33,6 @@ in {
       "signal"
       "telegram"
       "discord"
-      "brave-browser"
       "cloudflare-warp"
       "openkey"
     ];
