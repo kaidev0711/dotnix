@@ -24,6 +24,7 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    yazi.url = "github:sxyazi/yazi";
     yazi-plugins = {
       url = "github:yazi-rs/plugins";
       flake = false;
@@ -52,7 +53,7 @@
           home-manager.extraSpecialArgs = {inherit inputs;};
           home-manager.users.tuandv = {
             imports = [
-              ./hosts/mbtuandv/home.nix
+              ./hosts/mbtuandv/home
               stylix.homeModules.stylix
             ];
           };

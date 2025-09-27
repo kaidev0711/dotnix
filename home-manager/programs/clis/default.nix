@@ -1,0 +1,46 @@
+{pkgs, ...}: {
+  imports = [
+    ./carapace
+    ./starship
+    ./zoxide
+    ./eza
+    ./bat
+    ./bottom
+    ./jq
+    ./ripgrep
+    ./fd
+    ./tealdeer
+    ./fastfetch
+    ./pipes_rs
+    ./bacon
+    ./presenterm
+    ./glow
+    ./atuin
+    ./ripgrep-all
+    ./tailspin
+    ./clock_rs
+    ./pay_respects
+    ./navi
+  ];
+  home.packages = with pkgs; [
+    wget
+    du-dust
+    sd
+    tokei
+    procs
+    pipes-rs
+    hyperfine
+    nix-prefetch-git
+    presenterm
+    glow
+    hexyl
+    kondo
+    ouch
+    gping
+    wiki-tui
+    xh
+    xan
+    tailspin
+    ttyper
+  ];
+}

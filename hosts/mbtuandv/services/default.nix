@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ./profiles/tuandv
+    ./postgresql
   ];
 }
