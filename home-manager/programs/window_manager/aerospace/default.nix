@@ -162,6 +162,10 @@
           run = ["move-node-to-workspace Terminal"];
         }
         {
+          "if".app-id = "com.mitchellh.ghostty";
+          run = ["move-node-to-workspace Terminal"];
+        }
+        {
           "if".app-id = "com.apple.dt.Xcode";
           run = [
             "layout floating"

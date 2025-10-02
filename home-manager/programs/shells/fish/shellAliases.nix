@@ -5,6 +5,12 @@
 }: {
   programs.fish = {
     shellAliases = {
+      jd = "${pkgs.jujutsu}/bin/jj desc";
+      jf = "${pkgs.jujutsu}/bin/jj git fetch";
+      jn = "${pkgs.jujutsu}/bin/jj new";
+      jp = "${pkgs.jujutsu}/bin/jj git push";
+      js = "${pkgs.jujutsu}/bin/jj st";
+      gitignore = "curl -sL https://www.gitignore.io/api/$argv";
       pipes = "pipes-rs";
       cp = "cp -i";
       rm = "rm -i";

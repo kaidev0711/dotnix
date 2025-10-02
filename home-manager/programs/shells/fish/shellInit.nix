@@ -22,9 +22,9 @@
       # set -x PATH $PATH ${config.home.homeDirectory}/.cargo/bin
 
       # go
-      set -x GOPATH ${config.home.homeDirectory}/go:${config.home.homeDirectory}/devs/_go
-      set -x GOBIN ${config.home.homeDirectory}/go/bin
-      set -x PATH $PATH $GOPATH/bin
+      # set -x GOPATH ${config.home.homeDirectory}/devs/_go
+      # set -x GOBIN ${config.home.homeDirectory}/devs/_go/bin
+      # set -x PATH $PATH $GOPATH/bin
 
       set -x EDITOR "hx"
       set -x VISUAL "hx"

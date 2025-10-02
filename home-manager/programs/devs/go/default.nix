@@ -14,10 +14,9 @@
     enable = true;
     env = {
       GOPATH = [
-        "${config.home.homeDirectory}/go"
         "${config.home.homeDirectory}/devs/_go"
       ];
-      GOBIN = "${config.home.homeDirectory}/go/bin";
+      GOBIN = "${config.home.homeDirectory}/devs/_go/bin";
       GOPRIVATE = [];
     };
   };

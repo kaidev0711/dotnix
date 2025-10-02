@@ -17,6 +17,7 @@
       kubecolor.enable = true;
       zellij.enable = true;
       fzf.enable = true;
+      ghostty.enable = true;
     };
   };
 }
