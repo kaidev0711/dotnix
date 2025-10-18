@@ -17,6 +17,7 @@ in {
         "com.apple.sound.beep.feedback" = 0;
         AppleKeyboardUIMode = 3;
         AppleInterfaceStyle = "Dark";
+        AppleIconAppearanceTheme = "RegularDark";
         AppleShowAllExtensions = true;
         AppleShowAllFiles = true;
         InitialKeyRepeat = 15;

@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./langs
-    ./tools
+    ./kanata
   ];
 }

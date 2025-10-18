@@ -2,6 +2,8 @@
   programs.navi = {
     enable = true;
     enableFishIntegration = true;
-    settings = {};
+    settings = {
+      client.tealdeer = true;
+    };
   };
 }

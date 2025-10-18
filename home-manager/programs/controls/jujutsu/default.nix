@@ -6,7 +6,11 @@
         name = "Đặng Văn Tuấn";
         email = "kaiz.developers@gmail.com";
       };
-      ui.merge-editor = "mergiraf";
+      ui = {
+        editor = "hx";
+        color = "always";
+        merge-editor = "mergiraf";
+      };
     };
   };
 }

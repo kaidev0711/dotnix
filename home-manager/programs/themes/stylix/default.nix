@@ -6,6 +6,7 @@
     targets = {
       bat.enable = true;
       gitui.enable = true;
+      lazygit.enable = true;
       yazi.enable = true;
       tmux.enable = true;
       fish.enable = true;

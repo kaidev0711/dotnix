@@ -7,10 +7,10 @@
       {id = "amfojhdiedpdnlijjbhjnhokbnohfdfb";} # Ejoy
       {id = "bkdgflcldnnnapblkhphbgpggdiikppg";} # DuckDuckGo Search & Tracker Protection
       {id = "mljepckcnbghmcdmaebjhejiplcngbkm";} # Hide Scrollbar
-      {id = "elgmajanahbjpbcljflifdnnmpodfiij";} # Medium Parser
       {id = "bkhaagjahfmjljalopjnoealnfndnagc";} # Octotree
       {id = "mnjggcdmjocbbbhaepdhchncahnbgone";} # SponsorBlock
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # Vimium
+      {id = "lodbfhdipoipcjmlebjbgmmgekckhpfb";} # Harper
     ];
   };
 }

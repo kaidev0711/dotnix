@@ -32,6 +32,7 @@
       commit.gpgSign = true;
       gpg.format = "ssh";
       init.defaultBranch = "main";
+      credential.helper = "osxkeychain";
       push.autoSetupRemote = true;
       pull.rebase = true;
       rerere = {

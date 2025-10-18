@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./support
+    ./langs
   ];
   programs.helix = {
     languages = {

@@ -1,3 +1,6 @@
 {pkgs, ...}: {
-  environment.systemPackages = with pkgs; [];
+  environment.systemPackages = with pkgs; [
+    # kanata
+    kanata-with-cmd
+  ];
 }

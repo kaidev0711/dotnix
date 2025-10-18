@@ -3,8 +3,10 @@
     ./ssh
     ./git
     ./gh
+    ./gh_dash
     ./jujutsu
-    ./gitui
+    # ./gitui
+    ./lazygit
     ./git_cliff
   ];
   home.packages = with pkgs; [];

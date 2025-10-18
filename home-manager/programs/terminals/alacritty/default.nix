@@ -14,7 +14,7 @@
         startup_mode = "Maximized";
         dynamic_padding = true;
         dynamic_title = false;
-        opacity = lib.mkForce 0.8;
+        opacity = lib.mkForce 1.0;
         # blur = true;
         option_as_alt = "Both";
         padding = {

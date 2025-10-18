@@ -12,7 +12,6 @@
     ./tealdeer
     ./fastfetch
     ./pipes_rs
-    ./bacon
     ./presenterm
     ./glow
     ./atuin
@@ -29,7 +28,6 @@
     tokei
     procs
     pipes-rs
-    hyperfine
     nix-prefetch-git
     presenterm
     glow

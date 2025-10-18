@@ -12,7 +12,7 @@
       {
         font-size = lib.mkForce 15;
         font-feature = ["-liga" "-dlig" "-calt"];
-        background-opacity = lib.mkForce 0.8;
+        background-opacity = lib.mkForce 1.0;
         window-decoration = false;
         window-padding-x = 0;
         window-padding-y = 0;

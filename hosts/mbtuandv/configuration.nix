@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   imports = [
     ./system
     ./users
@@ -10,5 +10,7 @@
     ./fonts
     ./services
     ./activation
+    ./launchd
+    ./home
   ];
 }
