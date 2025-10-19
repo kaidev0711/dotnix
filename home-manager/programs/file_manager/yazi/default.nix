@@ -117,12 +117,25 @@ in {
             block = true;
           }
         ];
+        set-wallpaper = [
+          {
+            run = ''
+              osascript -e 'on run {img}' -e 'tell application "System Events" to set picture of every desktop to img' -e 'end run' "$1"
+            '';
+            for = "macos";
+            desc = "Set as wallpaper";
+          }
+        ];
       };
       open = {
         prepend_rules = [
           {
             name = "bulk-rename.txt";
             use = "bulk-rename";
+          }
+          {
+            mime = "image/*";
+            use = ["set-wallpaper" "open"];
           }
         ];
       };

@@ -25,7 +25,9 @@
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
       # gt = "${pkgs.gitui}/bin/gitui";
-      lg = "${pkgs.lazygit}/bin/lazygit";
+      lzg = "${pkgs.lazygit}/bin/lazygit";
+      lzd = "${pkgs.lazydocker}/bin/lazydocker";
+      lzs = "${pkgs.lazysql}/bin/lazysql";
       ju = "${pkgs.just}/bin/just";
       pre = "${pkgs.presenterm}/bin/presenterm";
       top = "${pkgs.bottom}/bin/btm";

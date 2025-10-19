@@ -1,5 +1,5 @@
 {...}: {
-  programs.lazydocker = {
+  programs.lazysql = {
     enable = true;
     settings = {};
   };

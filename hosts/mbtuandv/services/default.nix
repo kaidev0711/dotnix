@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./postgresql
     ./jankyborders
   ];
 }

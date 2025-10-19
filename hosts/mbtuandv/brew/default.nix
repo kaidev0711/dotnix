@@ -36,6 +36,7 @@ in {
       "cloudflare-warp"
       "openkey"
       "iina"
+      "utm"
     ];
     taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {

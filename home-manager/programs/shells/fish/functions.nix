@@ -15,6 +15,9 @@
             aerospace focus --window-id $window_id
         end
       '';
+      tree = ''
+        br -c :pt $argv
+      '';
     };
   };
 }

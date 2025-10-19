@@ -56,6 +56,7 @@ in {
           "${homeDirectory}/Applications/Home Manager Apps/Alacritty.app"
           "${homeDirectory}/Applications/Home Manager Apps/WezTerm.app"
           "${homeDirectory}/Applications/Home Manager Apps/Ghostty.app"
+          "/Applications/UTM.app"
           "/Applications/Discord.app"
           "/Applications/Signal.app"
           "/Applications/Telegram.app"

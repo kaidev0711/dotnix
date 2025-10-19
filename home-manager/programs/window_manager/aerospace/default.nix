@@ -62,6 +62,7 @@
             alt-ctrl-e = "workspace Editor";
             alt-ctrl-t = "workspace Terminal";
             alt-ctrl-f = "workspace Model";
+            alt-ctrl-v = "workspace VM";
 
             alt-ctrl-shift-a = "move-node-to-workspace Apple --focus-follows-window";
             alt-ctrl-shift-b = "move-node-to-workspace Browser --focus-follows-window";
@@ -70,6 +71,7 @@
             alt-ctrl-shift-e = "move-node-to-workspace Editor --focus-follows-window";
             alt-ctrl-shift-t = "move-node-to-workspace Terminal --focus-follows-window";
             alt-ctrl-shift-f = "move-node-to-workspace Model --focus-follows-window";
+            alt-ctrl-shift-v = "move-node-to-workspace VM --focus-follows-window";
 
             alt-ctrl-tab = "workspace-back-and-forth";
             alt-ctrl-shift-tab = "move-workspace-to-monitor --wrap-around next";
@@ -164,6 +166,10 @@
         {
           "if".app-id = "com.mitchellh.ghostty";
           run = ["move-node-to-workspace Terminal"];
+        }
+        {
+          "if".app-id = "com.utmapp.UTM";
+          run = ["move-node-to-workspace VM"];
         }
         {
           "if".app-id = "com.apple.dt.Xcode";

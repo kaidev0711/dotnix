@@ -133,9 +133,10 @@
             S = ":sh ${pkgs.zellij}/bin/zellij run -n Scooter -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh scooter";
           };
           g = {
-            # g = ":sh ${pkgs.zellij}/bin/zellij run -n Gitui -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/gitui.sh";
+            g = ":sh ${pkgs.zellij}/bin/zellij run -n Gitui -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/git-tools.sh gitui";
+            G = ":sh ${pkgs.zellij}/bin/zellij run -n Lazygit -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/git-tools.sh lazygit";
             b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}";
-            # b = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}";
+            B = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}";
           };
         };
       };
@@ -208,21 +209,27 @@
       ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
       ${pkgs.zellij}/bin/zellij action write 13
     else
-      echo "$TOOL failed with exit code $exit_code"
       ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-      exit $exit_code
     fi
   '';
-  # xdg.configFile."helix/gitui.sh".text = ''
-  #   ${pkgs.gitui}/bin/gitui
-  #   exit_code=$?
+  xdg.configFile."helix/git-tools.sh".text = ''
+    TOOL=$1
+    if [[ "$TOOL" == "lazygit" ]]; then
+      ${pkgs.lazygit}/bin/lazygit
+    elif [[ "$TOOL" == "gitui" ]]; then
+      echo ""
+    else
+      echo "Invalid tool: $TOOL"
+      exit 1
+    fi
+    exit_code=$?
 
-  #   if [[ $exit_code -eq 0 ]]; then
-  #     ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-  #     ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
-  #     ${pkgs.zellij}/bin/zellij action write 13
-  #   else
-  #   	${pkgs.zellij}/bin/zellij action toggle-floating-panes
-  #   fi
-  # '';
+    if [[ $exit_code -eq 0 ]]; then
+      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
+      ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
+      ${pkgs.zellij}/bin/zellij action write 13
+    else
+      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
+    fi
+  '';
 }
