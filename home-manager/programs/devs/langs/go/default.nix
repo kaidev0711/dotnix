@@ -5,10 +5,10 @@
 }: {
   home.packages = with pkgs; [
     golangci-lint
-    # gopls
-    # golangci-lint-langserver
-    # gotools
-    # delve
+    gopls
+    golangci-lint-langserver
+    gotools
+    delve
   ];
   programs.go = {
     enable = true;

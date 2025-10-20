@@ -64,7 +64,7 @@ in {
       }
       require("git"):setup{ order = 0 }
       require("folder-rules"):setup()
-      require("starship"):setup()
+      -- require("starship"):setup()
 
       Status:children_add(function(self)
       	local h = self._current.hovered

@@ -8,6 +8,9 @@
     # ./gitui
     ./lazygit
     ./git_cliff
+    ./delta
   ];
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [
+    lazyjj
+  ];
 }

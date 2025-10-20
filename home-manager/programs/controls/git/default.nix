@@ -1,8 +1,6 @@
 {...}: {
   programs.git = {
     enable = true;
-    userName = "Đặng Văn Tuấn";
-    userEmail = "kaiz.developers@gmail.com";
     ignores = [
       ".DS_Store"
       ".jj"
@@ -10,25 +8,16 @@
     lfs = {
       enable = true;
     };
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Đặng Văn Tuấn";
+        email = "kaiz.developers@gmail.com";
+        signingKey = "~/.ssh/id_ed25519";
+      };
       core = {
-        pager = "delta";
         editor = "hx";
       };
-      interactive.diffFilter = "delta --color-only";
-      merge = {
-        conflictStyle = "zdiff3";
-        tool = "mergiraf";
-      };
-      delta = {
-        enable = true;
-        options = {
-          navigate = true;
-          side-by-side = true;
-          line-numbers = true;
-        };
-      };
-      user.signingKey = "~/.ssh/id_ed25519";
+      merge = {};
       commit.gpgSign = true;
       gpg.format = "ssh";
       init.defaultBranch = "main";
@@ -41,20 +30,19 @@
       color = {
         ui = true;
       };
-    };
-    aliases = {
-      br = "branch";
-      co = "checkout";
-      st = "status";
-      ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
-      ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
-      cm = "commit -m";
-      ca = "commit -am";
-      dc = "diff --cached";
-      amend = "commit --amend -m";
-
-      update = "submodule update --init --recursive";
-      foreach = "submodule foreach";
+      alias = {
+        br = "branch";
+        co = "checkout";
+        st = "status";
+        ls = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate";
+        ll = "log --pretty=format:\"%C(yellow)%h%Cred%d\\\\ %Creset%s%Cblue\\\\ [%cn]\" --decorate --numstat";
+        cm = "commit -m";
+        ca = "commit -am";
+        dc = "diff --cached";
+        amend = "commit --amend -m";
+        update = "submodule update --init --recursive";
+        foreach = "submodule foreach";
+      };
     };
   };
 }
