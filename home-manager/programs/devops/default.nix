@@ -1,6 +1,7 @@
 {...}: {
   imports = [
     ./docker
+    ./podman
     ./kubernetes
     ./cloud
     ./tofu

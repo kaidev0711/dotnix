@@ -40,5 +40,6 @@
     xan
     tailspin
     ttyper
+    sniffnet
   ];
 }

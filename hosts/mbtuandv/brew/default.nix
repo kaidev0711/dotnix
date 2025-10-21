@@ -25,9 +25,9 @@ in {
     };
     brews = [
       "mas"
-      "sniffnet"
     ];
     casks = [
+      # personal
       "keka"
       "skim"
       "signal"
@@ -37,6 +37,9 @@ in {
       "openkey"
       "iina"
       "utm"
+      # Work
+      "google-chrome"
+      "zoom"
     ];
     taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {
