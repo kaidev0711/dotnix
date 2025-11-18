@@ -64,6 +64,7 @@
             alt-ctrl-f = "workspace Model";
             alt-ctrl-v = "workspace VM";
             alt-ctrl-w = "workspace Work";
+            alt-ctrl-n = "workspace Notes";
 
             alt-ctrl-shift-a = "move-node-to-workspace Apple --focus-follows-window";
             alt-ctrl-shift-b = "move-node-to-workspace Browser --focus-follows-window";
@@ -74,6 +75,7 @@
             alt-ctrl-shift-f = "move-node-to-workspace Model --focus-follows-window";
             alt-ctrl-shift-v = "move-node-to-workspace VM --focus-follows-window";
             alt-ctrl-shift-w = "move-node-to-workspace Work --focus-follows-window";
+            alt-ctrl-shift-n = "move-node-to-workspace Notes --focus-follows-window";
 
             alt-ctrl-tab = "workspace-back-and-forth";
             alt-ctrl-shift-tab = "move-workspace-to-monitor --wrap-around next";
@@ -201,8 +203,12 @@
           run = ["move-node-to-workspace Chat"];
         }
         {
+          "if".app-id = "org.zotero.zotero";
+          run = ["move-node-to-workspace Notes"];
+        }
+        {
           "if".app-id = "com.apple.Notes";
-          run = ["move-node-to-workspace Apple"];
+          run = ["move-node-to-workspace Notes"];
         }
         {
           "if".app-id = "com.apple.finder";

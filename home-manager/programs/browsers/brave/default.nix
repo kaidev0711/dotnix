@@ -11,6 +11,7 @@
       {id = "mnjggcdmjocbbbhaepdhchncahnbgone";} # SponsorBlock
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # Vimium
       {id = "lodbfhdipoipcjmlebjbgmmgekckhpfb";} # Harper
+      {id = "ekhagklcjbdpajgpjgmbionohlpdbjgc";} # Zotero Connector
     ];
   };
 }

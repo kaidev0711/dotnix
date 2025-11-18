@@ -25,13 +25,12 @@
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
       # gt = "${pkgs.gitui}/bin/gitui";
-      lzg = "${pkgs.lazygit}/bin/lazygit";
       lzd = "${pkgs.lazydocker}/bin/lazydocker";
       lzs = "${pkgs.lazysql}/bin/lazysql";
       ju = "${pkgs.just}/bin/just";
       pre = "${pkgs.presenterm}/bin/presenterm";
       top = "${pkgs.bottom}/bin/btm";
-      du = "${pkgs.du-dust}/bin/dust";
+      du = "${pkgs.dust}/bin/dust";
       epath = ''echo "$PATH" | tr ":" "\n"'';
     };
   };

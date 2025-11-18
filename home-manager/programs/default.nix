@@ -17,5 +17,7 @@
     ./spell_checker
     ./themes
     ./browsers
+    ./research
+    ./virtual_machine
   ];
 }

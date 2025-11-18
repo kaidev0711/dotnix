@@ -1,6 +1,10 @@
 {...}: {
   programs.lazydocker = {
     enable = true;
-    settings = {};
+    settings = {
+      gui = {
+        theme = {};
+      };
+    };
   };
 }

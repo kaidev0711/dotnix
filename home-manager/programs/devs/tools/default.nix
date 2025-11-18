@@ -13,5 +13,7 @@
     pueue
     prek
     hyperfine
+    oha
+    grex
   ];
 }

@@ -1,4 +1,7 @@
 {...}: {
+  imports = [
+    ./tools
+  ];
   programs.git = {
     enable = true;
     ignores = [

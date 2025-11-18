@@ -1,5 +1,5 @@
 {...}: {
-  programs.lazygit = {
+  programs.jjui = {
     enable = true;
     settings = {};
   };

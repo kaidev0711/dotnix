@@ -12,5 +12,6 @@
     ./activation
     ./launchd
     ./home
+    ./security
   ];
 }

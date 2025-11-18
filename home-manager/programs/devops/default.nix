@@ -7,5 +7,6 @@
     ./tofu
     ./terraform
     ./automation
+    ./container
   ];
 }

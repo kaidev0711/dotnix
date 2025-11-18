@@ -4,6 +4,7 @@
     rustlings
     workshop-runner
     cargo-nextest
+    cargo-outdated
     cargo-audit
     cargo-flamegraph
     cargo-binstall

@@ -1,0 +1,19 @@
+{...}: {
+  programs.zellij = {
+    layouts = {
+      vibes = ''
+        layout {
+            tab name="Vibes" {
+                pane split_direction="horizontal" {
+        	          pane command="termusic" size="70%" focus=true
+        	          pane size="30%"
+                }
+                pane size=1 borderless=true {
+                    plugin location="zellij:compact-bar"
+                }
+            }
+        }
+      '';
+    };
+  };
+}

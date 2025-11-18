@@ -142,8 +142,12 @@ in {
       plugin = {
         prepend_previewers = [
           {
-            name = "*.md";
+            url = "*.md";
             run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
+          }
+          {
+            url = "*.csv";
+            run = ''piper -- bat -p --color=always "$1"'';
           }
           # Archive previewer
           {

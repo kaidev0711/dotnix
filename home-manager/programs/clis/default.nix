@@ -23,7 +23,7 @@
   ];
   home.packages = with pkgs; [
     wget
-    du-dust
+    dust
     sd
     tokei
     procs
@@ -41,5 +41,6 @@
     tailspin
     ttyper
     sniffnet
+    duf
   ];
 }

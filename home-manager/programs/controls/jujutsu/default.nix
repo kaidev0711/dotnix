@@ -1,4 +1,7 @@
 {...}: {
+  imports = [
+    ./tools
+  ];
   programs.jujutsu = {
     enable = true;
     settings = {

@@ -2,5 +2,6 @@
   imports = [
     ./langs
     ./tools
+    ./clis
   ];
 }

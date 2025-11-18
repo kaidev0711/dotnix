@@ -29,22 +29,24 @@ in {
     casks = [
       # personal
       "keka"
-      "skim"
       "signal"
       "telegram"
       "discord"
       "cloudflare-warp"
       "openkey"
       "iina"
-      "utm"
+      # "servo"
       # Work
       "google-chrome"
       "zoom"
+      "microsoft-outlook"
+      "anydesk"
     ];
     taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {
       "Swift Playground" = 1496833156;
       Xcode = 497799835;
+      "WPS Office" = 1468073139;
     };
   };
 }

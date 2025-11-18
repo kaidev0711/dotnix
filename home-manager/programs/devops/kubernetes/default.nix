@@ -20,5 +20,6 @@
     stern
     velero
     argocd
+    trivy
   ];
 }
