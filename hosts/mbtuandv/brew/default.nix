@@ -5,7 +5,10 @@
 }: let
   username = "tuandv";
 in {
-  imports = [inputs.nix-homebrew.darwinModules.nix-homebrew];
+  imports = [
+    inputs.nix-homebrew.darwinModules.nix-homebrew
+    ./work/cennos
+  ];
   nix-homebrew = {
     enable = true;
     enableRosetta = true;
@@ -27,7 +30,6 @@ in {
       "mas"
     ];
     casks = [
-      # personal
       "keka"
       "signal"
       "telegram"
@@ -35,18 +37,12 @@ in {
       "cloudflare-warp"
       "openkey"
       "iina"
-      # "servo"
-      # Work
-      "google-chrome"
-      "zoom"
-      "microsoft-outlook"
-      "anydesk"
+      "servo"
     ];
     taps = builtins.attrNames config.nix-homebrew.taps;
     masApps = {
       "Swift Playground" = 1496833156;
       Xcode = 497799835;
-      "WPS Office" = 1468073139;
     };
   };
 }

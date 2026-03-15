@@ -5,7 +5,7 @@
       enable = true;
       keepAlive = true;
     };
-    userSettings = {
+    settings = {
       after-startup-command = [];
       exec-on-workspace-change = [];
       enable-normalization-flatten-containers = true;

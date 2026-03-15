@@ -24,7 +24,7 @@
       vibes = "rustyvibes ${config.home.homeDirectory}/devs/_opensource/Soundpacks/nk-cream/ -v 100";
       zj = "${pkgs.zellij}/bin/zellij";
       cat = "${pkgs.bat}/bin/bat";
-      # gt = "${pkgs.gitui}/bin/gitui";
+      gt = "${pkgs.gitui}/bin/gitui";
       lzd = "${pkgs.lazydocker}/bin/lazydocker";
       lzs = "${pkgs.lazysql}/bin/lazysql";
       ju = "${pkgs.just}/bin/just";

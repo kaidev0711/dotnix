@@ -53,6 +53,7 @@
         enter = "confirm_selection";
         pagedown = "scroll_preview_half_page_down";
         pageup = "scroll_preview_half_page_up";
+        ctrl-f = "cycle_previews";
         ctrl-y = "copy_entry_to_clipboard";
         ctrl-r = "reload_source";
         ctrl-s = "cycle_sources";
@@ -72,10 +73,6 @@
         end = "go_to_input_end";
         ctrl-e = "go_to_input_end";
       };
-      events = {
-        mouse-scroll-up = "scroll_preview_up";
-        mouse-scroll-down = "scroll_preview_down";
-      };
       shell_integration = {
         fallback_channel = "files";
         channel_triggers = {
@@ -91,6 +88,7 @@
             "cd"
             "ls"
             "rmdir"
+            "z"
           ];
           "files" = [
             "cat"

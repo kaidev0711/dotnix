@@ -10,6 +10,7 @@
   programs.television = {
     enable = true;
     package = inputs.television.packages."${pkgs.system}".default;
-    enableFishIntegration = true;
+    enableFishIntegration = false;
+    enableNushellIntegration = false;
   };
 }

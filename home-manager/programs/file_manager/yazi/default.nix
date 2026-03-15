@@ -6,22 +6,23 @@
   starship-plugins = pkgs.fetchFromGitHub {
     owner = "Rolv-Apneseth";
     repo = "starship.yazi";
-    rev = "6a0f3f788971b155cbc7cec47f6f11aebbc148c9";
-    hash = "sha256-q1G0Y4JAuAv8+zckImzbRvozVn489qiYVGFQbdCxC98=";
+    rev = "eca186171c5f2011ce62712f95f699308251c749";
+    hash = "sha256-xcz2+zepICZ3ji0Hm0SSUBSaEpabWUrIdG7JmxUl/ts=";
   };
 in {
   xdg.configFile = {
     "yazi/plugins/folder-rules.yazi/main.lua".text = ''
       local function setup()
-      	ps.sub("cd", function()
-      		local cwd = cx.active.current.cwd
-      		if cwd:ends_with("Downloads") then
-      			ya.emit("sort", { "mtime", reverse = true, dir_first = false })
-      		else
-      			ya.emit("sort", { "alphabetical", reverse = false, dir_first = true })
-      		end
-      	end)
-      end
+        ps.sub("ind-sort", function(opt)
+          	local cwd = cx.active.current.cwd
+          	if cwd:ends_with("Downloads") then
+          		opt.by, opt.reverse, opt.dir_first = "mtime", true, false
+          	else
+          	  opt.by, opt.reverse, opt.dir_first = "natural", false, true
+          	end
+          	return opt
+          end)
+        end
       return { setup = setup }
     '';
     "yazi/plugins/smart-tab.yazi/main.lua".text = ''
@@ -59,12 +60,14 @@ in {
     shellWrapperName = "y";
     initLua = ''
       require("full-border"):setup()
+      require("folder-rules"):setup()
       require("smart-enter"):setup {
       	open_multi = true,
       }
-      require("git"):setup{ order = 0 }
-      require("folder-rules"):setup()
-      -- require("starship"):setup()
+      require("git"):setup{
+        order = 1500,
+      }
+      require("starship"):setup()
 
       Status:children_add(function(self)
       	local h = self._current.hovered
@@ -113,7 +116,7 @@ in {
       opener = {
         bulk-rename = [
           {
-            run = ''hx "$@"'';
+            run = ''hx "$s"'';
             block = true;
           }
         ];
@@ -142,6 +145,10 @@ in {
       plugin = {
         prepend_previewers = [
           {
+            url = "*.tar*";
+            run = ''piper --format=url -- tar tf "$1"'';
+          }
+          {
             url = "*.md";
             run = ''piper -- CLICOLOR_FORCE=1 glow -w=$w -s=dark "$1"'';
           }
@@ -151,31 +158,7 @@ in {
           }
           # Archive previewer
           {
-            mime = "application/*zip";
-            run = "ouch";
-          }
-          {
-            mime = "application/x-tar";
-            run = "ouch";
-          }
-          {
-            mime = "application/x-bzip2";
-            run = "ouch";
-          }
-          {
-            mime = "application/x-7z-compressed";
-            run = "ouch";
-          }
-          {
-            mime = "application/x-rar";
-            run = "ouch";
-          }
-          {
-            mime = "application/x-xz";
-            run = "ouch";
-          }
-          {
-            mime = "application/xz";
+            mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
             run = "ouch";
           }
         ];
@@ -195,6 +178,18 @@ in {
             id = "git";
             name = "*/";
             run = "git";
+          }
+          {
+            id = "mime";
+            url = "local://*";
+            run = "mime-ext.local";
+            prio = "high";
+          }
+          {
+            id = "mime";
+            url = "remote://*";
+            run = "mime-ext.remote";
+            prio = "high";
           }
         ];
       };
@@ -304,6 +299,7 @@ in {
       smart-filter = "${inputs.yazi-plugins}/smart-filter.yazi";
       starship = "${starship-plugins}";
       ouch = "${pkgs.yaziPlugins.ouch}";
+      mime-ext = "${inputs.yazi-plugins}/mime-ext.yazi";
     };
   };
 }

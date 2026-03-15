@@ -180,16 +180,14 @@
   };
 
   xdg.configFile."helix/yazi-picker.sh".text = ''
-    #!/usr/bin/env bash
     paths=$(${pkgs.yazi}/bin/yazi "$2" --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
-
     if [[ -n "$paths" ]]; then
-    	${pkgs.zellij}/bin/zellij action toggle-floating-panes
-    	${pkgs.zellij}/bin/zellij action write 27 # send <Escape> key
-    	${pkgs.zellij}/bin/zellij action write-chars ":$1 $paths"
-    	${pkgs.zellij}/bin/zellij action write 13 # send <Enter> key
+      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
+     	${pkgs.zellij}/bin/zellij action write 27
+     	${pkgs.zellij}/bin/zellij action write-chars ":$1 $paths"
+     	${pkgs.zellij}/bin/zellij action write 13
     else
-    	${pkgs.zellij}/bin/zellij action toggle-floating-panes
+      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
     fi
   '';
   xdg.configFile."helix/replace.sh".text = ''
@@ -217,7 +215,7 @@
     if [[ "$TOOL" == "lazygit" ]]; then
       ${pkgs.lazygit}/bin/lazygit
     elif [[ "$TOOL" == "gitui" ]]; then
-      echo ""
+      ${pkgs.gitui}/bin/gitui
     else
       echo "Invalid tool: $TOOL"
       exit 1

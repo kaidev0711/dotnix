@@ -2,7 +2,7 @@
   imports = [
     ../../programs
   ];
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
   home.enableNixpkgsReleaseCheck = false;
   home.sessionVariables = {
     LANG = "en_US.UTF-8";

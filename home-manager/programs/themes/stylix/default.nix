@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
+    enableReleaseChecks = false;
     autoEnable = false;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
     targets = {

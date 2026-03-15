@@ -25,6 +25,7 @@
       config.window_close_confirmation = 'NeverPrompt'
       config.default_cursor_style = "BlinkingBar"
       config.cursor_blink_rate = 400
+      config.check_for_updates = false
 
       config.inactive_pane_hsb = {
       	saturation = 0.9,

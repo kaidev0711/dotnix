@@ -4,10 +4,11 @@
     ./gh
     ./gh_dash
     ./lazygit
-    # ./gitui
+    ./gitui
   ];
   home.packages = with pkgs; [
     serie
     glab
+    gitlogue
   ];
 }

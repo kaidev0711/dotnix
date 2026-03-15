@@ -12,6 +12,7 @@
       {id = "dbepggeogbaibhgnhhndojpepiihcmeb";} # Vimium
       {id = "lodbfhdipoipcjmlebjbgmmgekckhpfb";} # Harper
       {id = "ekhagklcjbdpajgpjgmbionohlpdbjgc";} # Zotero Connector
+      {id = "babnnfmbjokkeieobamoifmeapbbfhje";} # Medium Unlock
     ];
   };
 }

@@ -62,10 +62,6 @@
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/aerospace/aerospace-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/typst/typst-completions.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/rg/rg-completions.nu"
-
-      # television
-      mkdir ($nu.data-dir | path join "vendor/autoload")
-      tv init nu | save -f ($nu.data-dir | path join "vendor/autoload/tv.nu")
     '';
   };
 }
