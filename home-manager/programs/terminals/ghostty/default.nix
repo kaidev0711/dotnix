@@ -13,7 +13,9 @@
         font-size = lib.mkForce 15;
         font-feature = ["-liga" "-dlig" "-calt"];
         background-opacity = lib.mkForce 1.0;
-        window-decoration = false;
+
+        macos-titlebar-style = "hidden";
+
         window-padding-x = 0;
         window-padding-y = 0;
 

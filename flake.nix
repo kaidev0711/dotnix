@@ -29,11 +29,8 @@
       url = "github:yazi-rs/plugins";
       flake = false;
     };
-    television.url = "github:alexpasmantier/television";
     helix.url = "github:helix-editor/helix";
     wezterm.url = "github:wez/wezterm?dir=nix";
-    # fresh.url = "github:sinelaw/fresh";
-    # try-rs.url = "github:tassiovirginio/try-rs";
   };
 
   outputs = inputs @ {

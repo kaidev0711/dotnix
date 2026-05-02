@@ -133,7 +133,7 @@ in {
       open = {
         prepend_rules = [
           {
-            name = "bulk-rename.txt";
+            url = "bulk-rename.txt";
             use = "bulk-rename";
           }
           {
@@ -164,32 +164,32 @@ in {
         ];
         prepend_preloaders = [
           {
-            name = "/remote/**";
+            url = "/remote/**";
             run = "noop";
           }
         ];
         prepend_fetchers = [
           {
-            id = "git";
-            name = "*";
+            url = "*";
             run = "git";
+            group = "git";
           }
           {
-            id = "git";
-            name = "*/";
+            url = "*/";
             run = "git";
+            group = "git";
           }
           {
-            id = "mime";
             url = "local://*";
             run = "mime-ext.local";
             prio = "high";
+            group = "mime";
           }
           {
-            id = "mime";
             url = "remote://*";
             run = "mime-ext.remote";
             prio = "high";
+            group = "mime";
           }
         ];
       };

@@ -58,6 +58,7 @@
         ctrl-r = "reload_source";
         ctrl-s = "cycle_sources";
         ctrl-t = "toggle_remote_control";
+        ctrl-x = "toggle_action_picker";
         ctrl-o = "toggle_preview";
         ctrl-h = "toggle_help";
         f12 = "toggle_status_bar";
@@ -118,6 +119,7 @@
           ];
           "git-branch" = [
             "git checkout"
+            "git switch"
             "git branch"
             "git merge"
             "git rebase"

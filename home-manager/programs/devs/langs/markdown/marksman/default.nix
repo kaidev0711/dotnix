@@ -18,7 +18,7 @@
     # * full: the whole copy of a document is sent by the editor
     #   on every update,
     # * incremental: only the changed parts are sent by
-    #   the editor. This will result in less traffic between
+    #   the editor. This will result in less trafic between
     #   the editor and Marksman, but the overall performance
     #   impact is marginal.
     # Defaults to `full` because the editors have bugs in incremental
@@ -40,6 +40,8 @@
     [code_action]
     # Enable/disable "Table of Contents" code action
     toc.enable = true
+    # Heading levels to include when generating a Table of Contents
+    toc.include = [1, 2, 3, 4, 5, 6]
 
     # Enable/disable "Create missing linked file" code action
     create_missing_file.enable = true

@@ -8,7 +8,7 @@
       language = [
         {
           name = "markdown";
-          language-servers = ["markdown-oxide" "marksman" "codebook" "typos-lsp"];
+          language-servers = ["markdown-oxide" "marksman" "codebook" "typos-lsp" "rumdl"];
           auto-format = true;
           formatter = {
             command = lib.getExe pkgs.deno;
@@ -23,6 +23,12 @@
         marksman = {
           command = lib.getExe pkgs.marksman;
           args = ["server"];
+        };
+        rumdl = {
+          rumdl = {
+            command = lib.getExe pkgs.rumdl;
+            args = ["server"];
+          };
         };
       };
     };

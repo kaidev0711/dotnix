@@ -124,17 +124,18 @@
             y = ":yank-diagnostic";
           };
           e = {
-            o = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh open %{buffer_name}";
-            v = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh vsplit %{buffer_name}";
-            h = ":sh ${pkgs.zellij}/bin/zellij run -n Yazi -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/yazi-picker.sh hsplit %{buffer_name}";
+            o = [
+              ":sh rm -f /tmp/unique-ca1ea106"
+              ":insert-output yazi \"%{buffer_name}\" --chooser-file=/tmp/unique-ca1ea106"
+              ":sh printf \"\\x1b[?1049h\\x1b[?2004h\" > /dev/tty"
+              ":open %sh{cat /tmp/unique-ca1ea106}"
+              ":redraw"
+              ":set mouse false"
+              ":set mouse true"
+            ];
           };
-          s = {
-            s = ":sh ${pkgs.zellij}/bin/zellij run -n Serpl -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh serpl";
-            S = ":sh ${pkgs.zellij}/bin/zellij run -n Scooter -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/replace.sh scooter";
-          };
+          s = {};
           g = {
-            g = ":sh ${pkgs.zellij}/bin/zellij run -n Gitui -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/git-tools.sh gitui";
-            G = ":sh ${pkgs.zellij}/bin/zellij run -n Lazygit -c -f -x 10%% -y 10%% --width 80%% --height 80%% -- ${pkgs.bash}/bin/bash ${config.xdg.configHome}/helix/git-tools.sh lazygit";
             b = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}";
             B = ":sh git blame -L %{cursor_line},%{cursor_line} %{buffer_name}";
           };
@@ -178,56 +179,4 @@
       };
     };
   };
-
-  xdg.configFile."helix/yazi-picker.sh".text = ''
-    paths=$(${pkgs.yazi}/bin/yazi "$2" --chooser-file=/dev/stdout | while read -r; do printf "%q " "$REPLY"; done)
-    if [[ -n "$paths" ]]; then
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-     	${pkgs.zellij}/bin/zellij action write 27
-     	${pkgs.zellij}/bin/zellij action write-chars ":$1 $paths"
-     	${pkgs.zellij}/bin/zellij action write 13
-    else
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-    fi
-  '';
-  xdg.configFile."helix/replace.sh".text = ''
-    TOOL=$1
-    if [[ "$TOOL" == "serpl" ]]; then
-      ${pkgs.serpl}/bin/serpl
-    elif [[ "$TOOL" == "scooter" ]]; then
-      ${pkgs.scooter}/bin/scooter
-    else
-      echo "Invalid tool: $TOOL"
-      exit 1
-    fi
-    exit_code=$?
-
-    if [[ $exit_code -eq 0 ]]; then
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-      ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
-      ${pkgs.zellij}/bin/zellij action write 13
-    else
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-    fi
-  '';
-  xdg.configFile."helix/git-tools.sh".text = ''
-    TOOL=$1
-    if [[ "$TOOL" == "lazygit" ]]; then
-      ${pkgs.lazygit}/bin/lazygit
-    elif [[ "$TOOL" == "gitui" ]]; then
-      ${pkgs.gitui}/bin/gitui
-    else
-      echo "Invalid tool: $TOOL"
-      exit 1
-    fi
-    exit_code=$?
-
-    if [[ $exit_code -eq 0 ]]; then
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-      ${pkgs.zellij}/bin/zellij action write-chars ":reload-all"
-      ${pkgs.zellij}/bin/zellij action write 13
-    else
-      ${pkgs.zellij}/bin/zellij action toggle-floating-panes
-    fi
-  '';
 }

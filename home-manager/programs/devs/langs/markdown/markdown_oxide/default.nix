@@ -32,7 +32,7 @@
 
 
     # The folder for new daily notes: this is applied for the create file for unresolved link code action
-    # as well as the Today, Tomorrow, Yesterday, and Daily... lsp commands
+    # as well as the Today, Tomorrow, Yesterday, and Daily... lsp commands (including relative directives like prev, next, +N, -N)
     #
     # This is also imported from obsidian if not specified: specifically the option titled "New file location"
     daily_notes_folder = ""
@@ -66,5 +66,16 @@
     # Enables autocompleting by heading but inserting link to filename (instead of filename + heading)
     # Useful for unique notes / Zettelkasten users
     link_filenames_only = false
+
+    # Use GitHub-style heading slugs in completions (spaces replaced with dashes)
+    # When false (default), completions insert headings with spaces: [[file#My Heading]]
+    # When true, completions insert headings with dashes: [[file#My-Heading]]
+    # Note: Go-to-definition and diagnostics always resolve both forms regardless of this setting
+    heading_slug = false
+
+    # Folders to exclude from vault indexing
+    # Files within excluded folders will not appear in completions, references, diagnostics, or other LSP features
+    # Matching is by directory name, so excluding "Archive" will skip any directory named Archive at any depth
+    excluded_folders = []
   '';
 }

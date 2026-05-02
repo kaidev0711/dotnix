@@ -6,8 +6,11 @@
       keepAlive = true;
     };
     settings = {
+      config-version = 2;
       after-startup-command = [];
+
       exec-on-workspace-change = [];
+
       enable-normalization-flatten-containers = true;
       enable-normalization-opposite-orientation-for-nested-containers = true;
       accordion-padding = 30;
@@ -16,6 +19,8 @@
       on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
       on-focus-changed = ["move-mouse window-lazy-center"];
       automatically-unhide-macos-hidden-apps = false;
+      persistent-workspaces = [];
+      on-mode-changed = [];
 
       key-mapping = {
         preset = "qwerty";

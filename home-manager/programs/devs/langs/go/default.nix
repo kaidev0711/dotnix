@@ -5,9 +5,9 @@
 }: {
   home.packages = with pkgs; [
     golangci-lint
-    gopls
+    # gopls
     golangci-lint-langserver
-    gotools
+    # gotools
     delve
   ];
   programs.go = {

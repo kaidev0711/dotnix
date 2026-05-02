@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   roomPlugin = pkgs.fetchurl {
     url = "https://github.com/rvcas/room/releases/latest/download/room.wasm";
-    sha256 = "sha256-t6GPP7OOztf6XtBgzhLF+edUU294twnu0y5uufXwrkw=";
+    sha256 = "sha256-kLSDpAt2JGj7dYYhYFh6BfvtzVwTrcs+0jHwG/nActE=";
   };
   grabPlugin = pkgs.fetchurl {
     url = "https://github.com/imsnif/grab/releases/latest/download/grab.wasm";
